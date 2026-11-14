@@ -1,0 +1,30 @@
+[
+  {
+    "id": "northstar-restore",
+    "title": "Northstar backup policy",
+    "source": "sample/backup-policy",
+    "position": 0,
+    "excerpt": "The database operations lead approves production restores. Restore into an isolated database first and validate the requested records before touching production."
+  },
+  {
+    "id": "northstar-objectives",
+    "title": "Northstar backup policy",
+    "source": "sample/backup-policy",
+    "position": 1,
+    "excerpt": "The recovery point objective is 15 minutes. The recovery time objective is four hours. Full daily backups are retained for 30 days and monthly backups for 12 months."
+  },
+  {
+    "id": "northstar-incident",
+    "title": "Northstar incident response",
+    "source": "sample/incident-response",
+    "position": 0,
+    "excerpt": "For a SEV-1 incident, the on-call engineer immediately pages the incident commander and opens an incident channel. The communications lead posts a customer status update within 15 minutes."
+  },
+  {
+    "id": "northstar-access",
+    "title": "Northstar access policy",
+    "source": "sample/access-policy",
+    "position": 0,
+    "excerpt": "Managers approve the business need for application access. Application owners approve the role. Temporary elevated privileges expire after eight hours."
+  }
+]

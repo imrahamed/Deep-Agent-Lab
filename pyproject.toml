@@ -1,0 +1,47 @@
+[project]
+name = "deep-agent-lab"
+version = "0.1.0"
+description = "A local Deep Agents course and evidence-brief assistant with its own RAG pipeline"
+requires-python = ">=3.11,<3.15"
+readme = "README.md"
+dependencies = [
+  "deepagents==0.7.0",
+  "langchain>=1,<2",
+  "langchain-ollama>=1.1,<2",
+  "langgraph>=1,<2",
+  "langgraph-checkpoint-sqlite>=3,<4",
+  "langchain-quickjs>=0.2,<1",
+  "mcp>=1.20,<2",
+  "fastapi>=0.115,<1",
+  "httpx>=0.28,<1",
+  "langfuse>=5,<6",
+  "pydantic-settings>=2.7,<3",
+  "uvicorn>=0.34,<1",
+  "python-dotenv>=1,<2",
+  "psycopg[binary]>=3.2,<4",
+  "pypdf>=5,<7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1"]
+notebook = ["jupyterlab>=4.3,<5", "ipykernel>=6.29,<8", "nbclient>=0.10,<1"]
+
+[project.scripts]
+deep-lab = "deep_agent_lab.cli:main"
+
+[build-system]
+requires = ["hatchling>=1.26,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/deep_agent_lab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
