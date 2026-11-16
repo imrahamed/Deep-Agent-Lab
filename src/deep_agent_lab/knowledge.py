@@ -21,6 +21,7 @@ class Evidence(BaseModel):
     source: str
     position: int
     excerpt: str
+    revision: str = "fixture-v1"
 
     @computed_field
     @property
@@ -66,6 +67,7 @@ def search_knowledge(
             source=hit.source,
             position=hit.position,
             excerpt=hit.text[:1400],
+            revision=hit.revision,
         )
         for hit in hits
     ]

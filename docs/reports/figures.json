@@ -1,0 +1,134 @@
+[
+  {
+    "figure": "docs/reports/figures/01-agent-foundations/lab-00.png",
+    "width": 1308,
+    "height": 582,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/02-tools-and-mcp/lab-00.png",
+    "width": 1308,
+    "height": 582,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/03-evaluation-foundations/lab-00.png",
+    "width": 1308,
+    "height": 582,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/03-evaluation-foundations/lab-01.png",
+    "width": 1068,
+    "height": 408,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/04-context-engineering/lab-00.png",
+    "width": 1308,
+    "height": 582,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/04-context-engineering/lab-01.png",
+    "width": 1068,
+    "height": 408,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/05-skills-and-memory/lab-00.png",
+    "width": 1308,
+    "height": 582,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/06-planning-and-delegation/lab-00.png",
+    "width": 1308,
+    "height": 582,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/06-planning-and-delegation/lab-01.png",
+    "width": 1068,
+    "height": 408,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/07-agentic-rag/evidence-and-claims-00.png",
+    "width": 1308,
+    "height": 582,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/07-agentic-rag/evidence-and-claims-01.png",
+    "width": 1068,
+    "height": 408,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/07-agentic-rag/lab-00.png",
+    "width": 1308,
+    "height": 582,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/07-agentic-rag/lab-01.png",
+    "width": 1068,
+    "height": 408,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/08-advanced-evaluations/lab-00.png",
+    "width": 1308,
+    "height": 582,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/08-advanced-evaluations/lab-01.png",
+    "width": 1068,
+    "height": 408,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/09-security/lab-00.png",
+    "width": 1308,
+    "height": 582,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/10-human-review/lab-00.png",
+    "width": 1308,
+    "height": 582,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/11-durable-execution/lab-00.png",
+    "width": 1308,
+    "height": 582,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/11-durable-execution/process-recovery-00.png",
+    "width": 1308,
+    "height": 582,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/12-observability/lab-00.png",
+    "width": 1308,
+    "height": 582,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/12-observability/lab-01.png",
+    "width": 990,
+    "height": 290,
+    "status": "passed"
+  },
+  {
+    "figure": "docs/reports/figures/13-capstone/lab-00.png",
+    "width": 1308,
+    "height": 582,
+    "status": "passed"
+  }
+]

@@ -55,6 +55,8 @@ def main() -> int:
     try:
         selected_mode = "demo" if args.demo else "live" if args.live else None
         overrides = {"deep_lab_mode": selected_mode} if selected_mode else {}
+        if args.demo:
+            overrides["langfuse_enabled"] = False
         settings = Settings(**overrides)
         if args.command == "doctor":
             status = doctor(settings, check_tracing=True)

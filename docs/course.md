@@ -1,48 +1,43 @@
-# Deep Agent Lab course
+# AI Agent Engineering with Northstar
 
-A production restore and a customer-facing outage might happen at the same time.
-Who approves the restore? Who gets paged? Does policy explain how the two roles
-coordinate? You will build an assistant that answers from the fictional Northstar
-policies, flags missing evidence, and proposes a brief for a person to review.
+Build one fictional policy research assistant through thirteen modules. Start with a
+single lookup, then add evidence verification, context, skills, scoped memory,
+planning, security, exact review, durable recovery and measured evaluation.
 
-[Setup](../README.md) · [Notebook guide](../notebooks/README.md) ·
-[Operations reference](operations.md)
+The audience is a senior Node.js/TypeScript backend engineer learning Python AI
+engineering. Python type hints describe structure; Pydantic performs runtime
+validation, much like Zod. An async coroutine resembles a Promise, while
+asyncio concurrency still needs explicit cancellation and durable ownership.
 
-## Start here
+Read the concept chapter and execute the paired notebook in a fresh kernel. Modify
+the parameters, reproduce the deliberate failure, attempt the exercise, then run
+the complete reference solution. Every module works offline with temporary state.
 
-Follow the README to install dependencies. Then run these examples from the
-project root in PowerShell:
-
-```powershell
-uv run deep-lab --demo ask "Who approves a production restore?"
-```
-
-Use **demo** to learn tool calls, paths, checkpoints, and review. The scripted
-model reacts to specific words, so use the prompts as written. Use
-[live mode](../README.md#run-with-live-services) for open-ended questions,
-real search rankings, and Langfuse traces. Use a fresh thread to start an
-independent experiment. Reuse a thread ID to continue a conversation or review
-its pending action. Demo and live have separate state directories.
-
-## Lessons and checkpoints
-
-| Module | What you learn | How to check your work |
+| Module | Reading | Executable lab |
 | --- | --- | --- |
-| [1. Agent foundations](module-1-agent-foundations.md) | Model, harness, tools, MCP, checkpoints, and approval | Match a claim to its passage and reopen a pending review from a second process |
-| [2. Execution environment](module-2-execution-environment.md) | File backends, permissions, shell, and interpreter | Predict where a draft goes and which reference write is denied |
-| [3. Context management](module-3-context-management.md) | Offloading, summarization, skills, and memory | Find the original text behind a preview and explain why another thread cannot see your draft |
-| [4. Delegation](module-4-delegation.md) | Planning, specialist handoffs, and dynamic batches | Verify two child findings and explain what completed plan items tell you |
-| [5. Capstone](module-5-capstone.md) | Ingestion, hybrid retrieval, FastAPI, traces, and background work | Retrieve the approved brief and check each claim against its passage |
-| [6. Managed deployment](managed-deployment.md) | Runtime, model placement, identity, and durable writes | Sketch how the runtime reaches each service and what happens when approval is retried |
+| 01 | [Agent foundations](modules/01-agent-foundations.md) | [Notebook](../notebooks/01-agent-foundations/lab.ipynb) |
+| 02 | [Tools and MCP](modules/02-tools-and-mcp.md) | [Notebook](../notebooks/02-tools-and-mcp/lab.ipynb) |
+| 03 | [Evaluation foundations](modules/03-evaluation-foundations.md) | [Notebook](../notebooks/03-evaluation-foundations/lab.ipynb) |
+| 04 | [Context engineering](modules/04-context-engineering.md) | [Notebook](../notebooks/04-context-engineering/lab.ipynb) |
+| 05 | [Skills and memory](modules/05-skills-and-memory.md) | [Notebook](../notebooks/05-skills-and-memory/lab.ipynb) |
+| 06 | [Planning and delegation](modules/06-planning-and-delegation.md) | [Notebook](../notebooks/06-planning-and-delegation/lab.ipynb) |
+| 07 | [Agentic RAG](modules/07-agentic-rag.md) | [Notebook](../notebooks/07-agentic-rag/lab.ipynb) |
+| 08 | [Advanced evaluations](modules/08-advanced-evaluations.md) | [Notebook](../notebooks/08-advanced-evaluations/lab.ipynb) |
+| 09 | [Security and trust boundaries](modules/09-security.md) | [Notebook](../notebooks/09-security/lab.ipynb) |
+| 10 | [Human review bound to the exact action](modules/10-human-review.md) | [Notebook](../notebooks/10-human-review/lab.ipynb) |
+| 11 | [Durable execution](modules/11-durable-execution.md) | [Notebook](../notebooks/11-durable-execution/lab.ipynb) |
+| 12 | [Observability and model comparison](modules/12-observability.md) | [Notebook](../notebooks/12-observability/lab.ipynb) |
+| 13 | [Integrated Northstar capstone](modules/13-capstone.md) | [Notebook](../notebooks/13-capstone/lab.ipynb) |
 
-## Final exercise
+Complex topics have additional standalone labs:
 
-Draft an incident-readiness brief that names the restore approver, identifies
-who the on-call engineer pages during a SEV-1, and states any gap around joint
-decision authority. Verify each supported claim against the cited passage.
-Edit the proposal if needed, approve it, and fetch the exact Markdown saved.
-[Capstone acceptance cases](module-5-capstone.md#acceptance-cases)
+- [Claim support and contradictory evidence](../notebooks/07-agentic-rag/evidence-and-claims.ipynb)
+- [Separate-process crash recovery](../notebooks/11-durable-execution/process-recovery.ipynb)
 
-The lessons adapt the Academy Python course to Ollama, PostgreSQL, OpenSearch,
-FastAPI, SQLite, and Langfuse. [Academy syllabus](https://academy.langchain.com/courses/foundation-introduction-to-deepagents) ·
-[Course source](https://github.com/langchain-ai/lca-deepagents/tree/9e1fab37b9bcf4d672bdb6b667755f3f668a3fc8)
+The original [integrated walkthrough](../notebooks/deep_agents.ipynb) and legacy
+module documents remain available. [Managed deployment](managed-deployment.md)
+is an optional architecture exercise after the core course.
+
+[Setup and learning path](../README.md) · [Architecture](architecture.md) ·
+[Coverage and verification scope](coverage.md) · [Glossary](glossary.md) ·
+[Primary references and compatibility](references.md)

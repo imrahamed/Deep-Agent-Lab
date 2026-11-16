@@ -1,45 +1,23 @@
-# Deep Agent Lab notebook
+# Northstar notebooks
 
-Follow a question from its first search call through a checkpointed brief
-review. The [course map](../docs/course.md) has the written lessons and
-worked examples.
-
-## Open the lab
-
-From the project root in PowerShell:
+Follow the [thirteen-module learning path](../docs/course.md). Each numbered folder
+contains an independent lab with explanations, a rendered Matplotlib diagram,
+implementation, parameter experiments, deliberate failures, assertions and worked
+solutions. Modules 07 and 11 include deeper standalone notebooks. The original
+`deep_agents.ipynb` walkthrough is retained.
 
 ```powershell
-uv sync --locked --extra notebook
-uv run --extra notebook jupyter lab notebooks/deep_agents.ipynb
+$env:UV_CACHE_DIR = Join-Path $PWD '.uv-cache'
+uv sync --locked --extra dev --extra notebook
+uv run jupyter lab notebooks/01-agent-foundations/lab.ipynb
+uv run python scripts/check_notebook.py
 ```
 
-Choose the project environment's Python kernel and run the cells in order.
-The offline exercises create temporary checkpoints and use bundled evidence.
-Look for a matching citation, a denied write to a reference path, two
-specialist results, and a brief ID after approval.
+The checker starts a fresh kernel for each notebook using the exact project Python,
+executes all cells, rejects unexpected errors, checks PNG diagram outputs and saves
+the executed notebooks plus `docs/reports/notebooks.json`. Optional live cells use
+`RUN_LIVE = False` by default. They are not counted as live-tested by the checker.
 
-## Try live retrieval
-
-Initialize, check, and ingest the course corpus from the project root:
-
-```powershell
-uv run deep-lab init
-uv run deep-lab doctor
-uv run deep-lab ingest data/sample
-```
-
-Set `RUN_LIVE = True` in the final cell and run it. That cell reads the project's
-`.env`, uses Ollama and the course's PostgreSQL and OpenSearch resources, and
-stores the new thread under the configured live state directory. Compare the
-evidence, citations, and tool choices with the scripted result.
-[Live configuration](../docs/operations.md#configuration)
-
-## Verify without opening Jupyter
-
-Keep `RUN_LIVE = False` and run:
-
-```powershell
-uv run --extra notebook python scripts/check_notebook.py
-```
-
-The script executes the offline code cells and checks their assertions.
+Edit the teaching notebooks directly in Jupyter and update the paired reading in
+`docs/modules/` when needed. Run the checker again after editing to refresh
+execution evidence. The notebooks are self-contained teaching artifacts.

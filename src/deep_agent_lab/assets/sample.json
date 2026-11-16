@@ -4,13 +4,15 @@
     "title": "Northstar backup policy",
     "source": "sample/backup-policy",
     "position": 0,
-    "excerpt": "The database operations lead approves production restores. Restore into an isolated database first and validate the requested records before touching production."
+    "revision": "4",
+    "excerpt": "The database operations lead approves production restores. Restore into an isolated database first and validate the requested records before touching production. After restoration, designated operators must verify service health and record the validation result."
   },
   {
     "id": "northstar-objectives",
     "title": "Northstar backup policy",
     "source": "sample/backup-policy",
     "position": 1,
+    "revision": "4",
     "excerpt": "The recovery point objective is 15 minutes. The recovery time objective is four hours. Full daily backups are retained for 30 days and monthly backups for 12 months."
   },
   {
@@ -18,13 +20,15 @@
     "title": "Northstar incident response",
     "source": "sample/incident-response",
     "position": 0,
-    "excerpt": "For a SEV-1 incident, the on-call engineer immediately pages the incident commander and opens an incident channel. The communications lead posts a customer status update within 15 minutes."
+    "revision": "8",
+    "excerpt": "For a SEV-1 incident, the on-call engineer immediately pages the incident commander and opens an incident channel. The incident commander coordinates SEV-1 responders. The communications lead posts a customer status update within 15 minutes."
   },
   {
     "id": "northstar-access",
     "title": "Northstar access policy",
     "source": "sample/access-policy",
     "position": 0,
-    "excerpt": "Managers approve the business need for application access. Application owners approve the role. Temporary elevated privileges expire after eight hours."
+    "revision": "3",
+    "excerpt": "Managers approve the business need for application access. Application owners approve the role. Temporary elevated privileges expire after eight hours. Emergency privileged access requires separate authorization from the designated access-control authority and must be recorded for later review."
   }
 ]

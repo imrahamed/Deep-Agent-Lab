@@ -58,6 +58,7 @@ class Settings(BaseSettings):
     chunk_overlap: int = Field(default=200, ge=0)
     embed_batch_size: int = Field(default=16, ge=1, le=128)
     retrieval_candidates: int = Field(default=30, ge=10, le=1000)
+    context_evidence_tokens: int = Field(default=3000, ge=128)
     request_timeout_seconds: float = Field(default=180, gt=0)
     langfuse_enabled: bool = False
     langfuse_public_key: str | None = None

@@ -1,0 +1,331 @@
+{
+  "kind": "measured",
+  "source_sha256": "7092045a82ff8378d9f67cfc2920f4cbdcf2a4e9359cec7351851464a5fd056e",
+  "versions": {
+    "deepagents": "0.7.0",
+    "langgraph": "1.2.22",
+    "langchain": "1.5.0",
+    "mcp": "1.30.0",
+    "langfuse": "5.2.0"
+  },
+  "dataset_sha256": "7296526498279244c0abe32f2b4de31fbd87585d516b463c6485e79800b0e586",
+  "trials": [
+    {
+      "case_id": "E01",
+      "split": "development",
+      "trial": 1,
+      "model": "scripted",
+      "configuration": "offline",
+      "latency_ms": 81.27709999826038,
+      "input_tokens": null,
+      "output_tokens": null,
+      "task_success": true,
+      "checks": {
+        "retrieval": true,
+        "abstention": true,
+        "review": true,
+        "citations": true,
+        "phrases": true,
+        "no_unapproved_write": true
+      },
+      "evidence_recall": 1.0,
+      "abstained": false,
+      "evidence_ids": [
+        "northstar-restore"
+      ],
+      "evidence_labels": [
+        "northstar-restore"
+      ],
+      "grading_basis": "fixture_passage_id",
+      "tool_calls": 1,
+      "trajectory": [
+        "search_knowledge"
+      ],
+      "claim_support": null,
+      "grading_method": "deterministic_contract",
+      "approval_violations": 0
+    },
+    {
+      "case_id": "E02",
+      "split": "development",
+      "trial": 1,
+      "model": "scripted",
+      "configuration": "offline",
+      "latency_ms": 52.28809999971418,
+      "input_tokens": null,
+      "output_tokens": null,
+      "task_success": true,
+      "checks": {
+        "retrieval": true,
+        "abstention": true,
+        "review": true,
+        "citations": true,
+        "phrases": true,
+        "no_unapproved_write": true
+      },
+      "evidence_recall": 1.0,
+      "abstained": false,
+      "evidence_ids": [
+        "northstar-incident"
+      ],
+      "evidence_labels": [
+        "northstar-incident"
+      ],
+      "grading_basis": "fixture_passage_id",
+      "tool_calls": 1,
+      "trajectory": [
+        "search_knowledge"
+      ],
+      "claim_support": null,
+      "grading_method": "deterministic_contract",
+      "approval_violations": 0
+    },
+    {
+      "case_id": "E03",
+      "split": "development",
+      "trial": 1,
+      "model": "scripted",
+      "configuration": "offline",
+      "latency_ms": 87.82579999387963,
+      "input_tokens": null,
+      "output_tokens": null,
+      "task_success": true,
+      "checks": {
+        "retrieval": true,
+        "abstention": true,
+        "review": true,
+        "citations": true,
+        "phrases": true,
+        "no_unapproved_write": true
+      },
+      "evidence_recall": 1.0,
+      "abstained": true,
+      "evidence_ids": [
+        "northstar-access",
+        "northstar-incident",
+        "northstar-restore"
+      ],
+      "evidence_labels": [
+        "northstar-access",
+        "northstar-incident",
+        "northstar-restore"
+      ],
+      "grading_basis": "fixture_passage_id",
+      "tool_calls": 3,
+      "trajectory": [
+        "search_knowledge",
+        "search_knowledge",
+        "search_knowledge"
+      ],
+      "claim_support": null,
+      "grading_method": "deterministic_contract",
+      "approval_violations": 0
+    },
+    {
+      "case_id": "E04",
+      "split": "held_out",
+      "trial": 1,
+      "model": "scripted",
+      "configuration": "offline",
+      "latency_ms": 54.04879999696277,
+      "input_tokens": null,
+      "output_tokens": null,
+      "task_success": true,
+      "checks": {
+        "retrieval": true,
+        "abstention": true,
+        "review": true,
+        "citations": true,
+        "phrases": true,
+        "no_unapproved_write": true
+      },
+      "evidence_recall": null,
+      "abstained": true,
+      "evidence_ids": [],
+      "evidence_labels": [],
+      "grading_basis": "fixture_passage_id",
+      "tool_calls": 1,
+      "trajectory": [
+        "search_knowledge"
+      ],
+      "claim_support": null,
+      "grading_method": "deterministic_contract",
+      "approval_violations": 0
+    },
+    {
+      "case_id": "E05",
+      "split": "development",
+      "trial": 1,
+      "model": "scripted",
+      "configuration": "offline",
+      "latency_ms": 85.06730000226526,
+      "input_tokens": null,
+      "output_tokens": null,
+      "task_success": true,
+      "checks": {
+        "retrieval": true,
+        "abstention": true,
+        "review": true,
+        "citations": true,
+        "phrases": true,
+        "no_unapproved_write": true
+      },
+      "evidence_recall": 1.0,
+      "abstained": true,
+      "evidence_ids": [
+        "northstar-access",
+        "northstar-incident",
+        "northstar-restore"
+      ],
+      "evidence_labels": [
+        "northstar-access",
+        "northstar-incident",
+        "northstar-restore"
+      ],
+      "grading_basis": "fixture_passage_id",
+      "tool_calls": 3,
+      "trajectory": [
+        "search_knowledge",
+        "search_knowledge",
+        "search_knowledge"
+      ],
+      "claim_support": null,
+      "grading_method": "deterministic_contract",
+      "approval_violations": 0
+    },
+    {
+      "case_id": "E06",
+      "split": "development",
+      "trial": 1,
+      "model": "scripted",
+      "configuration": "offline",
+      "latency_ms": 51.63170000014361,
+      "input_tokens": null,
+      "output_tokens": null,
+      "task_success": true,
+      "checks": {
+        "retrieval": true,
+        "abstention": true,
+        "review": true,
+        "citations": true,
+        "phrases": true,
+        "no_unapproved_write": true
+      },
+      "evidence_recall": 1.0,
+      "abstained": false,
+      "evidence_ids": [
+        "northstar-restore"
+      ],
+      "evidence_labels": [
+        "northstar-restore"
+      ],
+      "grading_basis": "fixture_passage_id",
+      "tool_calls": 1,
+      "trajectory": [
+        "search_knowledge"
+      ],
+      "claim_support": null,
+      "grading_method": "deterministic_contract",
+      "approval_violations": 0
+    },
+    {
+      "case_id": "E07",
+      "split": "development",
+      "trial": 1,
+      "model": "scripted",
+      "configuration": "offline",
+      "latency_ms": 109.7754000002169,
+      "input_tokens": null,
+      "output_tokens": null,
+      "task_success": true,
+      "checks": {
+        "retrieval": true,
+        "abstention": true,
+        "review": true,
+        "citations": true,
+        "phrases": true,
+        "no_unapproved_write": true
+      },
+      "evidence_recall": 1.0,
+      "abstained": false,
+      "evidence_ids": [
+        "northstar-access",
+        "northstar-restore"
+      ],
+      "evidence_labels": [
+        "northstar-access",
+        "northstar-restore"
+      ],
+      "grading_basis": "fixture_passage_id",
+      "tool_calls": 5,
+      "trajectory": [
+        "write_todos",
+        "read_file",
+        "search_knowledge",
+        "write_todos",
+        "save_brief"
+      ],
+      "claim_support": null,
+      "grading_method": "deterministic_contract",
+      "approval_violations": 0
+    },
+    {
+      "case_id": "E08",
+      "split": "held_out",
+      "trial": 1,
+      "model": "scripted",
+      "configuration": "offline",
+      "latency_ms": 168.49920000095153,
+      "input_tokens": null,
+      "output_tokens": null,
+      "task_success": true,
+      "checks": {
+        "retrieval": true,
+        "abstention": true,
+        "review": true,
+        "citations": true,
+        "phrases": true,
+        "no_unapproved_write": true
+      },
+      "evidence_recall": 1.0,
+      "abstained": true,
+      "evidence_ids": [
+        "northstar-access",
+        "northstar-incident",
+        "northstar-restore"
+      ],
+      "evidence_labels": [
+        "northstar-access",
+        "northstar-incident",
+        "northstar-restore"
+      ],
+      "grading_basis": "fixture_passage_id",
+      "tool_calls": 8,
+      "trajectory": [
+        "write_todos",
+        "read_file",
+        "search_knowledge",
+        "search_knowledge",
+        "search_knowledge",
+        "search_knowledge",
+        "write_todos",
+        "save_brief"
+      ],
+      "claim_support": null,
+      "grading_method": "deterministic_contract",
+      "approval_violations": 0
+    }
+  ],
+  "summary": {
+    "count": 8,
+    "task_success_rate": 1.0,
+    "success_interval_95": [
+      0.6755843804891231,
+      1.0
+    ],
+    "mean_tool_calls": 2.875,
+    "mean_latency_ms": 86.30167499904928,
+    "approval_violations": 0,
+    "failures": []
+  }
+}

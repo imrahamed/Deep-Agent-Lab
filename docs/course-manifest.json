@@ -1,0 +1,315 @@
+[
+  {
+    "slug": "01-agent-foundations",
+    "title": "Agent foundations",
+    "topics": [
+      "LLM inference",
+      "tokens",
+      "messages",
+      "structured outputs",
+      "agent loops",
+      "workflows vs agents",
+      "harness",
+      "runtime",
+      "LangGraph",
+      "Deep Agents"
+    ],
+    "tests": [
+      "tests/test_foundations_tools.py",
+      "tests/test_course.py"
+    ],
+    "implementation": [
+      "src/deep_agent_lab/foundations.py",
+      "src/deep_agent_lab/agent.py"
+    ]
+  },
+  {
+    "slug": "02-tools-and-mcp",
+    "title": "Tools and MCP",
+    "topics": [
+      "tool schemas",
+      "validation",
+      "tool-call IDs",
+      "error handling",
+      "retries",
+      "timeouts",
+      "pagination",
+      "local MCP",
+      "remote MCP",
+      "authentication"
+    ],
+    "tests": [
+      "tests/test_foundations_tools.py",
+      "tests/test_course.py",
+      "tests/test_mcp_http.py"
+    ],
+    "implementation": [
+      "src/deep_agent_lab/tooling.py",
+      "src/deep_agent_lab/mcp_server.py"
+    ]
+  },
+  {
+    "slug": "03-evaluation-foundations",
+    "title": "Evaluation foundations",
+    "topics": [
+      "datasets",
+      "deterministic tests",
+      "baseline evaluations",
+      "tool correctness",
+      "task success",
+      "trajectories",
+      "held-out split"
+    ],
+    "tests": [
+      "tests/test_evidence_evaluations.py",
+      "tests/test_live_grading.py"
+    ],
+    "implementation": [
+      "src/deep_agent_lab/evaluation.py",
+      "data/evaluation/northstar.jsonl"
+    ]
+  },
+  {
+    "slug": "04-context-engineering",
+    "title": "Context engineering",
+    "topics": [
+      "context budgets",
+      "offloading",
+      "trimming",
+      "summarization",
+      "compaction",
+      "progressive disclosure",
+      "prompt caching",
+      "selective rereading",
+      "context ablation"
+    ],
+    "tests": [
+      "tests/test_context_memory_planning.py",
+      "tests/test_course.py"
+    ],
+    "implementation": [
+      "src/deep_agent_lab/context.py",
+      "src/deep_agent_lab/labs.py"
+    ]
+  },
+  {
+    "slug": "05-skills-and-memory",
+    "title": "Skills and memory",
+    "topics": [
+      "Agent Skills",
+      "memory types",
+      "memory scopes",
+      "checkpoints",
+      "provenance",
+      "expiration",
+      "conflicts",
+      "contamination",
+      "correction",
+      "deletion"
+    ],
+    "tests": [
+      "tests/test_context_memory_planning.py",
+      "tests/test_course.py"
+    ],
+    "implementation": [
+      "src/deep_agent_lab/memory.py",
+      "src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md"
+    ]
+  },
+  {
+    "slug": "06-planning-and-delegation",
+    "title": "Planning and delegation",
+    "topics": [
+      "task decomposition",
+      "dependency graphs",
+      "specialist agents",
+      "parallel execution",
+      "handoffs",
+      "cancellation",
+      "budgets",
+      "partial results",
+      "context isolation"
+    ],
+    "tests": [
+      "tests/test_context_memory_planning.py",
+      "tests/test_course.py"
+    ],
+    "implementation": [
+      "src/deep_agent_lab/planning.py",
+      "src/deep_agent_lab/labs.py"
+    ]
+  },
+  {
+    "slug": "07-agentic-rag",
+    "title": "Agentic RAG",
+    "topics": [
+      "BM25",
+      "vectors",
+      "RRF",
+      "hybrid retrieval",
+      "reranking",
+      "query reformulation",
+      "claim verification",
+      "contradictions",
+      "abstention",
+      "active revision hydration",
+      "embedding profiles"
+    ],
+    "tests": [
+      "tests/test_evidence_evaluations.py",
+      "tests/test_rag_pipeline.py"
+    ],
+    "implementation": [
+      "src/deep_agent_lab/retrieval.py",
+      "src/deep_agent_lab/evidence.py",
+      "src/deep_agent_lab/rag/pipeline.py"
+    ]
+  },
+  {
+    "slug": "08-advanced-evaluations",
+    "title": "Advanced evaluations",
+    "topics": [
+      "model judges",
+      "human calibration",
+      "regression tests",
+      "ablation studies",
+      "retrieval metrics",
+      "claim support",
+      "latency",
+      "tokens",
+      "repeated trials",
+      "confidence intervals",
+      "cost"
+    ],
+    "tests": [
+      "tests/test_evidence_evaluations.py",
+      "tests/test_live_grading.py"
+    ],
+    "implementation": [
+      "src/deep_agent_lab/evaluation.py",
+      "src/deep_agent_lab/evidence.py"
+    ]
+  },
+  {
+    "slug": "09-security",
+    "title": "Security and trust boundaries",
+    "topics": [
+      "prompt injection",
+      "trust boundaries",
+      "authorization",
+      "filesystem protection",
+      "memory attacks",
+      "trace privacy",
+      "MCP credential forwarding",
+      "execution isolation"
+    ],
+    "tests": [
+      "tests/test_review_jobs_security.py",
+      "tests/test_capstone.py",
+      "tests/test_tracing.py"
+    ],
+    "implementation": [
+      "src/deep_agent_lab/security.py",
+      "src/deep_agent_lab/capstone.py",
+      "src/deep_agent_lab/agent.py"
+    ]
+  },
+  {
+    "slug": "10-human-review",
+    "title": "Human review bound to the exact action",
+    "topics": [
+      "LangGraph interrupts",
+      "exact-action approval",
+      "approve/edit/reject",
+      "payload validation",
+      "stale approvals",
+      "proposal versions",
+      "expiration",
+      "duplicate review"
+    ],
+    "tests": [
+      "tests/test_review_jobs_security.py",
+      "tests/test_course.py",
+      "tests/test_capstone.py"
+    ],
+    "implementation": [
+      "src/deep_agent_lab/storage.py",
+      "src/deep_agent_lab/service.py"
+    ]
+  },
+  {
+    "slug": "11-durable-execution",
+    "title": "Durable execution",
+    "topics": [
+      "checkpoints",
+      "persistent jobs",
+      "retries",
+      "idempotency",
+      "crash recovery",
+      "leases",
+      "fencing",
+      "cancellation",
+      "deadlines",
+      "ambiguous writes",
+      "reconciliation"
+    ],
+    "tests": [
+      "tests/test_review_jobs_security.py",
+      "tests/test_capstone.py"
+    ],
+    "implementation": [
+      "src/deep_agent_lab/jobs.py",
+      "src/deep_agent_lab/storage.py",
+      "src/deep_agent_lab/capstone.py"
+    ]
+  },
+  {
+    "slug": "12-observability",
+    "title": "Observability and model comparison",
+    "topics": [
+      "Langfuse tracing",
+      "spans",
+      "agent debugging",
+      "model comparisons",
+      "cost",
+      "resource analysis",
+      "trace timelines",
+      "bounded repair loops",
+      "artifact lineage"
+    ],
+    "tests": [
+      "tests/test_tracing.py",
+      "tests/test_observability.py",
+      "tests/test_capstone.py"
+    ],
+    "implementation": [
+      "src/deep_agent_lab/tracing.py",
+      "src/deep_agent_lab/instrumentation.py",
+      "src/deep_agent_lab/storage.py"
+    ]
+  },
+  {
+    "slug": "13-capstone",
+    "title": "Integrated Northstar capstone",
+    "topics": [
+      "integrated Northstar",
+      "evaluation",
+      "security",
+      "recovery",
+      "skills integration",
+      "memory integration",
+      "review integration",
+      "source revisions",
+      "approved artifact lineage"
+    ],
+    "tests": [
+      "tests/test_capstone.py",
+      "tests/test_review_jobs_security.py",
+      "tests/test_evidence_evaluations.py"
+    ],
+    "implementation": [
+      "src/deep_agent_lab/capstone.py",
+      "src/deep_agent_lab/service.py"
+    ]
+  }
+]

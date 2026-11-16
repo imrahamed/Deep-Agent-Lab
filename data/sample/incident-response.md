@@ -2,6 +2,8 @@
 
 This is fictional sample knowledge for the RAG Lab.
 
+Course source alias: INC-3, revision 8.
+
 A SEV-1 incident is a complete customer-facing outage or confirmed data loss. The on-call engineer must page the incident commander immediately and open an incident channel. The incident commander coordinates technical response and assigns a communications lead.
 
 The communications lead posts a customer status update within 15 minutes of declaring a SEV-1 incident. Updates continue every 30 minutes until service is restored. Do not include customer secrets in public updates.

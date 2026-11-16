@@ -24,3 +24,4 @@ class Hit(BaseModel):
     position: int
     text: str
     score: float
+    revision: str = "unknown"

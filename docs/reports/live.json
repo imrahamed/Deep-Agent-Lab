@@ -1,0 +1,133 @@
+{
+  "kind": "measured",
+  "live": true,
+  "model": "qwen3.5:latest",
+  "remote_mcp": "not_configured",
+  "health": {
+    "status": "ok",
+    "services": {
+      "postgres": {
+        "status": "ok",
+        "documents": 3
+      },
+      "opensearch": {
+        "status": "ok",
+        "cluster_status": "green"
+      },
+      "ollama": {
+        "status": "ok",
+        "models": [
+          "llama3.2:3b",
+          "nomic-embed-text:latest",
+          "llama3.1:latest",
+          "llama3.1:8b",
+          "qwen3.5:latest",
+          "llava:latest",
+          "qwen2.5-coder:latest",
+          "gpt-oss:20b",
+          "gpt-oss:latest",
+          "llama3:latest"
+        ]
+      }
+    },
+    "tracing": {
+      "status": "disabled"
+    }
+  },
+  "external_tracing": "disabled; SDK verified with in-memory exporter",
+  "retrieval": {
+    "status": "passed",
+    "count": 3,
+    "revisions_present": true
+  },
+  "agent": {
+    "status": "passed",
+    "duration_seconds": 15.609161900007166,
+    "steps": [
+      "search_knowledge"
+    ],
+    "evidence_count": 2,
+    "unknown_citations": [],
+    "input_tokens": 12268,
+    "output_tokens": 120,
+    "trace_id": null,
+    "saved_brief_ids": [],
+    "dataset_contract": {
+      "task_success": true,
+      "checks": {
+        "retrieval": true,
+        "abstention": true,
+        "review": true,
+        "citations": true,
+        "phrases": true,
+        "no_unapproved_write": true
+      },
+      "evidence_recall": 1.0,
+      "abstained": false,
+      "evidence_ids": [
+        "8689ba038dbf7103d7964482372c286fecd73e9c2441db434affdc80f4d751a9",
+        "eb721ead272932f268eda808804085cce511a3605719cc51cd3ccdb0f1d2ff5b"
+      ],
+      "evidence_labels": [
+        "access-policy.md",
+        "backup-policy.md"
+      ],
+      "grading_basis": "document_source",
+      "tool_calls": 1,
+      "trajectory": [
+        "search_knowledge"
+      ],
+      "claim_support": null,
+      "grading_method": "deterministic_contract",
+      "approval_violations": 0
+    }
+  },
+  "judge_label_source": "synthetic_course_reference",
+  "judge_trials": [
+    {
+      "human": "supported",
+      "prediction": "supported",
+      "status": "completed",
+      "agrees_with_human": true
+    },
+    {
+      "human": "contradicted",
+      "prediction": "contradicted",
+      "status": "completed",
+      "agrees_with_human": true
+    },
+    {
+      "human": "insufficient",
+      "prediction": "contradicted",
+      "status": "completed",
+      "agrees_with_human": false
+    },
+    {
+      "human": "supported",
+      "prediction": "supported",
+      "status": "completed",
+      "agrees_with_human": true
+    }
+  ],
+  "judge_calibration": {
+    "agreement": 0.75,
+    "count": 4,
+    "confusion": {
+      "contradicted": {
+        "contradicted": 1,
+        "insufficient": 0,
+        "supported": 0
+      },
+      "insufficient": {
+        "contradicted": 1,
+        "insufficient": 0,
+        "supported": 0
+      },
+      "supported": {
+        "contradicted": 0,
+        "insufficient": 0,
+        "supported": 2
+      }
+    }
+  }
+}

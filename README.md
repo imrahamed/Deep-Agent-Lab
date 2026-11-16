@@ -1,108 +1,111 @@
 # Deep Agent Lab
 
-Build a Python research assistant that finds internal policy, cites the passage
-behind each claim, and pauses for a person to review a proposed brief. The six
-modules use fictional Northstar policies on database restores, incident response,
-and application access.
+A project-based AI Agent Engineering course for senior Node.js/TypeScript backend
+engineers learning Python. Build one evolving **Northstar Policy Research
+Assistant** through thirteen modules: evidence-grounded research, tools and MCP,
+context, skills, memory, planning, evaluations, security, human review, durability
+and observability.
 
-[Course map](docs/course.md) · [Jupyter walkthrough](notebooks/README.md) ·
-[Configuration and API](docs/operations.md)
+[Learning path](docs/course.md) | [Notebooks](notebooks/README.md) |
+[Architecture](docs/architecture.md) | [Coverage matrix](docs/coverage.md) |
+[Verification results](docs/verification.md)
 
-## Choose how to start
+## Start offline
 
-| Mode | What runs | Use it to |
-| --- | --- | --- |
-| Demo | Scripted model and bundled passages through the real tools, checkpoints, and approvals | Learn the mechanics with repeatable results |
-| Live | Ollama chat and embeddings, the course's PostgreSQL and OpenSearch corpus, and optional Langfuse traces | Ask open-ended questions and inspect model and search behavior |
-
-This checkout defaults to **live** through its ignored `.env`. Add `--demo` before
-an agent command to use the offline fixtures. Start in PowerShell with Python
-3.11–3.14 and uv:
+Use Python 3.11 through 3.14 and uv from the repository root:
 
 ```powershell
-Set-Location 'C:\Users\imrah\Documents\deepagents'
 $env:UV_CACHE_DIR = Join-Path $PWD '.uv-cache'
 uv sync --locked --extra dev --extra notebook
 uv run deep-lab --demo ask "Who approves a production restore?"
+uv run jupyter lab notebooks/01-agent-foundations/lab.ipynb
 ```
 
-The demo identifies the **database operations lead**. Match the citation in the
-answer to the `citation` field in `evidence`, then read that row's excerpt to check
-the claim. [Follow the first agent turn](docs/module-1-agent-foundations.md#12-run-an-agent-and-read-its-messages)
+The notebook path is offline by default and creates temporary state. Scripted
+models drive real Deep Agents/LangGraph orchestration, MCP, checkpoints and review.
+The fictional corpus and observed results are labelled; scripted success does not
+establish live-model quality. Explicit `--demo` also disables external tracing.
+A pre-existing ignored `.env` may select live mode for commands without that flag.
 
-## Run with live services
+## Follow the course
 
-This checkout's `.env` points to `C:\Users\imrah\Documents\Rag-project\.env` for
-service credentials. Start Ollama and check that `ollama list` includes the chat
-model, `qwen3.5:latest` by default, and the configured embedding model, typically
-`nomic-embed-text`.
+| Module | Reading | Standalone notebook |
+| --- | --- | --- |
+| 01 | [Agent foundations](docs/modules/01-agent-foundations.md) | [Run lab](notebooks/01-agent-foundations/lab.ipynb) |
+| 02 | [Tools and MCP](docs/modules/02-tools-and-mcp.md) | [Run lab](notebooks/02-tools-and-mcp/lab.ipynb) |
+| 03 | [Evaluation foundations](docs/modules/03-evaluation-foundations.md) | [Run lab](notebooks/03-evaluation-foundations/lab.ipynb) |
+| 04 | [Context engineering](docs/modules/04-context-engineering.md) | [Run lab](notebooks/04-context-engineering/lab.ipynb) |
+| 05 | [Skills and memory](docs/modules/05-skills-and-memory.md) | [Run lab](notebooks/05-skills-and-memory/lab.ipynb) |
+| 06 | [Planning and delegation](docs/modules/06-planning-and-delegation.md) | [Run lab](notebooks/06-planning-and-delegation/lab.ipynb) |
+| 07 | [Agentic RAG](docs/modules/07-agentic-rag.md) | [Run lab](notebooks/07-agentic-rag/lab.ipynb) |
+| 08 | [Advanced evaluations](docs/modules/08-advanced-evaluations.md) | [Run lab](notebooks/08-advanced-evaluations/lab.ipynb) |
+| 09 | [Security and trust boundaries](docs/modules/09-security.md) | [Run lab](notebooks/09-security/lab.ipynb) |
+| 10 | [Human review bound to the exact action](docs/modules/10-human-review.md) | [Run lab](notebooks/10-human-review/lab.ipynb) |
+| 11 | [Durable execution](docs/modules/11-durable-execution.md) | [Run lab](notebooks/11-durable-execution/lab.ipynb) |
+| 12 | [Observability and model comparison](docs/modules/12-observability.md) | [Run lab](notebooks/12-observability/lab.ipynb) |
+| 13 | [Integrated Northstar capstone](docs/modules/13-capstone.md) | [Run lab](notebooks/13-capstone/lab.ipynb) |
+
+Each notebook reads like a chapter: problem, objectives, first-principles
+explanation, rendered diagram, implementation from scratch, framework execution,
+walkthrough, parameter experiments, deliberate failures, assertions, exercises and
+complete solutions. Read the [Python bridge](docs/python-bridge.md) if needed.
+
+Complex subjects have additional standalone labs:
+
+- [Claim support, contradictions and abstention](notebooks/07-agentic-rag/evidence-and-claims.ipynb)
+- [Separate-process crash and ambiguous-write recovery](notebooks/11-durable-execution/process-recovery.ipynb)
+
+The original [integrated walkthrough](notebooks/deep_agents.ipynb) and legacy
+chapters remain available. [Managed deployment](docs/managed-deployment.md) and
+[advanced extensions](docs/advanced-topics.md) are optional follow-on material.
+
+## Verify and experiment
 
 ```powershell
-ollama list
-uv run deep-lab init
-uv run deep-lab doctor
-uv run deep-lab ingest data/sample
-uv run deep-lab documents
-uv run deep-lab search "production restore approval" --mode hybrid
-uv run deep-lab ask "Who approves a production restore? Cite the policy passage."
+uv run python scripts/verify_course.py
+uv run python scripts/evaluate.py --output docs/reports/evaluation.json
+uv run python scripts/check_notebook.py
 ```
 
-`documents` should include the backup, incident response, and access policies.
-`search` shows ranked passages without running the chat model. `ask` lets the
-model choose tools and returns an answer, retrieved evidence, tool names, and a
-Langfuse trace ID when tracing is active.
+Verification runs lint, the full test suite, locked API compatibility checks,
+actual deterministic evaluations and every notebook in a fresh project-Python
+kernel. Executed outputs and rendered PNGs are retained. Reports distinguish
+measured results from estimates and leave unavailable usage or semantic scores
+null. See [verification](docs/verification.md) for scope and limitations.
 
-The course connects directly to the configured services. It stores its corpus in
-PostgreSQL schema `deep_agent_lab` and OpenSearch index `deep-agent-lab-v1`. In a new
-checkout, copy `.env.example` to `.env` and set `RAG_LAB_ENV_FILE` or configure the
-services directly. This checkout reuses the existing Langfuse project credentials
-with content capture off. [Configuration reference](docs/operations.md#configuration)
+Reusable application code is in `src/deep_agent_lab/`, reading is in
+`docs/modules/`, and the teaching notebooks are edited directly in `notebooks/`.
+After changing a notebook, execute it again with `scripts/check_notebook.py`.
+The coverage checker uses the curriculum index in `docs/course-manifest.json`.
 
-## How the parts fit together
+## Optional live services
 
-1. **Ingest.** Load a file, split it into passages, and ask Ollama for embeddings,
-   which are vectors used to find similar text. OpenSearch indexes passages and
-   vectors. PostgreSQL stores canonical documents and their active passages.
-2. **Answer.** Deep Agents supplies the tools and instructions. LangGraph runs
-   the steps. When Ollama requests a search, OpenSearch ranks candidates and the
-   app reads the matching active passages from PostgreSQL. The model cites the
-   relevant excerpts in its answer.
-3. **Review.** A `save_brief` call pauses at a checkpoint. After approval, fetch the
-   exact Markdown using the returned brief ID.
-   [Try the review](docs/module-1-agent-foundations.md#18-pause-for-human-review)
-
-```mermaid
-flowchart LR
-    U["CLI or FastAPI"] --> A["Deep Agents on LangGraph"]
-    A --> M["Ollama chat"]
-    A --> R["Course retrieval pipeline"]
-    R --> I["OpenSearch ranking"]
-    R --> P["PostgreSQL source passages"]
-    R --> E["Ollama embeddings"]
-    A --> S["SQLite checkpoints and approved briefs"]
-    A -. observations .-> L["Langfuse"]
-    R -. observations .-> L
-```
-
-## Run the notebook or API
+Configure your own `.env` using `.env.example`, then opt into live mode. Existing
+service configuration is preserved. The course uses its own PostgreSQL schema
+`deep_agent_lab` and OpenSearch index `deep-agent-lab-v1`.
 
 ```powershell
-# Notebook
-uv run --extra notebook jupyter lab notebooks/deep_agents.ipynb
-
-# API
-uv run uvicorn deep_agent_lab.api:app --host 127.0.0.1 --port 8001
+uv run deep-lab --live doctor
+uv run deep-lab --live init
+uv run deep-lab --live ingest data/sample
+uv run deep-lab --live search "production restore approval" --mode hybrid
+uv run deep-lab --live ask "Who approves a production restore? Cite the policy."
+uv run python scripts/check_live.py --model --judge
+uv run python scripts/evaluate.py --live --trials 3
 ```
 
-The notebook starts with scripted exercises and includes an optional live cell.
-The API uses the configured mode. Its interactive console exposes search, agent
-runs, thread inspection, and reviews.
-[Notebook guide](notebooks/README.md) · [API walkthrough](docs/operations.md#start-the-api)
+The live verification/evaluation scripts disable external tracing exports. The
+application's optional Langfuse integration retains explicit privacy controls;
+the course verifies its SDK with a local in-memory exporter. Remote MCP requires
+a separately configured trusted HTTPS endpoint and an appropriately scoped token.
+[Configuration, API and review commands](docs/operations.md)
 
-## Course and source
+The existing FastAPI interface remains a local single-user lab. The integrated
+`Northstar` Python boundary adds owned jobs, trusted principal checks, scoped
+memory, exact review, fencing and artifact lineage. It expects identity from a
+trusted caller; it is not an Internet authentication service. Distributed graph
+ownership and cross-database revision fencing need a separate operational design.
+[Detailed guarantees](docs/architecture.md)
 
-The project pins Deep Agents `0.7.0` to match the Academy Python labs. The
-ingestion and retrieval pipeline adapts code from your RAG Lab.
-[Academy syllabus](https://academy.langchain.com/courses/foundation-introduction-to-deepagents) ·
-[Public Python course](https://github.com/langchain-ai/lca-deepagents/tree/9e1fab37b9bcf4d672bdb6b667755f3f668a3fc8) ·
-[Deep Agents SDK 0.7.0](https://github.com/langchain-ai/deepagents/tree/deepagents%3D%3D0.7.0)
+[Glossary](docs/glossary.md) |
+[Primary references and tested versions](docs/references.md)

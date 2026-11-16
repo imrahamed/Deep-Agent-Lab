@@ -72,12 +72,32 @@ class DemoModel(BaseChatModel):
             )
         if is_brief and "read_file" in names and "read_file" not in results:
             return call("read_file", file_path="/reference/skills/evidence-brief/SKILL.md")
-        if "search_knowledge" not in results:
-            return call("search_knowledge", query=question[:4000], top_k=3)
-        try:
-            evidence = json.loads(results["search_knowledge"].text)
-        except (ValueError, TypeError):
-            evidence = []
+        searches = [
+            msg
+            for msg in messages[turns[-1] + 1 :]
+            if isinstance(msg, ToolMessage) and msg.name == "search_knowledge"
+        ]
+        # A deterministic policy for the fixture curriculum, NOT a substitute for live reasoning.
+        multi = any(word in lower for word in ("compare", "readiness", "joint", "automatically"))
+        queries = [question[:4000]]
+        if multi:
+            queries = ["production restore approval", "SEV-1 incident commander"]
+            if "access" in lower or "readiness" in lower:
+                queries.append("temporary elevated privileges application access")
+            queries.append("joint authority automatic role transfer")
+        if len(searches) < len(queries):
+            return call("search_knowledge", query=queries[len(searches)], top_k=3)
+        evidence_by_id = {}
+        for result in searches:
+            try:
+                rows = json.loads(result.text)
+                if isinstance(rows, list):
+                    evidence_by_id.update({row["id"]: row for row in rows})
+            except (ValueError, TypeError):
+                return AIMessage(
+                    content="Retrieval unavailable; policy absence has not been established."
+                )
+        evidence = list(evidence_by_id.values())
 
         if "delegate" in lower and "task" in names and "task" not in results:
             return call(
@@ -91,6 +111,12 @@ class DemoModel(BaseChatModel):
             answer = f"## Findings\n\n{bullets}\n\n## Next steps\n\nVerify the source excerpts."
         else:
             answer = "Evidence gap: the sample corpus contains no matching passage."
+        if multi:
+            answer += (
+                "\n\n## Evidence gaps\n\nEvidence gap: the supplied passages do not "
+                "establish joint authority or automatic role transfer. Request the "
+                "cross-functional recovery procedure from the policy owner."
+            )
         if is_brief and "write_todos" in results and "completed" not in results["write_todos"].text:
             return call(
                 "write_todos",

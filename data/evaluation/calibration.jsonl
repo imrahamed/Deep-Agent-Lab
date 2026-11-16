@@ -1,0 +1,4 @@
+{"claim": "The database operations lead approves production restores.", "evidence_id": "northstar-restore", "human": "supported", "label_source": "synthetic_course_reference"}
+{"claim": "The database operations lead is forbidden from approving production restores.", "evidence_id": "northstar-restore", "human": "contradicted", "label_source": "synthetic_course_reference"}
+{"claim": "The restore approver automatically becomes incident commander.", "evidence_id": "northstar-restore", "human": "insufficient", "label_source": "synthetic_course_reference"}
+{"claim": "Temporary elevated privileges expire after eight hours.", "evidence_id": "northstar-access", "human": "supported", "label_source": "synthetic_course_reference"}

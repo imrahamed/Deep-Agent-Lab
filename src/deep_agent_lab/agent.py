@@ -14,6 +14,7 @@ from langchain.tools import ToolRuntime, tool
 from langgraph.types import Command
 from pydantic import StringConstraints
 
+from deep_agent_lab.context import select_evidence
 from deep_agent_lab.instrumentation import ResearchMiddleware
 from deep_agent_lab.knowledge import ASSETS, Limit, Query, search_knowledge
 from deep_agent_lab.model import DemoModel, local_model
@@ -45,6 +46,8 @@ as saved only after save_brief returns its ID. After a rejection, report it and 
 class EvidenceState(DeepAgentState):
     evidence: Annotated[dict[str, dict], or_]
     saved_briefs: Annotated[dict[str, str], or_]
+    research_plan: dict
+    working_state: dict
 
 
 def build_agent(
@@ -92,10 +95,11 @@ def build_agent(
         rows = retrieve(query, mode, top_k)
         if isinstance(rows, str):
             return rows
+        visible = select_evidence(rows, settings.context_evidence_tokens)
         return Command(
             update={
                 "evidence": {row["citation"][2:-2]: row for row in rows},
-                "messages": [ToolMessage(json.dumps(rows), tool_call_id=runtime.tool_call_id)],
+                "messages": [ToolMessage(json.dumps(visible), tool_call_id=runtime.tool_call_id)],
             }
         )
 
@@ -112,7 +116,11 @@ def build_agent(
         if not cited or cited.difference(runtime.state.get("evidence", {})):
             return "Save declined. Include citations verified by search_knowledge in this thread."
         thread_id = runtime.config["configurable"]["thread_id"]
-        brief_id = store.save(thread_id, title, markdown)
+        revisions = {
+            key: row.get("revision", "fixture-v1")
+            for key, row in runtime.state.get("evidence", {}).items()
+        }
+        brief_id = store.save_reviewed(thread_id, title, markdown, revisions)
         return Command(
             update={
                 "saved_briefs": {runtime.tool_call_id: brief_id},

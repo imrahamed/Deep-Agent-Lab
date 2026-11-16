@@ -1,0 +1,118 @@
+{
+  "mode": "offline",
+  "results": [
+    {
+      "notebook": "notebooks/01-agent-foundations/lab.ipynb",
+      "status": "passed",
+      "code_cells": 10,
+      "rendered_pngs": 1,
+      "duration_seconds": 6.101
+    },
+    {
+      "notebook": "notebooks/02-tools-and-mcp/lab.ipynb",
+      "status": "passed",
+      "code_cells": 9,
+      "rendered_pngs": 1,
+      "duration_seconds": 7.585
+    },
+    {
+      "notebook": "notebooks/03-evaluation-foundations/lab.ipynb",
+      "status": "passed",
+      "code_cells": 9,
+      "rendered_pngs": 2,
+      "duration_seconds": 6.079
+    },
+    {
+      "notebook": "notebooks/04-context-engineering/lab.ipynb",
+      "status": "passed",
+      "code_cells": 9,
+      "rendered_pngs": 2,
+      "duration_seconds": 6.27
+    },
+    {
+      "notebook": "notebooks/05-skills-and-memory/lab.ipynb",
+      "status": "passed",
+      "code_cells": 9,
+      "rendered_pngs": 1,
+      "duration_seconds": 6.1
+    },
+    {
+      "notebook": "notebooks/06-planning-and-delegation/lab.ipynb",
+      "status": "passed",
+      "code_cells": 9,
+      "rendered_pngs": 2,
+      "duration_seconds": 6.369
+    },
+    {
+      "notebook": "notebooks/07-agentic-rag/evidence-and-claims.ipynb",
+      "status": "passed",
+      "code_cells": 10,
+      "rendered_pngs": 2,
+      "duration_seconds": 5.389
+    },
+    {
+      "notebook": "notebooks/07-agentic-rag/lab.ipynb",
+      "status": "passed",
+      "code_cells": 10,
+      "rendered_pngs": 2,
+      "duration_seconds": 5.299
+    },
+    {
+      "notebook": "notebooks/08-advanced-evaluations/lab.ipynb",
+      "status": "passed",
+      "code_cells": 10,
+      "rendered_pngs": 2,
+      "duration_seconds": 8.152
+    },
+    {
+      "notebook": "notebooks/09-security/lab.ipynb",
+      "status": "passed",
+      "code_cells": 9,
+      "rendered_pngs": 1,
+      "duration_seconds": 7.22
+    },
+    {
+      "notebook": "notebooks/10-human-review/lab.ipynb",
+      "status": "passed",
+      "code_cells": 9,
+      "rendered_pngs": 1,
+      "duration_seconds": 5.637
+    },
+    {
+      "notebook": "notebooks/11-durable-execution/lab.ipynb",
+      "status": "passed",
+      "code_cells": 9,
+      "rendered_pngs": 1,
+      "duration_seconds": 5.688
+    },
+    {
+      "notebook": "notebooks/11-durable-execution/process-recovery.ipynb",
+      "status": "passed",
+      "code_cells": 9,
+      "rendered_pngs": 1,
+      "duration_seconds": 2.055
+    },
+    {
+      "notebook": "notebooks/12-observability/lab.ipynb",
+      "status": "passed",
+      "code_cells": 10,
+      "rendered_pngs": 2,
+      "duration_seconds": 5.774
+    },
+    {
+      "notebook": "notebooks/13-capstone/lab.ipynb",
+      "status": "passed",
+      "code_cells": 10,
+      "rendered_pngs": 1,
+      "duration_seconds": 7.23
+    },
+    {
+      "notebook": "notebooks/deep_agents.ipynb",
+      "status": "passed",
+      "code_cells": 9,
+      "rendered_pngs": 0,
+      "duration_seconds": 8.64
+    }
+  ],
+  "failures": []
+}

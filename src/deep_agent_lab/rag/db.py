@@ -79,7 +79,7 @@ class Database:
         with self.connect() as connection:
             rows = connection.execute(
                 "SELECT c.id AS chunk_id, c.document_id, c.position, c.content AS text, "
-                "d.title, d.source FROM deep_agent_lab.rag_chunks c "
+                "d.title, d.source, d.revision FROM deep_agent_lab.rag_chunks c "
                 "JOIN deep_agent_lab.rag_documents d ON d.id=c.document_id "
                 "WHERE c.id = ANY(%s)",
                 (ids,),

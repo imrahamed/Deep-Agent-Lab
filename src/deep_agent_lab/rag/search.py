@@ -9,6 +9,8 @@ from deep_agent_lab.tracing import Tracing
 
 def reciprocal_rank_fusion(rankings: list[list[dict]], k: int = 60) -> list[dict]:
     """Combine ranks, since BM25 and cosine-derived scores have different scales."""
+    if k < 1:
+        raise ValueError("RRF rank constant must be positive")
     scores: dict[str, float] = {}
     for ranking in rankings:
         seen = set()
