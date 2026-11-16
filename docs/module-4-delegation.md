@@ -1,5 +1,7 @@
 # Module 4 · Planning and delegation
 
+Archived supplemental chapter. Follow the [current thirteen-module course](course.md) and [service setup](start-here.md) for the maintained learning path.
+
 [Course home](course.md) · [Previous module](module-3-context-management.md) · [Next module](module-5-capstone.md)
 
 Compare production restore approval with SEV-1 escalation. Each topic has its
@@ -22,7 +24,7 @@ completed plan.
 | Prepare a brief | Write separate findings and a comparison | Each finding has a matching citation |
 
 ```powershell
-uv run deep-lab --demo ask "Draft a brief about production restore approval and delegate an evidence check."
+uv run deep-lab --live ask "Draft a brief about production restore approval and delegate an evidence check."
 ```
 
 Look for `write_todos`, `task`, and `search_knowledge` in `steps`. The live

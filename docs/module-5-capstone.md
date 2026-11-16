@@ -1,5 +1,7 @@
 # Module 5 · Build and operate the research assistant
 
+Archived supplemental chapter. Follow the [current thirteen-module course](course.md) and [service setup](start-here.md) for the maintained learning path.
+
 [Course home](course.md) · [Previous module](module-4-delegation.md) · [Next module](managed-deployment.md)
 
 An on-call lead needs an incident-readiness brief. It should explain who

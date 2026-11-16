@@ -23,7 +23,7 @@ def test_observations_exclude_content_by_default(tmp_path, monkeypatch):
     settings = Settings(
         _env_file=None,
         deep_lab_state_dir=tmp_path,
-        deep_lab_mode="demo",
+        deep_lab_mode="live",
         langfuse_enabled=True,
         langfuse_public_key="pk-lf-test",
         langfuse_secret_key="sk-lf-test",

@@ -1,6 +1,18 @@
 # Agentic RAG
 
-Adapted from the supplied Northstar course reference. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+
+Prerequisites include [Module 03](03-evaluation-foundations.md) for the baseline and [Module 04](04-context-engineering.md) for adaptive research. Recommended next is [Module 04](04-context-engineering.md) after the baseline, then [Module 08](08-advanced-evaluations.md) after adaptive research.
+
+Estimated time 120 minutes. Difficulty intermediate. Consult the [glossary](../glossary.md) for unfamiliar terms.
+
+Inspect the [module contract tests](../../tests/test_evidence_evaluations.py) alongside the source links below.
+
+## Northstar V4 progression
+
+V3 validates references and recognizes missing evidence. A terminology mismatch blocks an otherwise answerable lookup. This module adds the capability to reformulate faithfully against the original question.
+
+The deterministic acceptance criterion is budget and identifier checks constrain every executed rewrite. Live model judgments are recorded independently.
 
 ## Existing Northstar retrieval architecture
 
@@ -210,7 +222,7 @@ An unsupported example:
 
 The second reference resolves to a real bundled passage. Its content does not establish the claim. Support is a separate Verdict, rather than a self-declared property of the Claim record.
 
-These human-readable evidence IDs are teaching fixtures. The existing repository generates bracketed citation tokens derived from evidence IDs, such as `[[<12-character-hash>]]`. In an actual integration, resolve those exact tokens back to the corresponding stored evidence records rather than relying on a human-readable alias.
+These human-readable aliases identify the fictional policy sources. The existing repository generates bracketed citation tokens derived from evidence IDs, such as `[[<12-character-hash>]]`. In an actual integration, resolve those exact tokens back to the corresponding stored evidence records rather than relying on a human-readable alias.
 
 ## Three levels of citation correctness
 
@@ -266,10 +278,31 @@ This is more useful than inventing a convenient relationship.
 
 ## Executable implementation
 
-BM25 weights rare terms and saturates term frequency while normalizing document length. Cosine compares direction in one embedding space. RRF uses rank positions because BM25 and vector scores have different scales. The offline vector coordinates are illustrative arithmetic fixtures. Real learned embeddings come from Ollama in the optional live exercise. The existing pipeline hydrates candidate IDs from canonical SQL, excluding orphaned or inactive index records. A reranker scores query/passage relevance; it does not establish claim entailment.
+BM25 weights rare terms and saturates term frequency while normalizing document length. Cosine compares direction in one embedding space. RRF uses rank positions because BM25 and vector scores have different scales. Learned vectors come from actual Ollama embedding calls in the service experiments. The existing pipeline hydrates candidate IDs from canonical SQL, excluding orphaned or inactive index records. A reranker scores query/passage relevance; it does not establish claim entailment.
 
 More candidates or reranking can improve recall at additional latency. An empty successful search permits a bounded reformulation; a failed backend must be reported as unavailable. Source changes require rechecking active revisions. The companion evidence notebook examines provenance, conflict and semantic limits in depth.
 
 Application sources: [`retrieval.py`](../../src/deep_agent_lab/retrieval.py), [`evidence.py`](../../src/deep_agent_lab/evidence.py), [`pipeline.py`](../../src/deep_agent_lab/rag/pipeline.py).
 
 [Open the complete notebook](../../notebooks/07-agentic-rag/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+
+## Evidence sufficiency and faithful reformulation
+
+Retrieval success and answer sufficiency are separate checks. A relevant passage
+can omit the requested fact. Abstention is a successful research outcome when the
+needed evidence is absent. Preserve the original question, identifiers, negation,
+and scope across rewrites. `adaptive_search` accumulates unique evidence and asks
+an injected assessor about the original question after every retrieval. The helper
+returns a structured trace and leaves answer generation to its caller. The
+identifier/scope guard catches obvious drift but requires separate evaluation for
+semantic equivalence. Backend failures propagate and do not establish absence.
+
+
+
+[Start here](../start-here.md) ? [Course order](../course.md) ? [Glossary](../glossary.md) ? [Previous module](06-planning-and-delegation.md) ? [Next module](08-advanced-evaluations.md)
+
+Estimated time 120 minutes. Difficulty intermediate.
+
+## Retrieval baseline
+
+Before advanced delegation, complete the lexical baseline, learned-vector search, fusion and active-revision hydration in the paired notebook. Return for adaptive retrieval after context engineering.

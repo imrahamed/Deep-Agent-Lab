@@ -8,7 +8,7 @@ from tempfile import TemporaryDirectory
 
 from deep_agent_lab.evaluation import calibration, grade, load_cases
 from deep_agent_lab.evidence import Claim, Reference, model_verdict
-from deep_agent_lab.knowledge import fixture_search
+from deep_agent_lab.knowledge import search_knowledge
 from deep_agent_lab.model import local_model
 from deep_agent_lab.rag.models import SearchRequest
 from deep_agent_lab.rag.pipeline import RagService
@@ -28,6 +28,7 @@ def main():
     settings = Settings(deep_lab_mode="live", request_timeout_seconds=30, langfuse_enabled=False)
     report = {
         "kind": "measured",
+        "measurement_kind": "live measurement",
         "live": True,
         "model": settings.ollama_chat_model,
         "remote_mcp": "not_configured",
@@ -87,11 +88,14 @@ def main():
             json.loads(line)
             for line in (root / "data/evaluation/calibration.jsonl").read_text().splitlines()
         ]
-        registry = {row.id: row for row in fixture_search("restore incident access recovery", 5)}
+        registry = {
+            row.id: row
+            for row in search_knowledge(settings, "restore incident access recovery", top_k=5)
+        }
         model = local_model(settings)
         trials = []
         for item in items:
-            row = registry[item["evidence_id"]]
+            row = next(row for row in registry.values() if Path(row.source).name == item["source"])
             claim = Claim(
                 text=item["claim"],
                 references=[
@@ -102,26 +106,28 @@ def main():
                 verdict = model_verdict(model, claim, registry)
                 trials.append(
                     {
-                        "human": item["human"],
+                        "reference_label": item["reference_label"],
                         "prediction": verdict.label,
                         "status": "completed",
-                        "agrees_with_human": verdict.label == item["human"],
+                        "agrees_with_reference": verdict.label == item["reference_label"],
                     }
                 )
             except Exception as error:
                 trials.append(
                     {
-                        "human": item["human"],
+                        "reference_label": item["reference_label"],
                         "prediction": None,
                         "status": "failed",
                         "error_type": type(error).__name__,
                     }
                 )
-        report["judge_label_source"] = "synthetic_course_reference"
+        report["judge_label_source"] = "draft_reference_annotations_needing_human_review"
         report["judge_trials"] = trials
         completed = [trial for trial in trials if trial["prediction"]]
         report["judge_calibration"] = (
-            calibration([t["human"] for t in completed], [t["prediction"] for t in completed])
+            calibration(
+                [t["reference_label"] for t in completed], [t["prediction"] for t in completed]
+            )
             if completed
             else None
         )

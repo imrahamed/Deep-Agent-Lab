@@ -8,6 +8,7 @@ from importlib.metadata import version
 from pathlib import Path
 
 from deepagents import create_deep_agent
+from langchain_ollama import ChatOllama
 from langfuse import Langfuse
 from mcp import ClientSession
 from mcp.client.streamable_http import streamable_http_client
@@ -19,6 +20,7 @@ def main():
         p["name"]: p["version"] for p in tomllib.loads((root / "uv.lock").read_text())["package"]
     }
     names = [
+        "langchain-ollama",
         "deepagents",
         "langchain",
         "langgraph",
@@ -32,6 +34,9 @@ def main():
     ]
     installed = {name: version(name) for name in names}
     assert all(installed[name] == locked[name] for name in names)
+    assert callable(ChatOllama.invoke)
+    assert "schema" in inspect.signature(ChatOllama.with_structured_output).parameters
+    assert "tools" in inspect.signature(ChatOllama.bind_tools).parameters
     agent_params = inspect.signature(create_deep_agent).parameters
     assert {
         "model",

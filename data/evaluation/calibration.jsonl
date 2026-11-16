@@ -1,4 +1,8 @@
-{"claim": "The database operations lead approves production restores.", "evidence_id": "northstar-restore", "human": "supported", "label_source": "synthetic_course_reference"}
-{"claim": "The database operations lead is forbidden from approving production restores.", "evidence_id": "northstar-restore", "human": "contradicted", "label_source": "synthetic_course_reference"}
-{"claim": "The restore approver automatically becomes incident commander.", "evidence_id": "northstar-restore", "human": "insufficient", "label_source": "synthetic_course_reference"}
-{"claim": "Temporary elevated privileges expire after eight hours.", "evidence_id": "northstar-access", "human": "supported", "label_source": "synthetic_course_reference"}
+{"claim": "The database operations lead approves production restores.", "source": "backup-policy.md", "reference_label": "supported", "annotation_status": "needs_human_review"}
+{"claim": "The database operations lead is forbidden from approving production restores.", "source": "backup-policy.md", "reference_label": "contradicted", "annotation_status": "needs_human_review"}
+{"claim": "The restore approver automatically becomes incident commander.", "source": "backup-policy.md", "reference_label": "insufficient", "annotation_status": "needs_human_review"}
+{"claim": "Temporary elevated privileges expire after eight hours.", "source": "access-policy.md", "reference_label": "supported", "annotation_status": "needs_human_review"}
+{"claim": "The database operations lead approves production restores only for staging.", "reference_label": "contradicted", "source": "backup-policy.md", "tags": ["scope"], "annotation_status": "needs_human_review"}
+{"claim": "Production changes can precede isolated-database validation.", "reference_label": "contradicted", "source": "backup-policy.md", "tags": ["conditions"], "annotation_status": "needs_human_review"}
+{"claim": "Emergency privileged access never requires separate authorization.", "reference_label": "contradicted", "source": "access-policy.md", "tags": ["negation", "exceptions"], "annotation_status": "needs_human_review"}
+{"claim": "The recovery time objective guarantees that every incident completes within four hours.", "reference_label": "contradicted", "source": "backup-policy.md", "tags": ["conditions", "scope"], "annotation_status": "needs_human_review"}

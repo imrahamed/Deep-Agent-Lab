@@ -11,7 +11,8 @@ from langsmith import tracing_context
 from pydantic import BaseModel, ConfigDict, Field, StringConstraints
 
 from deep_agent_lab.agent import CITATION, SAVED_BRIEF, Markdown, Title, build_agent
-from deep_agent_lab.knowledge import ASSETS, Evidence, Query
+from deep_agent_lab.instrumentation import ExecutionMetrics
+from deep_agent_lab.knowledge import Evidence, Query
 from deep_agent_lab.rag.pipeline import RagService
 from deep_agent_lab.settings import Settings
 from deep_agent_lab.storage import BriefStore
@@ -66,6 +67,7 @@ class RunResult(BaseModel):
     trace_id: str | None = None
     input_tokens: int | None = None
     output_tokens: int | None = None
+    execution_metrics: dict = Field(default_factory=dict)
 
 
 class ThreadConflict(Exception):
@@ -79,7 +81,7 @@ class AgentService:
         self.settings = settings
         self.store = BriefStore(settings.state_dir)
         self.tracing = Tracing(settings)
-        self.rag = RagService(settings, self.tracing) if settings.deep_lab_mode == "live" else None
+        self.rag = RagService(settings, self.tracing)
         self.agent = build_agent(
             settings,
             self.store,
@@ -227,18 +229,11 @@ class AgentService:
         )
 
     def current_revisions(self, evidence):
-        if self.rag is not None:
-            active = self.rag.db.hydrate([row["id"] for row in evidence.values()])
-            return {
-                key: active[row["id"]]["revision"]
-                for key, row in evidence.items()
-                if row["id"] in active
-            }
-        active = {
-            row["id"]: row.get("revision", "fixture-v1")
-            for row in json.loads((ASSETS / "sample.json").read_text(encoding="utf-8"))
+        active = self.rag.db.hydrate([row["id"] for row in evidence.values()])
+        return {
+            key: active[row["id"]]["revision"]
+            for key, row in evidence.items() if row["id"] in active
         }
-        return {key: active[row["id"]] for key, row in evidence.items() if row["id"] in active}
 
     def _with_reviews(self, result):
         revisions = {row.citation[2:-2]: row.revision for row in result.evidence}
@@ -267,6 +262,8 @@ class AgentService:
     def _invoke(self, thread_id: str, state_input, input_text: str | None = None) -> RunResult:
         start = time.perf_counter()
         config = self.config(thread_id)
+        metrics = ExecutionMetrics()
+        config["callbacks"] = [metrics]
         with (
             tracing_context(enabled=False),
             self.tracing.span(
@@ -279,6 +276,7 @@ class AgentService:
                 self.agent.invoke(state_input, config)
                 result = self._with_reviews(self._result(thread_id, self.agent.get_state(config)))
             result.trace_id = span.trace_id
+            result.execution_metrics = metrics.report()
             span.update(
                 output=result.answer,
                 metadata={

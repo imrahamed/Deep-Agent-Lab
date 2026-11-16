@@ -17,7 +17,7 @@ from pydantic import StringConstraints
 from deep_agent_lab.context import select_evidence
 from deep_agent_lab.instrumentation import ResearchMiddleware
 from deep_agent_lab.knowledge import ASSETS, Limit, Query, search_knowledge
-from deep_agent_lab.model import DemoModel, local_model
+from deep_agent_lab.model import local_model
 from deep_agent_lab.rag.pipeline import RagService
 from deep_agent_lab.settings import SearchMode, Settings
 from deep_agent_lab.storage import BriefStore
@@ -40,6 +40,9 @@ Finish in the user's language. Use save_brief only when the user requests saving
 contains verified citations. A workspace file created by write_file is only a draft.
 If asked to save the brief, call save_brief with the full Markdown and a title. Report a brief
 as saved only after save_brief returns its ID. After a rejection, report it and stop.
+Calling save_brief submits the proposed action to the application's human review interrupt.
+The runtime pauses BEFORE executing the write. Submit the tool call when saving is requested,
+and let the runtime collect approval instead of replacing the tool call with a chat question.
 """
 
 
@@ -59,11 +62,7 @@ def build_agent(
     tracing=None,
     rag: RagService | None = None,
 ):
-    model = (
-        model
-        if model is not None
-        else (DemoModel() if settings.deep_lab_mode == "demo" else local_model(settings))
-    )
+    model = model if model is not None else local_model(settings)
 
     tracing = tracing or Tracing()
 
@@ -111,7 +110,12 @@ def build_agent(
 
     @tool
     def save_brief(title: Title, markdown: Markdown, runtime: ToolRuntime) -> Command | str:
-        """Save a reviewed Markdown evidence brief. Requires human approval."""
+        """Submit an evidence brief for human review and saving.
+
+        Call this tool when the user requests saving. The runtime interrupts before the
+        write to collect approval of this exact title and Markdown. Use exact citations
+        verified in this thread. Persistence requires approval bound to this payload.
+        """
         cited = set(CITATION.findall(markdown))
         if not cited or cited.difference(runtime.state.get("evidence", {})):
             return "Save declined. Include citations verified by search_knowledge in this thread."
@@ -172,7 +176,7 @@ def build_agent(
         tools=[search_tool, save_brief],
         middleware=[
             TodoListMiddleware(),
-            ResearchMiddleware(tracing, repair_citations=settings.deep_lab_mode == "live"),
+            ResearchMiddleware(tracing, repair_citations=True),
         ],
         state_schema=EvidenceState,
         backend=backend,

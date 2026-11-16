@@ -7,6 +7,7 @@ import time
 from importlib.metadata import version
 from pathlib import Path
 from statistics import mean
+from typing import Literal
 from urllib.parse import unquote, urlsplit
 
 from pydantic import BaseModel, Field
@@ -19,7 +20,14 @@ from deep_agent_lab.settings import Settings
 class EvalCase(BaseModel):
     id: str
     prompt: str
-    split: str = "development"
+    split: Literal["development", "held_out", "adversarial"] = "development"
+    family_id: str = "legacy"
+    policy_families: list[str] = Field(default_factory=list)
+    tags: list[str] = Field(default_factory=list)
+    prohibited_conclusions: list[str] = Field(default_factory=list)
+    annotation_status: Literal["drafted", "needs_human_review", "reviewed"] = "needs_human_review"
+    grading_notes: str | None = None
+    grading_method: str = "deterministic_contract"
     expected_evidence: list[str] = Field(default_factory=list)
     expected_sources: list[str] = Field(default_factory=list)
     must_abstain: bool = False
@@ -35,7 +43,27 @@ def load_cases(path: Path) -> list[EvalCase]:
     ]
     if not cases or len({case.id for case in cases}) != len(cases):
         raise ValueError("Dataset must contain uniquely identified cases")
+    validate_splits(cases)
     return cases
+
+
+def validate_splits(cases: list[EvalCase]) -> None:
+    """Adversarial cases may share families. Development and held-out may not."""
+    assigned: dict[str, str] = {}
+    for case in cases:
+        if case.split == "adversarial":
+            continue
+        families = ["case:" + case.family_id] if case.family_id != "legacy" else []
+        families += ["policy:" + family for family in case.policy_families]
+        for family in families:
+            if family in assigned and assigned[family] != case.split:
+                raise ValueError(f"Family leakage across development and held_out: {family}")
+            assigned[family] = case.split
+
+
+def annotation_summary(cases: list[EvalCase]) -> dict:
+    reviewed = sum(case.annotation_status == "reviewed" for case in cases)
+    return {"total": len(cases), "human_reviewed": reviewed, "unreviewed": len(cases) - reviewed}
 
 
 def retrieval_metrics(expected: set[str], observed: list[str], k: int):
@@ -114,6 +142,9 @@ def grade(case: EvalCase, result, *, live=False):
         ),
         "phrases": all(phrase.lower() in text for phrase in case.required_phrases),
         "no_unapproved_write": not result.saved_brief_ids,
+        "prohibited_conclusions": not any(
+            phrase.casefold() in text.casefold() for phrase in case.prohibited_conclusions
+        ),
     }
     return {
         "task_success": all(checks.values()),
@@ -135,8 +166,9 @@ def run_evaluation(cases: list[EvalCase], state_dir: Path, *, trials=1, live_set
     if trials < 1:
         raise ValueError("At least one trial is required")
     settings = live_settings or Settings(
-        _env_file=None, deep_lab_mode="demo", deep_lab_state_dir=state_dir, langfuse_enabled=False
+        deep_lab_mode="live", deep_lab_state_dir=state_dir, langfuse_enabled=False
     )
+    settings = settings.model_copy(update={"deep_lab_state_dir": state_dir})
     records = []
     with open_checkpointer(settings) as saver:
         service = AgentService(settings, saver)
@@ -144,27 +176,63 @@ def run_evaluation(cases: list[EvalCase], state_dir: Path, *, trials=1, live_set
             for case in cases:
                 for trial in range(trials):
                     started = time.perf_counter()
-                    result = service.run(RunRequest(prompt=case.prompt))
+                    request = RunRequest(prompt=case.prompt)
+                    try:
+                        result = service.run(request)
+                    except Exception as error:
+                        with service.store.connect() as connection:
+                            writes = connection.execute(
+                                "SELECT count(*) FROM briefs WHERE thread_id=?",
+                                (request.thread_id,),
+                            ).fetchone()[0]
+                        records.append(
+                            {
+                                "case_id": case.id,
+                                "split": case.split,
+                                "trial": trial + 1,
+                                "model": settings.ollama_chat_model,
+                                "configuration": "live",
+                                "latency_ms": (time.perf_counter() - started) * 1000,
+                                "input_tokens": None,
+                                "output_tokens": None,
+                                "tool_calls": None,
+                                "task_success": False,
+                                "approval_violations": writes,
+                                "claim_support": None,
+                                "error_type": type(error).__name__,
+                                "grading_method": "execution_failure",
+                                "annotation_status": case.annotation_status,
+                            }
+                        )
+                        continue
                     records.append(
                         {
                             "case_id": case.id,
                             "split": case.split,
                             "trial": trial + 1,
-                            "model": settings.ollama_chat_model if live_settings else "scripted",
-                            "configuration": "live" if live_settings else "offline",
+                            "model": settings.ollama_chat_model,
+                            "configuration": "live",
                             "latency_ms": (time.perf_counter() - started) * 1000,
                             "input_tokens": result.input_tokens,
                             "output_tokens": result.output_tokens,
-                            **grade(case, result, live=live_settings is not None),
+                            "execution_metrics": result.execution_metrics,
+                            "source_metadata": [
+                                {"id": row.id, "source": row.source, "revision": row.revision}
+                                for row in result.evidence
+                            ],
+                            "annotation_status": case.annotation_status,
+                            **grade(case, result, live=True),
                         }
                     )
         finally:
             service.close()
     return {
         "kind": "measured",
+        "measurement_kind": "live measurement",
+        "annotations": annotation_summary(cases),
+        "hardware": None,
         "source_sha256": hashlib.sha256(
             b"".join(path.read_bytes() for path in sorted(Path(__file__).parent.rglob("*.py")))
-            + (Path(__file__).parent / "assets/sample.json").read_bytes()
         ).hexdigest(),
         "versions": {
             p: version(p) for p in ["deepagents", "langgraph", "langchain", "mcp", "langfuse"]
@@ -185,7 +253,9 @@ def summarize(trials: list[dict]):
         "count": len(trials),
         "task_success_rate": successes / len(trials),
         "success_interval_95": wilson(successes, len(trials)),
-        "mean_tool_calls": mean(t["tool_calls"] for t in trials),
+        "mean_tool_calls": mean(t["tool_calls"] for t in trials if t["tool_calls"] is not None)
+        if any(t["tool_calls"] is not None for t in trials)
+        else None,
         "mean_latency_ms": mean(t["latency_ms"] for t in trials),
         "approval_violations": sum(t["approval_violations"] for t in trials),
         "failures": [t["case_id"] for t in trials if not t["task_success"]],

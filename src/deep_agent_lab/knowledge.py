@@ -1,5 +1,3 @@
-import json
-import re
 from hashlib import sha256
 from pathlib import Path
 from typing import Annotated
@@ -30,17 +28,41 @@ class Evidence(BaseModel):
         return f"[[{token}]]"
 
 
-def fixture_search(query: str, top_k: int) -> list[Evidence]:
-    rows = [
-        Evidence.model_validate(row)
-        for row in json.loads((ASSETS / "sample.json").read_text(encoding="utf-8"))
-    ]
-    stop_words = {"the", "and", "for", "what", "who", "how", "which", "with", "does", "when"}
-    terms = set(re.findall(r"[a-z]{3,}", query.lower())) - stop_words
-    scored = [
-        (len(terms & set(re.findall(r"[a-z]{3,}", row.excerpt.lower()))), row) for row in rows
-    ]
-    return [row for score, row in sorted(scored, key=lambda item: -item[0]) if score][:top_k]
+def load_policy_evidence(directory: Path) -> list[Evidence]:
+    """Load actual policy files with content-derived revision and passage identifiers."""
+    from deep_agent_lab.rag.chunking import chunk_text
+    from deep_agent_lab.rag.loaders import load_file
+
+    rows = []
+    for path in sorted(directory.glob("*.md")):
+        title, source, content = load_file(path)
+        revision = sha256(content.encode()).hexdigest()
+        for position, excerpt in enumerate(chunk_text(content, 1400, 200)):
+            key = sha256(f"{path.name}:{revision}:{position}".encode()).hexdigest()
+            rows.append(
+                Evidence(
+                    id=key,
+                    title=title,
+                    source=source,
+                    position=position,
+                    excerpt=excerpt,
+                    revision=revision,
+                )
+            )
+    if not rows:
+        raise ValueError("No policy Markdown files found")
+    return rows
+
+
+def local_search(directory: Path, query: str, top_k: int = 3) -> list[Evidence]:
+    """A real lexical baseline over files read on every invocation."""
+    from deep_agent_lab.foundations import SearchArgs
+    from deep_agent_lab.retrieval import bm25
+
+    request = SearchArgs(query=query, top_k=top_k)
+    rows = load_policy_evidence(directory)
+    registry = {row.id: row for row in rows}
+    return [registry[hit["_id"]] for hit in bm25(request.query, rows)[: request.top_k]]
 
 
 def search_knowledge(
@@ -51,9 +73,6 @@ def search_knowledge(
     *,
     rag: RagService | None = None,
 ) -> list[Evidence]:
-    if settings.deep_lab_mode == "demo":
-        return fixture_search(query, top_k)
-
     request = SearchRequest(query=query, mode=mode, top_k=top_k)
     if rag is None:
         with RagService(settings) as service:

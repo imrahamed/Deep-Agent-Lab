@@ -35,7 +35,7 @@ class Settings(BaseSettings):
         "langfuse_timeout_seconds",
     )
 
-    deep_lab_mode: Literal["demo", "live"] = "demo"
+    deep_lab_mode: Literal["live"] = "live"
     deep_lab_state_dir: Path = Path(".deep-lab")
     rag_lab_env_file: Path | None = None
     postgres_dsn: SecretStr | None = None

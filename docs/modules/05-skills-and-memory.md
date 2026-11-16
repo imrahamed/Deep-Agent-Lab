@@ -1,6 +1,18 @@
 # Skills and memory
 
-Adapted from the supplied Northstar course reference. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+
+Prerequisites include [Module 04](04-context-engineering.md). Recommended next is [Module 06](06-planning-and-delegation.md).
+
+Estimated time 75 minutes. Difficulty intermediate. Consult the [glossary](../glossary.md) for unfamiliar terms.
+
+Inspect the [module contract tests](../../tests/test_context_memory_planning.py) alongside the source links below.
+
+## Northstar V5 progression
+
+V4 preserves explicit context. A preference from another user or expired scope is inapplicable. This module adds the capability to add skills and scoped preferences with provenance and lifecycle controls.
+
+The deterministic acceptance criterion is scope, expiry and correction checks reject inappropriate memory. Live model judgments are recorded independently.
 
 ## The six information categories
 
@@ -183,3 +195,9 @@ Many assistants need no learned policy memory: retrieve current policy instead. 
 Application sources: [`memory.py`](../../src/deep_agent_lab/memory.py), [`SKILL.md`](../../src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md).
 
 [Open the complete notebook](../../notebooks/05-skills-and-memory/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+
+
+
+[Start here](../start-here.md) ? [Course order](../course.md) ? [Glossary](../glossary.md) ? [Previous module](04-context-engineering.md) ? [Next module](06-planning-and-delegation.md)
+
+Estimated time 75 minutes. Difficulty intermediate.

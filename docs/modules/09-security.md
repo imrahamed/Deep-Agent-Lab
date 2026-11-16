@@ -1,6 +1,12 @@
 # Security
 
-Adapted from the supplied Northstar course reference. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+
+Prerequisites include [Module 02](02-tools-and-mcp.md) and [Module 08](08-advanced-evaluations.md). Recommended next is [Module 10](10-human-review.md).
+
+Estimated time 90 minutes. Difficulty advanced. Consult the [glossary](../glossary.md) for unfamiliar terms.
+
+Inspect the [module contract tests](../../tests/test_review_jobs_security.py) alongside the source links below.
 
 ## Why prompt injection occurs
 
@@ -108,10 +114,15 @@ The MCP specification explicitly treats tool execution as sensitive and describe
 
 ## Executable implementation
 
-The test sends adversarial content through the real search tool and graph. The scripted model is not evidence of live-model injection resistance; the enforced interrupt and exact-action save boundary are the guarantee tested. Authentication identifies the caller. Authorization checks the authenticated tenant, owner and permission before accessing a checkpoint. The original HTTP API remains a local single-user lab; the Northstar wrapper adds trusted caller scope. `Path.resolve` prevents traversal and follows existing symlinks, but an attacker who can concurrently replace workspace links requires OS-level isolation.
+The test sends adversarial content through the real search tool and graph. The actual model response is retained, while the enforced interrupt and exact-action save boundary protect persistence. Authentication identifies the caller. Authorization checks the authenticated tenant, owner and permission before accessing a checkpoint. The original HTTP API remains a local single-user lab; the Northstar wrapper adds trusted caller scope. `Path.resolve` prevents traversal and follows existing symlinks, but an attacker who can concurrently replace workspace links requires OS-level isolation.
 
 Prompt instructions and text filters are useful guidance but do not enforce authorization. Keep dangerous execution tools out of the research agent. Restrict telemetry by data classification: content suppression alone does not sanitize arbitrary metadata.
 
 Application sources: [`security.py`](../../src/deep_agent_lab/security.py), [`capstone.py`](../../src/deep_agent_lab/capstone.py), [`agent.py`](../../src/deep_agent_lab/agent.py).
 
 [Open the complete notebook](../../notebooks/09-security/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+
+
+[Start here](../start-here.md) ? [Course order](../course.md) ? [Glossary](../glossary.md) ? [Previous module](08-advanced-evaluations.md) ? [Next module](10-human-review.md)
+
+Estimated time 90 minutes. Difficulty advanced.

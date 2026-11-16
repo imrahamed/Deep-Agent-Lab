@@ -2,2037 +2,1611 @@
   {
     "module": "01-agent-foundations",
     "topic": "LLM inference",
-    "status": "Mechanics explained; scripted loop verified; one live inference checked",
-    "documentation": "docs/modules/01-agent-foundations.md",
-    "notebook": "notebooks/01-agent-foundations/lab.ipynb",
-    "exercise": "notebooks/01-agent-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/foundations.py",
-      "src/deep_agent_lab/agent.py"
+    "explained_in": "docs/modules/01-agent-foundations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/model_lab.py:course_model"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-06",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "01-agent-foundations",
     "topic": "tokens",
-    "status": "Usage accounting verified; actual Ollama token counts recorded in live report",
-    "documentation": "docs/modules/01-agent-foundations.md",
-    "notebook": "notebooks/01-agent-foundations/lab.ipynb",
-    "exercise": "notebooks/01-agent-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/foundations.py",
-      "src/deep_agent_lab/agent.py"
+    "explained_in": "docs/modules/01-agent-foundations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/model_lab.py:invoke_record"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-11",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "01-agent-foundations",
     "topic": "messages",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/01-agent-foundations.md",
-    "notebook": "notebooks/01-agent-foundations/lab.ipynb",
-    "exercise": "notebooks/01-agent-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/foundations.py",
-      "src/deep_agent_lab/agent.py"
+    "explained_in": "docs/modules/01-agent-foundations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/model_lab.py:tool_exchange"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-15",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "01-agent-foundations",
     "topic": "structured outputs",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/01-agent-foundations.md",
-    "notebook": "notebooks/01-agent-foundations/lab.ipynb",
-    "exercise": "notebooks/01-agent-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/foundations.py",
-      "src/deep_agent_lab/agent.py"
+    "explained_in": "docs/modules/01-agent-foundations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/model_lab.py:PolicyAnswer"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-13",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "01-agent-foundations",
     "topic": "agent loops",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/01-agent-foundations.md",
-    "notebook": "notebooks/01-agent-foundations/lab.ipynb",
-    "exercise": "notebooks/01-agent-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/foundations.py",
-      "src/deep_agent_lab/agent.py"
+    "explained_in": "docs/modules/01-agent-foundations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/foundations.py:agent_loop"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-15",
+    "assertion_or_test": [
+      "tests/test_foundations_tools.py::test_invalid_call_never_executes_and_loop_is_bounded"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "01-agent-foundations",
     "topic": "workflows vs agents",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/01-agent-foundations.md",
-    "notebook": "notebooks/01-agent-foundations/lab.ipynb",
-    "exercise": "notebooks/01-agent-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/foundations.py",
-      "src/deep_agent_lab/agent.py"
-    ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py"
-    ]
+    "explained_in": "docs/modules/01-agent-foundations.md",
+    "implemented_by": [],
+    "exercise_cell": null,
+    "assertion_or_test": [],
+    "verification_level": "explained",
+    "live_experiment": null
   },
   {
     "module": "01-agent-foundations",
     "topic": "harness",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/01-agent-foundations.md",
-    "notebook": "notebooks/01-agent-foundations/lab.ipynb",
-    "exercise": "notebooks/01-agent-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/foundations.py",
-      "src/deep_agent_lab/agent.py"
-    ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py"
-    ]
+    "explained_in": "docs/modules/01-agent-foundations.md",
+    "implemented_by": [],
+    "exercise_cell": null,
+    "assertion_or_test": [],
+    "verification_level": "explained",
+    "live_experiment": null
   },
   {
     "module": "01-agent-foundations",
     "topic": "runtime",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/01-agent-foundations.md",
-    "notebook": "notebooks/01-agent-foundations/lab.ipynb",
-    "exercise": "notebooks/01-agent-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/foundations.py",
-      "src/deep_agent_lab/agent.py"
-    ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py"
-    ]
+    "explained_in": "docs/modules/01-agent-foundations.md",
+    "implemented_by": [],
+    "exercise_cell": null,
+    "assertion_or_test": [],
+    "verification_level": "explained",
+    "live_experiment": null
   },
   {
     "module": "01-agent-foundations",
     "topic": "LangGraph",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/01-agent-foundations.md",
-    "notebook": "notebooks/01-agent-foundations/lab.ipynb",
-    "exercise": "notebooks/01-agent-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/foundations.py",
-      "src/deep_agent_lab/agent.py"
+    "explained_in": "docs/modules/01-agent-foundations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/agent.py:build_agent"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-15",
+    "assertion_or_test": [
+      "tests/test_course.py::test_checkpoint_review_restart"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "01-agent-foundations",
     "topic": "Deep Agents",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/01-agent-foundations.md",
-    "notebook": "notebooks/01-agent-foundations/lab.ipynb",
-    "exercise": "notebooks/01-agent-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/foundations.py",
-      "src/deep_agent_lab/agent.py"
+    "explained_in": "docs/modules/01-agent-foundations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/agent.py:build_agent"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-15",
+    "assertion_or_test": [
+      "tests/test_course.py::test_checkpoint_review_restart"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "02-tools-and-mcp",
     "topic": "tool schemas",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/02-tools-and-mcp.md",
-    "notebook": "notebooks/02-tools-and-mcp/lab.ipynb",
-    "exercise": "notebooks/02-tools-and-mcp/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tooling.py",
-      "src/deep_agent_lab/mcp_server.py"
+    "explained_in": "docs/modules/02-tools-and-mcp.md",
+    "implemented_by": [
+      "src/deep_agent_lab/foundations.py:SearchArgs"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py",
-      "tests/test_mcp_http.py"
-    ]
+    "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-06",
+    "assertion_or_test": [
+      "tests/test_foundations_tools.py::test_invalid_call_never_executes_and_loop_is_bounded"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "02-tools-and-mcp",
     "topic": "validation",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/02-tools-and-mcp.md",
-    "notebook": "notebooks/02-tools-and-mcp/lab.ipynb",
-    "exercise": "notebooks/02-tools-and-mcp/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tooling.py",
-      "src/deep_agent_lab/mcp_server.py"
+    "explained_in": "docs/modules/02-tools-and-mcp.md",
+    "implemented_by": [
+      "src/deep_agent_lab/tooling.py:search_read"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py",
-      "tests/test_mcp_http.py"
-    ]
+    "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-11",
+    "assertion_or_test": [
+      "tests/test_course_content.py::test_module_two_has_executable_tool_contract"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "02-tools-and-mcp",
     "topic": "tool-call IDs",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/02-tools-and-mcp.md",
-    "notebook": "notebooks/02-tools-and-mcp/lab.ipynb",
-    "exercise": "notebooks/02-tools-and-mcp/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tooling.py",
-      "src/deep_agent_lab/mcp_server.py"
+    "explained_in": "docs/modules/02-tools-and-mcp.md",
+    "implemented_by": [
+      "src/deep_agent_lab/foundations.py:agent_loop"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py",
-      "tests/test_mcp_http.py"
-    ]
+    "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-06",
+    "assertion_or_test": [
+      "tests/test_foundations_tools.py::test_loop_correlates_calls_and_uses_results"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "02-tools-and-mcp",
     "topic": "error handling",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/02-tools-and-mcp.md",
-    "notebook": "notebooks/02-tools-and-mcp/lab.ipynb",
-    "exercise": "notebooks/02-tools-and-mcp/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tooling.py",
-      "src/deep_agent_lab/mcp_server.py"
+    "explained_in": "docs/modules/02-tools-and-mcp.md",
+    "implemented_by": [
+      "src/deep_agent_lab/tooling.py:ToolOutcome"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py",
-      "tests/test_mcp_http.py"
-    ]
+    "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-13",
+    "assertion_or_test": [
+      "tests/test_foundations_tools.py::test_read_outcomes_retry_timeout_and_privacy"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "02-tools-and-mcp",
     "topic": "retries",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/02-tools-and-mcp.md",
-    "notebook": "notebooks/02-tools-and-mcp/lab.ipynb",
-    "exercise": "notebooks/02-tools-and-mcp/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tooling.py",
-      "src/deep_agent_lab/mcp_server.py"
+    "explained_in": "docs/modules/02-tools-and-mcp.md",
+    "implemented_by": [
+      "src/deep_agent_lab/tooling.py:search_read"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py",
-      "tests/test_mcp_http.py"
-    ]
+    "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-13",
+    "assertion_or_test": [
+      "tests/test_foundations_tools.py::test_read_outcomes_retry_timeout_and_privacy"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "02-tools-and-mcp",
     "topic": "timeouts",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/02-tools-and-mcp.md",
-    "notebook": "notebooks/02-tools-and-mcp/lab.ipynb",
-    "exercise": "notebooks/02-tools-and-mcp/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tooling.py",
-      "src/deep_agent_lab/mcp_server.py"
+    "explained_in": "docs/modules/02-tools-and-mcp.md",
+    "implemented_by": [
+      "src/deep_agent_lab/tooling.py:search_read"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py",
-      "tests/test_mcp_http.py"
-    ]
+    "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-13",
+    "assertion_or_test": [
+      "tests/test_foundations_tools.py::test_read_outcomes_retry_timeout_and_privacy"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "02-tools-and-mcp",
     "topic": "pagination",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/02-tools-and-mcp.md",
-    "notebook": "notebooks/02-tools-and-mcp/lab.ipynb",
-    "exercise": "notebooks/02-tools-and-mcp/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tooling.py",
-      "src/deep_agent_lab/mcp_server.py"
+    "explained_in": "docs/modules/02-tools-and-mcp.md",
+    "implemented_by": [
+      "src/deep_agent_lab/tooling.py:collect_pages"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py",
-      "tests/test_mcp_http.py"
-    ]
+    "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-18",
+    "assertion_or_test": [
+      "tests/test_foundations_tools.py::test_pagination_and_exact_remote_origin"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "02-tools-and-mcp",
     "topic": "local MCP",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/02-tools-and-mcp.md",
-    "notebook": "notebooks/02-tools-and-mcp/lab.ipynb",
-    "exercise": "notebooks/02-tools-and-mcp/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tooling.py",
-      "src/deep_agent_lab/mcp_server.py"
+    "explained_in": "docs/modules/02-tools-and-mcp.md",
+    "implemented_by": [
+      "src/deep_agent_lab/labs.py:mcp_lab"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py",
-      "tests/test_mcp_http.py"
-    ]
+    "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-08",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "02-tools-and-mcp",
     "topic": "remote MCP",
-    "status": "Real SDK adapter and origin contract verified; remote server not configured",
-    "documentation": "docs/modules/02-tools-and-mcp.md",
-    "notebook": "notebooks/02-tools-and-mcp/lab.ipynb",
-    "exercise": "notebooks/02-tools-and-mcp/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tooling.py",
-      "src/deep_agent_lab/mcp_server.py"
+    "explained_in": "docs/modules/02-tools-and-mcp.md",
+    "implemented_by": [
+      "src/deep_agent_lab/tooling.py:remote_mcp_search"
     ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py",
-      "tests/test_mcp_http.py"
-    ]
+    "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-18",
+    "assertion_or_test": [
+      "tests/test_mcp_http.py::test_real_streamable_http_protocol_with_in_process_authenticated_transport"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "02-tools-and-mcp",
     "topic": "authentication",
-    "status": "Trusted-principal and token-origin contracts verified; OAuth login not implemented",
-    "documentation": "docs/modules/02-tools-and-mcp.md",
-    "notebook": "notebooks/02-tools-and-mcp/lab.ipynb",
-    "exercise": "notebooks/02-tools-and-mcp/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tooling.py",
-      "src/deep_agent_lab/mcp_server.py"
-    ],
-    "tests": [
-      "tests/test_foundations_tools.py",
-      "tests/test_course.py",
-      "tests/test_mcp_http.py"
-    ]
+    "explained_in": "docs/modules/02-tools-and-mcp.md",
+    "implemented_by": [],
+    "exercise_cell": null,
+    "assertion_or_test": [],
+    "verification_level": "explained",
+    "live_experiment": null
   },
   {
     "module": "03-evaluation-foundations",
     "topic": "datasets",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/03-evaluation-foundations.md",
-    "notebook": "notebooks/03-evaluation-foundations/lab.ipynb",
-    "exercise": "notebooks/03-evaluation-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "data/evaluation/northstar.jsonl"
+    "explained_in": "docs/modules/03-evaluation-foundations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evaluation.py:load_cases"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "exercise_cell": "notebooks/03-evaluation-foundations/lab.ipynb#03-08",
+    "assertion_or_test": [
+      "tests/test_evaluation_metadata.py::test_annotation_defaults_and_prohibited_conclusions"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "03-evaluation-foundations",
     "topic": "deterministic tests",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/03-evaluation-foundations.md",
-    "notebook": "notebooks/03-evaluation-foundations/lab.ipynb",
-    "exercise": "notebooks/03-evaluation-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "data/evaluation/northstar.jsonl"
-    ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "explained_in": "docs/modules/03-evaluation-foundations.md",
+    "implemented_by": [],
+    "exercise_cell": null,
+    "assertion_or_test": [],
+    "verification_level": "explained",
+    "live_experiment": null
   },
   {
     "module": "03-evaluation-foundations",
     "topic": "baseline evaluations",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/03-evaluation-foundations.md",
-    "notebook": "notebooks/03-evaluation-foundations/lab.ipynb",
-    "exercise": "notebooks/03-evaluation-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "data/evaluation/northstar.jsonl"
+    "explained_in": "docs/modules/03-evaluation-foundations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evaluation.py:run_evaluation"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "exercise_cell": "notebooks/03-evaluation-foundations/lab.ipynb#03-08",
+    "assertion_or_test": [
+      "tests/test_evidence_evaluations.py::test_actual_agent_evaluations_and_metrics"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "03-evaluation-foundations",
     "topic": "tool correctness",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/03-evaluation-foundations.md",
-    "notebook": "notebooks/03-evaluation-foundations/lab.ipynb",
-    "exercise": "notebooks/03-evaluation-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "data/evaluation/northstar.jsonl"
-    ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "explained_in": "docs/modules/03-evaluation-foundations.md",
+    "implemented_by": [],
+    "exercise_cell": null,
+    "assertion_or_test": [],
+    "verification_level": "explained",
+    "live_experiment": null
   },
   {
     "module": "03-evaluation-foundations",
     "topic": "task success",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/03-evaluation-foundations.md",
-    "notebook": "notebooks/03-evaluation-foundations/lab.ipynb",
-    "exercise": "notebooks/03-evaluation-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "data/evaluation/northstar.jsonl"
+    "explained_in": "docs/modules/03-evaluation-foundations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evaluation.py:grade"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "exercise_cell": "notebooks/03-evaluation-foundations/lab.ipynb#03-11",
+    "assertion_or_test": [
+      "tests/test_live_grading.py::test_live_grading_uses_explicit_sources_and_retains_exact_chunk_ids"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "03-evaluation-foundations",
     "topic": "trajectories",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/03-evaluation-foundations.md",
-    "notebook": "notebooks/03-evaluation-foundations/lab.ipynb",
-    "exercise": "notebooks/03-evaluation-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "data/evaluation/northstar.jsonl"
+    "explained_in": "docs/modules/03-evaluation-foundations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evaluation.py:run_evaluation"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "exercise_cell": "notebooks/03-evaluation-foundations/lab.ipynb#03-08",
+    "assertion_or_test": [
+      "tests/test_evidence_evaluations.py::test_actual_agent_evaluations_and_metrics"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "03-evaluation-foundations",
     "topic": "held-out split",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/03-evaluation-foundations.md",
-    "notebook": "notebooks/03-evaluation-foundations/lab.ipynb",
-    "exercise": "notebooks/03-evaluation-foundations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "data/evaluation/northstar.jsonl"
+    "explained_in": "docs/modules/03-evaluation-foundations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evaluation.py:validate_splits"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "exercise_cell": "notebooks/03-evaluation-foundations/lab.ipynb#03-08",
+    "assertion_or_test": [
+      "tests/test_evaluation_metadata.py::test_family_leakage_and_adversarial_exception"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "04-context-engineering",
     "topic": "context budgets",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/04-context-engineering.md",
-    "notebook": "notebooks/04-context-engineering/lab.ipynb",
-    "exercise": "notebooks/04-context-engineering/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/context.py",
-      "src/deep_agent_lab/labs.py"
+    "explained_in": "docs/modules/04-context-engineering.md",
+    "implemented_by": [
+      "src/deep_agent_lab/context.py:ContextBudget"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-06",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_context_required_evidence_and_compaction"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "04-context-engineering",
     "topic": "offloading",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/04-context-engineering.md",
-    "notebook": "notebooks/04-context-engineering/lab.ipynb",
-    "exercise": "notebooks/04-context-engineering/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/context.py",
-      "src/deep_agent_lab/labs.py"
+    "explained_in": "docs/modules/04-context-engineering.md",
+    "implemented_by": [
+      "src/deep_agent_lab/labs.py:context_lab"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-18",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "04-context-engineering",
     "topic": "trimming",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/04-context-engineering.md",
-    "notebook": "notebooks/04-context-engineering/lab.ipynb",
-    "exercise": "notebooks/04-context-engineering/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/context.py",
-      "src/deep_agent_lab/labs.py"
+    "explained_in": "docs/modules/04-context-engineering.md",
+    "implemented_by": [
+      "src/deep_agent_lab/context.py:trim_turns"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-15",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_context_required_evidence_and_compaction"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "04-context-engineering",
     "topic": "summarization",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/04-context-engineering.md",
-    "notebook": "notebooks/04-context-engineering/lab.ipynb",
-    "exercise": "notebooks/04-context-engineering/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/context.py",
-      "src/deep_agent_lab/labs.py"
+    "explained_in": "docs/modules/04-context-engineering.md",
+    "implemented_by": [
+      "src/deep_agent_lab/labs.py:summarization_lab"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-18",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "04-context-engineering",
     "topic": "compaction",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/04-context-engineering.md",
-    "notebook": "notebooks/04-context-engineering/lab.ipynb",
-    "exercise": "notebooks/04-context-engineering/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/context.py",
-      "src/deep_agent_lab/labs.py"
+    "explained_in": "docs/modules/04-context-engineering.md",
+    "implemented_by": [
+      "src/deep_agent_lab/context.py:validate_compaction"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-13",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_context_required_evidence_and_compaction"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "04-context-engineering",
     "topic": "progressive disclosure",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/04-context-engineering.md",
-    "notebook": "notebooks/04-context-engineering/lab.ipynb",
-    "exercise": "notebooks/04-context-engineering/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/context.py",
-      "src/deep_agent_lab/labs.py"
-    ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "explained_in": "docs/modules/04-context-engineering.md",
+    "implemented_by": [],
+    "exercise_cell": null,
+    "assertion_or_test": [],
+    "verification_level": "explained",
+    "live_experiment": null
   },
   {
     "module": "04-context-engineering",
     "topic": "prompt caching",
-    "status": "Stable-prefix fingerprint verified; provider cache reuse not measured",
-    "documentation": "docs/modules/04-context-engineering.md",
-    "notebook": "notebooks/04-context-engineering/lab.ipynb",
-    "exercise": "notebooks/04-context-engineering/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/context.py",
-      "src/deep_agent_lab/labs.py"
+    "explained_in": "docs/modules/04-context-engineering.md",
+    "implemented_by": [
+      "src/deep_agent_lab/context.py:prefix_key"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-15",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_context_required_evidence_and_compaction"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "04-context-engineering",
     "topic": "selective rereading",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/04-context-engineering.md",
-    "notebook": "notebooks/04-context-engineering/lab.ipynb",
-    "exercise": "notebooks/04-context-engineering/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/context.py",
-      "src/deep_agent_lab/labs.py"
-    ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "explained_in": "docs/modules/04-context-engineering.md",
+    "implemented_by": [],
+    "exercise_cell": null,
+    "assertion_or_test": [],
+    "verification_level": "explained",
+    "live_experiment": null
   },
   {
     "module": "04-context-engineering",
     "topic": "context ablation",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/04-context-engineering.md",
-    "notebook": "notebooks/04-context-engineering/lab.ipynb",
-    "exercise": "notebooks/04-context-engineering/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/context.py",
-      "src/deep_agent_lab/labs.py"
+    "explained_in": "docs/modules/04-context-engineering.md",
+    "implemented_by": [
+      "src/deep_agent_lab/context.py:context_payload"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-11",
+    "assertion_or_test": [
+      "tests/test_course_content.py::test_context_estimate_includes_state_and_is_deterministic"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "05-skills-and-memory",
     "topic": "Agent Skills",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/05-skills-and-memory.md",
-    "notebook": "notebooks/05-skills-and-memory/lab.ipynb",
-    "exercise": "notebooks/05-skills-and-memory/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/memory.py",
+    "explained_in": "docs/modules/05-skills-and-memory.md",
+    "implemented_by": [
       "src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-08",
+    "assertion_or_test": [],
+    "verification_level": "exercised",
+    "live_experiment": null
   },
   {
     "module": "05-skills-and-memory",
     "topic": "memory types",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/05-skills-and-memory.md",
-    "notebook": "notebooks/05-skills-and-memory/lab.ipynb",
-    "exercise": "notebooks/05-skills-and-memory/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/memory.py",
-      "src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md"
+    "explained_in": "docs/modules/05-skills-and-memory.md",
+    "implemented_by": [
+      "src/deep_agent_lab/memory.py:MemoryStore"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "05-skills-and-memory",
     "topic": "memory scopes",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/05-skills-and-memory.md",
-    "notebook": "notebooks/05-skills-and-memory/lab.ipynb",
-    "exercise": "notebooks/05-skills-and-memory/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/memory.py",
-      "src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md"
+    "explained_in": "docs/modules/05-skills-and-memory.md",
+    "implemented_by": [
+      "src/deep_agent_lab/memory.py:MemoryStore"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "05-skills-and-memory",
     "topic": "checkpoints",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/05-skills-and-memory.md",
-    "notebook": "notebooks/05-skills-and-memory/lab.ipynb",
-    "exercise": "notebooks/05-skills-and-memory/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/memory.py",
-      "src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md"
+    "explained_in": "docs/modules/05-skills-and-memory.md",
+    "implemented_by": [
+      "src/deep_agent_lab/labs.py:memory_lab"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-08",
+    "assertion_or_test": [],
+    "verification_level": "exercised",
+    "live_experiment": null
   },
   {
     "module": "05-skills-and-memory",
     "topic": "provenance",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/05-skills-and-memory.md",
-    "notebook": "notebooks/05-skills-and-memory/lab.ipynb",
-    "exercise": "notebooks/05-skills-and-memory/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/memory.py",
-      "src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md"
+    "explained_in": "docs/modules/05-skills-and-memory.md",
+    "implemented_by": [
+      "src/deep_agent_lab/memory.py:MemoryStore"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "05-skills-and-memory",
     "topic": "expiration",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/05-skills-and-memory.md",
-    "notebook": "notebooks/05-skills-and-memory/lab.ipynb",
-    "exercise": "notebooks/05-skills-and-memory/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/memory.py",
-      "src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md"
+    "explained_in": "docs/modules/05-skills-and-memory.md",
+    "implemented_by": [
+      "src/deep_agent_lab/memory.py:MemoryStore"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "05-skills-and-memory",
     "topic": "conflicts",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/05-skills-and-memory.md",
-    "notebook": "notebooks/05-skills-and-memory/lab.ipynb",
-    "exercise": "notebooks/05-skills-and-memory/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/memory.py",
-      "src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md"
+    "explained_in": "docs/modules/05-skills-and-memory.md",
+    "implemented_by": [
+      "src/deep_agent_lab/memory.py:MemoryStore"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "05-skills-and-memory",
     "topic": "contamination",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/05-skills-and-memory.md",
-    "notebook": "notebooks/05-skills-and-memory/lab.ipynb",
-    "exercise": "notebooks/05-skills-and-memory/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/memory.py",
-      "src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md"
+    "explained_in": "docs/modules/05-skills-and-memory.md",
+    "implemented_by": [
+      "src/deep_agent_lab/memory.py:MemoryStore"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "05-skills-and-memory",
     "topic": "correction",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/05-skills-and-memory.md",
-    "notebook": "notebooks/05-skills-and-memory/lab.ipynb",
-    "exercise": "notebooks/05-skills-and-memory/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/memory.py",
-      "src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md"
+    "explained_in": "docs/modules/05-skills-and-memory.md",
+    "implemented_by": [
+      "src/deep_agent_lab/memory.py:MemoryStore"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "05-skills-and-memory",
     "topic": "deletion",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/05-skills-and-memory.md",
-    "notebook": "notebooks/05-skills-and-memory/lab.ipynb",
-    "exercise": "notebooks/05-skills-and-memory/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/memory.py",
-      "src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md"
+    "explained_in": "docs/modules/05-skills-and-memory.md",
+    "implemented_by": [
+      "src/deep_agent_lab/memory.py:MemoryStore"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "06-planning-and-delegation",
     "topic": "task decomposition",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/06-planning-and-delegation.md",
-    "notebook": "notebooks/06-planning-and-delegation/lab.ipynb",
-    "exercise": "notebooks/06-planning-and-delegation/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/planning.py",
-      "src/deep_agent_lab/labs.py"
+    "explained_in": "docs/modules/06-planning-and-delegation.md",
+    "implemented_by": [
+      "src/deep_agent_lab/planning.py:validate_plan"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-learner-mechanism",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_plan_dependencies_and_invalid_handoffs"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "06-planning-and-delegation",
     "topic": "dependency graphs",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/06-planning-and-delegation.md",
-    "notebook": "notebooks/06-planning-and-delegation/lab.ipynb",
-    "exercise": "notebooks/06-planning-and-delegation/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/planning.py",
-      "src/deep_agent_lab/labs.py"
+    "explained_in": "docs/modules/06-planning-and-delegation.md",
+    "implemented_by": [
+      "src/deep_agent_lab/planning.py:validate_plan"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-learner-mechanism",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_plan_dependencies_and_invalid_handoffs"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "06-planning-and-delegation",
     "topic": "specialist agents",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/06-planning-and-delegation.md",
-    "notebook": "notebooks/06-planning-and-delegation/lab.ipynb",
-    "exercise": "notebooks/06-planning-and-delegation/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/planning.py",
-      "src/deep_agent_lab/labs.py"
+    "explained_in": "docs/modules/06-planning-and-delegation.md",
+    "implemented_by": [
+      "src/deep_agent_lab/planning.py:run_specialists"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-13",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_specialist_timeout_partial_results_and_cancellation"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "06-planning-and-delegation",
     "topic": "parallel execution",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/06-planning-and-delegation.md",
-    "notebook": "notebooks/06-planning-and-delegation/lab.ipynb",
-    "exercise": "notebooks/06-planning-and-delegation/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/planning.py",
-      "src/deep_agent_lab/labs.py"
+    "explained_in": "docs/modules/06-planning-and-delegation.md",
+    "implemented_by": [
+      "src/deep_agent_lab/planning.py:run_specialists"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-13",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_specialist_timeout_partial_results_and_cancellation"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "06-planning-and-delegation",
     "topic": "handoffs",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/06-planning-and-delegation.md",
-    "notebook": "notebooks/06-planning-and-delegation/lab.ipynb",
-    "exercise": "notebooks/06-planning-and-delegation/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/planning.py",
-      "src/deep_agent_lab/labs.py"
+    "explained_in": "docs/modules/06-planning-and-delegation.md",
+    "implemented_by": [
+      "src/deep_agent_lab/planning.py:verify_handoff"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-06",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_parent_independently_verifies_specialist_handoff"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "06-planning-and-delegation",
     "topic": "cancellation",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/06-planning-and-delegation.md",
-    "notebook": "notebooks/06-planning-and-delegation/lab.ipynb",
-    "exercise": "notebooks/06-planning-and-delegation/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/planning.py",
-      "src/deep_agent_lab/labs.py"
+    "explained_in": "docs/modules/06-planning-and-delegation.md",
+    "implemented_by": [
+      "src/deep_agent_lab/planning.py:run_specialists"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-13",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_specialist_timeout_partial_results_and_cancellation"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "06-planning-and-delegation",
     "topic": "budgets",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/06-planning-and-delegation.md",
-    "notebook": "notebooks/06-planning-and-delegation/lab.ipynb",
-    "exercise": "notebooks/06-planning-and-delegation/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/planning.py",
-      "src/deep_agent_lab/labs.py"
+    "explained_in": "docs/modules/06-planning-and-delegation.md",
+    "implemented_by": [
+      "src/deep_agent_lab/planning.py:run_specialists"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-13",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_specialist_timeout_partial_results_and_cancellation"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "06-planning-and-delegation",
     "topic": "partial results",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/06-planning-and-delegation.md",
-    "notebook": "notebooks/06-planning-and-delegation/lab.ipynb",
-    "exercise": "notebooks/06-planning-and-delegation/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/planning.py",
-      "src/deep_agent_lab/labs.py"
+    "explained_in": "docs/modules/06-planning-and-delegation.md",
+    "implemented_by": [
+      "src/deep_agent_lab/planning.py:run_specialists"
     ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-13",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_specialist_timeout_partial_results_and_cancellation"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "06-planning-and-delegation",
     "topic": "context isolation",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/06-planning-and-delegation.md",
-    "notebook": "notebooks/06-planning-and-delegation/lab.ipynb",
-    "exercise": "notebooks/06-planning-and-delegation/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/planning.py",
-      "src/deep_agent_lab/labs.py"
-    ],
-    "tests": [
-      "tests/test_context_memory_planning.py",
-      "tests/test_course.py"
-    ]
+    "explained_in": "docs/modules/06-planning-and-delegation.md",
+    "implemented_by": [],
+    "exercise_cell": null,
+    "assertion_or_test": [],
+    "verification_level": "explained",
+    "live_experiment": null
   },
   {
     "module": "07-agentic-rag",
     "topic": "BM25",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/07-agentic-rag.md",
-    "notebook": "notebooks/07-agentic-rag/lab.ipynb",
-    "exercise": "notebooks/07-agentic-rag/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/retrieval.py",
-      "src/deep_agent_lab/evidence.py",
-      "src/deep_agent_lab/rag/pipeline.py"
+    "explained_in": "docs/modules/07-agentic-rag.md",
+    "implemented_by": [
+      "src/deep_agent_lab/retrieval.py:bm25"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_rag_pipeline.py"
-    ]
+    "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-06",
+    "assertion_or_test": [
+      "tests/test_evidence_evaluations.py::test_rankers_reformulation_and_reranking"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "07-agentic-rag",
     "topic": "vectors",
-    "status": "Cosine arithmetic verified; live Ollama/OpenSearch retrieval checked",
-    "documentation": "docs/modules/07-agentic-rag.md",
-    "notebook": "notebooks/07-agentic-rag/lab.ipynb",
-    "exercise": "notebooks/07-agentic-rag/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/retrieval.py",
-      "src/deep_agent_lab/evidence.py",
-      "src/deep_agent_lab/rag/pipeline.py"
+    "explained_in": "docs/modules/07-agentic-rag.md",
+    "implemented_by": [
+      "src/deep_agent_lab/rag/ollama.py:Ollama.embed"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_rag_pipeline.py"
-    ]
+    "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+    "assertion_or_test": [
+      "tests/test_rag_pipeline.py::test_embedding_profile_and_partial_search_are_rejected"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "07-agentic-rag",
     "topic": "RRF",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/07-agentic-rag.md",
-    "notebook": "notebooks/07-agentic-rag/lab.ipynb",
-    "exercise": "notebooks/07-agentic-rag/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/retrieval.py",
-      "src/deep_agent_lab/evidence.py",
-      "src/deep_agent_lab/rag/pipeline.py"
+    "explained_in": "docs/modules/07-agentic-rag.md",
+    "implemented_by": [
+      "src/deep_agent_lab/rag/search.py:reciprocal_rank_fusion"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_rag_pipeline.py"
-    ]
+    "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+    "assertion_or_test": [
+      "tests/test_evidence_evaluations.py::test_rankers_reformulation_and_reranking"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "07-agentic-rag",
     "topic": "hybrid retrieval",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/07-agentic-rag.md",
-    "notebook": "notebooks/07-agentic-rag/lab.ipynb",
-    "exercise": "notebooks/07-agentic-rag/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/retrieval.py",
-      "src/deep_agent_lab/evidence.py",
-      "src/deep_agent_lab/rag/pipeline.py"
+    "explained_in": "docs/modules/07-agentic-rag.md",
+    "implemented_by": [
+      "src/deep_agent_lab/rag/pipeline.py:RagService._search"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_rag_pipeline.py"
-    ]
+    "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+    "assertion_or_test": [
+      "tests/test_rag_pipeline.py::test_active_hydration_preserves_source_revision_and_drops_stale_ids"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "07-agentic-rag",
     "topic": "reranking",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/07-agentic-rag.md",
-    "notebook": "notebooks/07-agentic-rag/lab.ipynb",
-    "exercise": "notebooks/07-agentic-rag/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/retrieval.py",
-      "src/deep_agent_lab/evidence.py",
-      "src/deep_agent_lab/rag/pipeline.py"
+    "explained_in": "docs/modules/07-agentic-rag.md",
+    "implemented_by": [
+      "src/deep_agent_lab/comparisons.py:retrieval_comparison"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_rag_pipeline.py"
-    ]
+    "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "07-agentic-rag",
     "topic": "query reformulation",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/07-agentic-rag.md",
-    "notebook": "notebooks/07-agentic-rag/lab.ipynb",
-    "exercise": "notebooks/07-agentic-rag/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/retrieval.py",
-      "src/deep_agent_lab/evidence.py",
-      "src/deep_agent_lab/rag/pipeline.py"
+    "explained_in": "docs/modules/07-agentic-rag.md",
+    "implemented_by": [
+      "src/deep_agent_lab/retrieval.py:adaptive_search"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_rag_pipeline.py"
-    ]
+    "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-11",
+    "assertion_or_test": [
+      "tests/test_adaptive_retrieval.py::test_faithful_rewrite_accumulates_evidence"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "07-agentic-rag",
     "topic": "claim verification",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/07-agentic-rag.md",
-    "notebook": "notebooks/07-agentic-rag/lab.ipynb",
-    "exercise": "notebooks/07-agentic-rag/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/retrieval.py",
-      "src/deep_agent_lab/evidence.py",
-      "src/deep_agent_lab/rag/pipeline.py"
+    "explained_in": "docs/modules/07-agentic-rag.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evidence.py:extractive_verdict"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_rag_pipeline.py"
-    ]
+    "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-13",
+    "assertion_or_test": [
+      "tests/test_evidence_evaluations.py::test_provenance_and_valid_but_irrelevant_citations"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "07-agentic-rag",
     "topic": "contradictions",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/07-agentic-rag.md",
-    "notebook": "notebooks/07-agentic-rag/lab.ipynb",
-    "exercise": "notebooks/07-agentic-rag/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/retrieval.py",
-      "src/deep_agent_lab/evidence.py",
-      "src/deep_agent_lab/rag/pipeline.py"
+    "explained_in": "docs/modules/07-agentic-rag.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evidence.py:contradictions"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_rag_pipeline.py"
-    ]
+    "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-13",
+    "assertion_or_test": [
+      "tests/test_evidence_evaluations.py::test_provenance_and_valid_but_irrelevant_citations"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "07-agentic-rag",
     "topic": "abstention",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/07-agentic-rag.md",
-    "notebook": "notebooks/07-agentic-rag/lab.ipynb",
-    "exercise": "notebooks/07-agentic-rag/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/retrieval.py",
-      "src/deep_agent_lab/evidence.py",
-      "src/deep_agent_lab/rag/pipeline.py"
+    "explained_in": "docs/modules/07-agentic-rag.md",
+    "implemented_by": [
+      "src/deep_agent_lab/retrieval.py:adaptive_search"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_rag_pipeline.py"
-    ]
+    "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-11",
+    "assertion_or_test": [
+      "tests/test_adaptive_retrieval.py::test_missing_fact_abstains_even_with_related_documents"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "07-agentic-rag",
     "topic": "active revision hydration",
-    "status": "Stale-ID exclusion and revision propagation verified, including live retrieval",
-    "documentation": "docs/modules/07-agentic-rag.md",
-    "notebook": "notebooks/07-agentic-rag/lab.ipynb",
-    "exercise": "notebooks/07-agentic-rag/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/retrieval.py",
-      "src/deep_agent_lab/evidence.py",
-      "src/deep_agent_lab/rag/pipeline.py"
+    "explained_in": "docs/modules/07-agentic-rag.md",
+    "implemented_by": [
+      "src/deep_agent_lab/rag/pipeline.py:RagService._search"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_rag_pipeline.py"
-    ]
+    "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+    "assertion_or_test": [
+      "tests/test_rag_pipeline.py::test_active_hydration_preserves_source_revision_and_drops_stale_ids"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "07-agentic-rag",
     "topic": "embedding profiles",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/07-agentic-rag.md",
-    "notebook": "notebooks/07-agentic-rag/lab.ipynb",
-    "exercise": "notebooks/07-agentic-rag/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/retrieval.py",
-      "src/deep_agent_lab/evidence.py",
-      "src/deep_agent_lab/rag/pipeline.py"
+    "explained_in": "docs/modules/07-agentic-rag.md",
+    "implemented_by": [
+      "src/deep_agent_lab/settings.py:Settings.embedding_profile"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_rag_pipeline.py"
-    ]
+    "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+    "assertion_or_test": [
+      "tests/test_rag_pipeline.py::test_embedding_profile_and_partial_search_are_rejected"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "08-advanced-evaluations",
     "topic": "model judges",
-    "status": "Adapter and calibration verified; measured live labels retained in the live report",
-    "documentation": "docs/modules/08-advanced-evaluations.md",
-    "notebook": "notebooks/08-advanced-evaluations/lab.ipynb",
-    "exercise": "notebooks/08-advanced-evaluations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "src/deep_agent_lab/evidence.py"
+    "explained_in": "docs/modules/08-advanced-evaluations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evidence.py:model_verdict"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-18",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "08-advanced-evaluations",
     "topic": "human calibration",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/08-advanced-evaluations.md",
-    "notebook": "notebooks/08-advanced-evaluations/lab.ipynb",
-    "exercise": "notebooks/08-advanced-evaluations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "src/deep_agent_lab/evidence.py"
+    "explained_in": "docs/modules/08-advanced-evaluations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evaluation.py:calibration"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-18",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "08-advanced-evaluations",
     "topic": "regression tests",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/08-advanced-evaluations.md",
-    "notebook": "notebooks/08-advanced-evaluations/lab.ipynb",
-    "exercise": "notebooks/08-advanced-evaluations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "src/deep_agent_lab/evidence.py"
+    "explained_in": "docs/modules/08-advanced-evaluations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evaluation.py:regression_gate"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-13",
+    "assertion_or_test": [
+      "tests/test_evidence_evaluations.py::test_actual_agent_evaluations_and_metrics"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "08-advanced-evaluations",
     "topic": "ablation studies",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/08-advanced-evaluations.md",
-    "notebook": "notebooks/08-advanced-evaluations/lab.ipynb",
-    "exercise": "notebooks/08-advanced-evaluations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "src/deep_agent_lab/evidence.py"
-    ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "explained_in": "docs/modules/08-advanced-evaluations.md",
+    "implemented_by": [],
+    "exercise_cell": null,
+    "assertion_or_test": [],
+    "verification_level": "explained",
+    "live_experiment": null
   },
   {
     "module": "08-advanced-evaluations",
     "topic": "retrieval metrics",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/08-advanced-evaluations.md",
-    "notebook": "notebooks/08-advanced-evaluations/lab.ipynb",
-    "exercise": "notebooks/08-advanced-evaluations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "src/deep_agent_lab/evidence.py"
+    "explained_in": "docs/modules/08-advanced-evaluations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evaluation.py:retrieval_metrics"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-11",
+    "assertion_or_test": [
+      "tests/test_evidence_evaluations.py::test_actual_agent_evaluations_and_metrics"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "08-advanced-evaluations",
     "topic": "claim support",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/08-advanced-evaluations.md",
-    "notebook": "notebooks/08-advanced-evaluations/lab.ipynb",
-    "exercise": "notebooks/08-advanced-evaluations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "src/deep_agent_lab/evidence.py"
+    "explained_in": "docs/modules/08-advanced-evaluations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evidence.py:model_verdict"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-18",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "08-advanced-evaluations",
     "topic": "latency",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/08-advanced-evaluations.md",
-    "notebook": "notebooks/08-advanced-evaluations/lab.ipynb",
-    "exercise": "notebooks/08-advanced-evaluations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "src/deep_agent_lab/evidence.py"
+    "explained_in": "docs/modules/08-advanced-evaluations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evaluation.py:run_evaluation"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-08",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "08-advanced-evaluations",
     "topic": "tokens",
-    "status": "Usage accounting verified; actual Ollama token counts recorded in live report",
-    "documentation": "docs/modules/08-advanced-evaluations.md",
-    "notebook": "notebooks/08-advanced-evaluations/lab.ipynb",
-    "exercise": "notebooks/08-advanced-evaluations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "src/deep_agent_lab/evidence.py"
+    "explained_in": "docs/modules/08-advanced-evaluations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evaluation.py:run_evaluation"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-15",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "08-advanced-evaluations",
     "topic": "repeated trials",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/08-advanced-evaluations.md",
-    "notebook": "notebooks/08-advanced-evaluations/lab.ipynb",
-    "exercise": "notebooks/08-advanced-evaluations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "src/deep_agent_lab/evidence.py"
+    "explained_in": "docs/modules/08-advanced-evaluations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evaluation.py:run_evaluation"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-08",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "08-advanced-evaluations",
     "topic": "confidence intervals",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/08-advanced-evaluations.md",
-    "notebook": "notebooks/08-advanced-evaluations/lab.ipynb",
-    "exercise": "notebooks/08-advanced-evaluations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "src/deep_agent_lab/evidence.py"
+    "explained_in": "docs/modules/08-advanced-evaluations.md",
+    "implemented_by": [
+      "src/deep_agent_lab/evaluation.py:wilson"
     ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-18",
+    "assertion_or_test": [
+      "tests/test_evidence_evaluations.py::test_actual_agent_evaluations_and_metrics"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "08-advanced-evaluations",
     "topic": "cost",
-    "status": "Accounting boundaries explained; prices and local power cost unmeasured",
-    "documentation": "docs/modules/08-advanced-evaluations.md",
-    "notebook": "notebooks/08-advanced-evaluations/lab.ipynb",
-    "exercise": "notebooks/08-advanced-evaluations/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/evaluation.py",
-      "src/deep_agent_lab/evidence.py"
-    ],
-    "tests": [
-      "tests/test_evidence_evaluations.py",
-      "tests/test_live_grading.py"
-    ]
+    "explained_in": "docs/modules/08-advanced-evaluations.md",
+    "implemented_by": [],
+    "exercise_cell": null,
+    "assertion_or_test": [],
+    "verification_level": "explained",
+    "live_experiment": null
   },
   {
     "module": "09-security",
     "topic": "prompt injection",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/09-security.md",
-    "notebook": "notebooks/09-security/lab.ipynb",
-    "exercise": "notebooks/09-security/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/security.py",
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/agent.py"
+    "explained_in": "docs/modules/09-security.md",
+    "implemented_by": [
+      "src/deep_agent_lab/agent.py:build_agent"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py",
-      "tests/test_tracing.py"
-    ]
+    "exercise_cell": "notebooks/09-security/lab.ipynb#09-08",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_agent_injected_excerpt_cannot_bypass_review"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "09-security",
     "topic": "trust boundaries",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/09-security.md",
-    "notebook": "notebooks/09-security/lab.ipynb",
-    "exercise": "notebooks/09-security/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/security.py",
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/agent.py"
-    ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py",
-      "tests/test_tracing.py"
-    ]
+    "explained_in": "docs/modules/09-security.md",
+    "implemented_by": [],
+    "exercise_cell": null,
+    "assertion_or_test": [],
+    "verification_level": "explained",
+    "live_experiment": null
   },
   {
     "module": "09-security",
     "topic": "authorization",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/09-security.md",
-    "notebook": "notebooks/09-security/lab.ipynb",
-    "exercise": "notebooks/09-security/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/security.py",
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/agent.py"
+    "explained_in": "docs/modules/09-security.md",
+    "implemented_by": [
+      "src/deep_agent_lab/security.py:authorize"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py",
-      "tests/test_tracing.py"
-    ]
+    "exercise_cell": "notebooks/09-security/lab.ipynb#09-06",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_path_traversal_absolute_and_sibling_prefix"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "09-security",
     "topic": "filesystem protection",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/09-security.md",
-    "notebook": "notebooks/09-security/lab.ipynb",
-    "exercise": "notebooks/09-security/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/security.py",
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/agent.py"
+    "explained_in": "docs/modules/09-security.md",
+    "implemented_by": [
+      "src/deep_agent_lab/security.py:scoped_path"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py",
-      "tests/test_tracing.py"
-    ]
+    "exercise_cell": "notebooks/09-security/lab.ipynb#09-11",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_path_traversal_absolute_and_sibling_prefix"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "09-security",
     "topic": "memory attacks",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/09-security.md",
-    "notebook": "notebooks/09-security/lab.ipynb",
-    "exercise": "notebooks/09-security/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/security.py",
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/agent.py"
+    "explained_in": "docs/modules/09-security.md",
+    "implemented_by": [
+      "src/deep_agent_lab/memory.py:MemoryStore.put"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py",
-      "tests/test_tracing.py"
-    ]
+    "exercise_cell": "notebooks/09-security/lab.ipynb#09-18",
+    "assertion_or_test": [
+      "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "09-security",
     "topic": "trace privacy",
-    "status": "Content suppression and sanitized exceptions verified; no blanket metadata guarantee",
-    "documentation": "docs/modules/09-security.md",
-    "notebook": "notebooks/09-security/lab.ipynb",
-    "exercise": "notebooks/09-security/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/security.py",
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/agent.py"
+    "explained_in": "docs/modules/09-security.md",
+    "implemented_by": [
+      "src/deep_agent_lab/tracing.py:Observation.update"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py",
-      "tests/test_tracing.py"
-    ]
+    "exercise_cell": "notebooks/09-security/lab.ipynb#09-15",
+    "assertion_or_test": [
+      "tests/test_observability.py::test_exception_trace_uses_type_not_secret_message"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "09-security",
     "topic": "MCP credential forwarding",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/09-security.md",
-    "notebook": "notebooks/09-security/lab.ipynb",
-    "exercise": "notebooks/09-security/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/security.py",
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/agent.py"
+    "explained_in": "docs/modules/09-security.md",
+    "implemented_by": [
+      "src/deep_agent_lab/tooling.py:remote_headers"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py",
-      "tests/test_tracing.py"
-    ]
+    "exercise_cell": "notebooks/09-security/lab.ipynb#09-15",
+    "assertion_or_test": [
+      "tests/test_foundations_tools.py::test_pagination_and_exact_remote_origin"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "09-security",
     "topic": "execution isolation",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/09-security.md",
-    "notebook": "notebooks/09-security/lab.ipynb",
-    "exercise": "notebooks/09-security/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/security.py",
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/agent.py"
-    ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py",
-      "tests/test_tracing.py"
-    ]
+    "explained_in": "docs/modules/09-security.md",
+    "implemented_by": [],
+    "exercise_cell": null,
+    "assertion_or_test": [],
+    "verification_level": "explained",
+    "live_experiment": null
   },
   {
     "module": "10-human-review",
     "topic": "LangGraph interrupts",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/10-human-review.md",
-    "notebook": "notebooks/10-human-review/lab.ipynb",
-    "exercise": "notebooks/10-human-review/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/10-human-review.md",
+    "implemented_by": [
+      "src/deep_agent_lab/agent.py:build_agent"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_course.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-08",
+    "assertion_or_test": [
+      "tests/test_course.py::test_checkpoint_review_restart"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "10-human-review",
     "topic": "exact-action approval",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/10-human-review.md",
-    "notebook": "notebooks/10-human-review/lab.ipynb",
-    "exercise": "notebooks/10-human-review/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/10-human-review.md",
+    "implemented_by": [
+      "src/deep_agent_lab/storage.py:BriefStore.decide"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_course.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "10-human-review",
     "topic": "approve/edit/reject",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/10-human-review.md",
-    "notebook": "notebooks/10-human-review/lab.ipynb",
-    "exercise": "notebooks/10-human-review/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/10-human-review.md",
+    "implemented_by": [
+      "src/deep_agent_lab/storage.py:BriefStore.decide"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_course.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "10-human-review",
     "topic": "payload validation",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/10-human-review.md",
-    "notebook": "notebooks/10-human-review/lab.ipynb",
-    "exercise": "notebooks/10-human-review/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/10-human-review.md",
+    "implemented_by": [
+      "src/deep_agent_lab/storage.py:BriefStore.decide"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_course.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "10-human-review",
     "topic": "stale approvals",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/10-human-review.md",
-    "notebook": "notebooks/10-human-review/lab.ipynb",
-    "exercise": "notebooks/10-human-review/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/10-human-review.md",
+    "implemented_by": [
+      "src/deep_agent_lab/storage.py:BriefStore.decide"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_course.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "10-human-review",
     "topic": "proposal versions",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/10-human-review.md",
-    "notebook": "notebooks/10-human-review/lab.ipynb",
-    "exercise": "notebooks/10-human-review/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/10-human-review.md",
+    "implemented_by": [
+      "src/deep_agent_lab/storage.py:BriefStore.decide"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_course.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "10-human-review",
     "topic": "expiration",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/10-human-review.md",
-    "notebook": "notebooks/10-human-review/lab.ipynb",
-    "exercise": "notebooks/10-human-review/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/10-human-review.md",
+    "implemented_by": [
+      "src/deep_agent_lab/storage.py:BriefStore.decide"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_course.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "10-human-review",
     "topic": "duplicate review",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/10-human-review.md",
-    "notebook": "notebooks/10-human-review/lab.ipynb",
-    "exercise": "notebooks/10-human-review/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/10-human-review.md",
+    "implemented_by": [
+      "src/deep_agent_lab/storage.py:BriefStore.decide"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_course.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "11-durable-execution",
     "topic": "checkpoints",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/11-durable-execution.md",
-    "notebook": "notebooks/11-durable-execution/lab.ipynb",
-    "exercise": "notebooks/11-durable-execution/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/jobs.py",
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/capstone.py"
+    "explained_in": "docs/modules/11-durable-execution.md",
+    "implemented_by": [
+      "src/deep_agent_lab/service.py:open_checkpointer"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-08",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_checkpoint_survives_an_actual_process_restart"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "11-durable-execution",
     "topic": "persistent jobs",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/11-durable-execution.md",
-    "notebook": "notebooks/11-durable-execution/lab.ipynb",
-    "exercise": "notebooks/11-durable-execution/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/jobs.py",
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/capstone.py"
+    "explained_in": "docs/modules/11-durable-execution.md",
+    "implemented_by": [
+      "src/deep_agent_lab/jobs.py:JobStore"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "11-durable-execution",
     "topic": "retries",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/11-durable-execution.md",
-    "notebook": "notebooks/11-durable-execution/lab.ipynb",
-    "exercise": "notebooks/11-durable-execution/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/jobs.py",
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/capstone.py"
+    "explained_in": "docs/modules/11-durable-execution.md",
+    "implemented_by": [
+      "src/deep_agent_lab/jobs.py:JobStore"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "11-durable-execution",
     "topic": "idempotency",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/11-durable-execution.md",
-    "notebook": "notebooks/11-durable-execution/lab.ipynb",
-    "exercise": "notebooks/11-durable-execution/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/jobs.py",
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/capstone.py"
+    "explained_in": "docs/modules/11-durable-execution.md",
+    "implemented_by": [
+      "src/deep_agent_lab/storage.py:BriefStore.save_reviewed"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-18",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_process_restart_and_ambiguous_write_reconciliation"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "11-durable-execution",
     "topic": "crash recovery",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/11-durable-execution.md",
-    "notebook": "notebooks/11-durable-execution/lab.ipynb",
-    "exercise": "notebooks/11-durable-execution/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/jobs.py",
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/capstone.py"
+    "explained_in": "docs/modules/11-durable-execution.md",
+    "implemented_by": [
+      "src/deep_agent_lab/storage.py:BriefStore.save_reviewed"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-18",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_process_restart_and_ambiguous_write_reconciliation"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "11-durable-execution",
     "topic": "leases",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/11-durable-execution.md",
-    "notebook": "notebooks/11-durable-execution/lab.ipynb",
-    "exercise": "notebooks/11-durable-execution/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/jobs.py",
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/capstone.py"
+    "explained_in": "docs/modules/11-durable-execution.md",
+    "implemented_by": [
+      "src/deep_agent_lab/jobs.py:JobStore"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "11-durable-execution",
     "topic": "fencing",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/11-durable-execution.md",
-    "notebook": "notebooks/11-durable-execution/lab.ipynb",
-    "exercise": "notebooks/11-durable-execution/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/jobs.py",
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/capstone.py"
+    "explained_in": "docs/modules/11-durable-execution.md",
+    "implemented_by": [
+      "src/deep_agent_lab/jobs.py:JobStore"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "11-durable-execution",
     "topic": "cancellation",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/11-durable-execution.md",
-    "notebook": "notebooks/11-durable-execution/lab.ipynb",
-    "exercise": "notebooks/11-durable-execution/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/jobs.py",
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/capstone.py"
+    "explained_in": "docs/modules/11-durable-execution.md",
+    "implemented_by": [
+      "src/deep_agent_lab/jobs.py:JobStore"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "11-durable-execution",
     "topic": "deadlines",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/11-durable-execution.md",
-    "notebook": "notebooks/11-durable-execution/lab.ipynb",
-    "exercise": "notebooks/11-durable-execution/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/jobs.py",
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/capstone.py"
+    "explained_in": "docs/modules/11-durable-execution.md",
+    "implemented_by": [
+      "src/deep_agent_lab/jobs.py:JobStore"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "11-durable-execution",
     "topic": "ambiguous writes",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/11-durable-execution.md",
-    "notebook": "notebooks/11-durable-execution/lab.ipynb",
-    "exercise": "notebooks/11-durable-execution/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/jobs.py",
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/capstone.py"
+    "explained_in": "docs/modules/11-durable-execution.md",
+    "implemented_by": [
+      "src/deep_agent_lab/storage.py:BriefStore.save_reviewed"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-18",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_process_restart_and_ambiguous_write_reconciliation"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "11-durable-execution",
     "topic": "reconciliation",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/11-durable-execution.md",
-    "notebook": "notebooks/11-durable-execution/lab.ipynb",
-    "exercise": "notebooks/11-durable-execution/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/jobs.py",
-      "src/deep_agent_lab/storage.py",
-      "src/deep_agent_lab/capstone.py"
+    "explained_in": "docs/modules/11-durable-execution.md",
+    "implemented_by": [
+      "src/deep_agent_lab/storage.py:BriefStore.save_reviewed"
     ],
-    "tests": [
-      "tests/test_review_jobs_security.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-18",
+    "assertion_or_test": [
+      "tests/test_review_jobs_security.py::test_process_restart_and_ambiguous_write_reconciliation"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "12-observability",
     "topic": "Langfuse tracing",
-    "status": "Actual SDK and span hierarchy verified locally; external export not verified",
-    "documentation": "docs/modules/12-observability.md",
-    "notebook": "notebooks/12-observability/lab.ipynb",
-    "exercise": "notebooks/12-observability/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tracing.py",
-      "src/deep_agent_lab/instrumentation.py",
-      "src/deep_agent_lab/storage.py"
+    "explained_in": "docs/modules/12-observability.md",
+    "implemented_by": [
+      "src/deep_agent_lab/tracing.py:Tracing"
     ],
-    "tests": [
-      "tests/test_tracing.py",
-      "tests/test_observability.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/12-observability/lab.ipynb#12-08",
+    "assertion_or_test": [
+      "tests/test_tracing.py::test_observations_exclude_content_by_default"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "12-observability",
     "topic": "spans",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/12-observability.md",
-    "notebook": "notebooks/12-observability/lab.ipynb",
-    "exercise": "notebooks/12-observability/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tracing.py",
-      "src/deep_agent_lab/instrumentation.py",
-      "src/deep_agent_lab/storage.py"
+    "explained_in": "docs/modules/12-observability.md",
+    "implemented_by": [
+      "src/deep_agent_lab/tracing.py:Tracing.span"
     ],
-    "tests": [
-      "tests/test_tracing.py",
-      "tests/test_observability.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/12-observability/lab.ipynb#12-08",
+    "assertion_or_test": [
+      "tests/test_tracing.py::test_observations_exclude_content_by_default"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "12-observability",
     "topic": "agent debugging",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/12-observability.md",
-    "notebook": "notebooks/12-observability/lab.ipynb",
-    "exercise": "notebooks/12-observability/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tracing.py",
-      "src/deep_agent_lab/instrumentation.py",
-      "src/deep_agent_lab/storage.py"
-    ],
-    "tests": [
-      "tests/test_tracing.py",
-      "tests/test_observability.py",
-      "tests/test_capstone.py"
-    ]
+    "explained_in": "docs/modules/12-observability.md",
+    "implemented_by": [],
+    "exercise_cell": null,
+    "assertion_or_test": [],
+    "verification_level": "explained",
+    "live_experiment": null
   },
   {
     "module": "12-observability",
     "topic": "model comparisons",
-    "status": "Controlled trial runner verified; no multi-model quality ranking claimed",
-    "documentation": "docs/modules/12-observability.md",
-    "notebook": "notebooks/12-observability/lab.ipynb",
-    "exercise": "notebooks/12-observability/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tracing.py",
-      "src/deep_agent_lab/instrumentation.py",
-      "src/deep_agent_lab/storage.py"
+    "explained_in": "docs/modules/12-observability.md",
+    "implemented_by": [
+      "src/deep_agent_lab/comparisons.py:agent_comparison"
     ],
-    "tests": [
-      "tests/test_tracing.py",
-      "tests/test_observability.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/12-observability/lab.ipynb#12-18",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "12-observability",
     "topic": "cost",
-    "status": "Accounting boundaries explained; prices and local power cost unmeasured",
-    "documentation": "docs/modules/12-observability.md",
-    "notebook": "notebooks/12-observability/lab.ipynb",
-    "exercise": "notebooks/12-observability/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tracing.py",
-      "src/deep_agent_lab/instrumentation.py",
-      "src/deep_agent_lab/storage.py"
-    ],
-    "tests": [
-      "tests/test_tracing.py",
-      "tests/test_observability.py",
-      "tests/test_capstone.py"
-    ]
+    "explained_in": "docs/modules/12-observability.md",
+    "implemented_by": [],
+    "exercise_cell": null,
+    "assertion_or_test": [],
+    "verification_level": "explained",
+    "live_experiment": null
   },
   {
     "module": "12-observability",
     "topic": "resource analysis",
-    "status": "Measured timings and reported tokens; VRAM and power unmeasured",
-    "documentation": "docs/modules/12-observability.md",
-    "notebook": "notebooks/12-observability/lab.ipynb",
-    "exercise": "notebooks/12-observability/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tracing.py",
-      "src/deep_agent_lab/instrumentation.py",
-      "src/deep_agent_lab/storage.py"
+    "explained_in": "docs/modules/12-observability.md",
+    "implemented_by": [
+      "src/deep_agent_lab/model_lab.py:invoke_record"
     ],
-    "tests": [
-      "tests/test_tracing.py",
-      "tests/test_observability.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/12-observability/lab.ipynb#12-18",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "12-observability",
     "topic": "trace timelines",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/12-observability.md",
-    "notebook": "notebooks/12-observability/lab.ipynb",
-    "exercise": "notebooks/12-observability/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tracing.py",
-      "src/deep_agent_lab/instrumentation.py",
-      "src/deep_agent_lab/storage.py"
+    "explained_in": "docs/modules/12-observability.md",
+    "implemented_by": [
+      "src/deep_agent_lab/model_lab.py:invoke_record"
     ],
-    "tests": [
-      "tests/test_tracing.py",
-      "tests/test_observability.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/12-observability/lab.ipynb#12-11",
+    "assertion_or_test": [],
+    "verification_level": "implemented",
+    "live_experiment": null
   },
   {
     "module": "12-observability",
     "topic": "bounded repair loops",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/12-observability.md",
-    "notebook": "notebooks/12-observability/lab.ipynb",
-    "exercise": "notebooks/12-observability/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tracing.py",
-      "src/deep_agent_lab/instrumentation.py",
-      "src/deep_agent_lab/storage.py"
+    "explained_in": "docs/modules/12-observability.md",
+    "implemented_by": [
+      "src/deep_agent_lab/instrumentation.py:ResearchMiddleware"
     ],
-    "tests": [
-      "tests/test_tracing.py",
-      "tests/test_observability.py",
-      "tests/test_capstone.py",
-      "tests/test_citation_repair.py"
-    ]
+    "exercise_cell": "notebooks/12-observability/lab.ipynb#12-15",
+    "assertion_or_test": [
+      "tests/test_citation_repair.py::test_citation_repair_has_one_targeted_attempt_and_disables_tools"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "12-observability",
     "topic": "artifact lineage",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/12-observability.md",
-    "notebook": "notebooks/12-observability/lab.ipynb",
-    "exercise": "notebooks/12-observability/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/tracing.py",
-      "src/deep_agent_lab/instrumentation.py",
-      "src/deep_agent_lab/storage.py"
+    "explained_in": "docs/modules/12-observability.md",
+    "implemented_by": [
+      "src/deep_agent_lab/storage.py:BriefStore.lineage"
     ],
-    "tests": [
-      "tests/test_tracing.py",
-      "tests/test_observability.py",
-      "tests/test_capstone.py"
-    ]
+    "exercise_cell": "notebooks/12-observability/lab.ipynb#12-18",
+    "assertion_or_test": [
+      "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "13-capstone",
     "topic": "integrated Northstar",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/13-capstone.md",
-    "notebook": "notebooks/13-capstone/lab.ipynb",
-    "exercise": "notebooks/13-capstone/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/13-capstone.md",
+    "implemented_by": [
+      "src/deep_agent_lab/capstone.py:Northstar"
     ],
-    "tests": [
-      "tests/test_capstone.py",
-      "tests/test_review_jobs_security.py",
-      "tests/test_evidence_evaluations.py"
-    ]
+    "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+    "assertion_or_test": [
+      "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "13-capstone",
     "topic": "evaluation",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/13-capstone.md",
-    "notebook": "notebooks/13-capstone/lab.ipynb",
-    "exercise": "notebooks/13-capstone/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/13-capstone.md",
+    "implemented_by": [
+      "src/deep_agent_lab/capstone.py:Northstar"
     ],
-    "tests": [
-      "tests/test_capstone.py",
-      "tests/test_review_jobs_security.py",
-      "tests/test_evidence_evaluations.py"
-    ]
+    "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+    "assertion_or_test": [
+      "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "13-capstone",
     "topic": "security",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/13-capstone.md",
-    "notebook": "notebooks/13-capstone/lab.ipynb",
-    "exercise": "notebooks/13-capstone/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/13-capstone.md",
+    "implemented_by": [
+      "src/deep_agent_lab/capstone.py:Northstar"
     ],
-    "tests": [
-      "tests/test_capstone.py",
-      "tests/test_review_jobs_security.py",
-      "tests/test_evidence_evaluations.py"
-    ]
+    "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+    "assertion_or_test": [
+      "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "13-capstone",
     "topic": "recovery",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/13-capstone.md",
-    "notebook": "notebooks/13-capstone/lab.ipynb",
-    "exercise": "notebooks/13-capstone/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/13-capstone.md",
+    "implemented_by": [
+      "src/deep_agent_lab/capstone.py:Northstar"
     ],
-    "tests": [
-      "tests/test_capstone.py",
-      "tests/test_review_jobs_security.py",
-      "tests/test_evidence_evaluations.py"
-    ]
+    "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+    "assertion_or_test": [
+      "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "13-capstone",
     "topic": "skills integration",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/13-capstone.md",
-    "notebook": "notebooks/13-capstone/lab.ipynb",
-    "exercise": "notebooks/13-capstone/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/13-capstone.md",
+    "implemented_by": [
+      "src/deep_agent_lab/capstone.py:Northstar"
     ],
-    "tests": [
-      "tests/test_capstone.py",
-      "tests/test_review_jobs_security.py",
-      "tests/test_evidence_evaluations.py"
-    ]
+    "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+    "assertion_or_test": [
+      "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "13-capstone",
     "topic": "memory integration",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/13-capstone.md",
-    "notebook": "notebooks/13-capstone/lab.ipynb",
-    "exercise": "notebooks/13-capstone/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/13-capstone.md",
+    "implemented_by": [
+      "src/deep_agent_lab/capstone.py:Northstar"
     ],
-    "tests": [
-      "tests/test_capstone.py",
-      "tests/test_review_jobs_security.py",
-      "tests/test_evidence_evaluations.py"
-    ]
+    "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+    "assertion_or_test": [
+      "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "13-capstone",
     "topic": "review integration",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/13-capstone.md",
-    "notebook": "notebooks/13-capstone/lab.ipynb",
-    "exercise": "notebooks/13-capstone/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/13-capstone.md",
+    "implemented_by": [
+      "src/deep_agent_lab/capstone.py:Northstar"
     ],
-    "tests": [
-      "tests/test_capstone.py",
-      "tests/test_review_jobs_security.py",
-      "tests/test_evidence_evaluations.py"
-    ]
+    "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+    "assertion_or_test": [
+      "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "13-capstone",
     "topic": "source revisions",
-    "status": "Provenance and stale-review checks verified; cross-database fencing remains a design boundary",
-    "documentation": "docs/modules/13-capstone.md",
-    "notebook": "notebooks/13-capstone/lab.ipynb",
-    "exercise": "notebooks/13-capstone/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/13-capstone.md",
+    "implemented_by": [
+      "src/deep_agent_lab/capstone.py:Northstar"
     ],
-    "tests": [
-      "tests/test_capstone.py",
-      "tests/test_review_jobs_security.py",
-      "tests/test_evidence_evaluations.py"
-    ]
+    "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+    "assertion_or_test": [
+      "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   },
   {
     "module": "13-capstone",
     "topic": "approved artifact lineage",
-    "status": "Offline implementation and notebook assertions verified",
-    "documentation": "docs/modules/13-capstone.md",
-    "notebook": "notebooks/13-capstone/lab.ipynb",
-    "exercise": "notebooks/13-capstone/lab.ipynb#Exercise",
-    "implementation": [
-      "src/deep_agent_lab/capstone.py",
-      "src/deep_agent_lab/service.py"
+    "explained_in": "docs/modules/13-capstone.md",
+    "implemented_by": [
+      "src/deep_agent_lab/capstone.py:Northstar"
     ],
-    "tests": [
-      "tests/test_capstone.py",
-      "tests/test_review_jobs_security.py",
-      "tests/test_evidence_evaluations.py"
-    ]
+    "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+    "assertion_or_test": [
+      "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+    ],
+    "verification_level": "deterministically_tested",
+    "live_experiment": null
   }
 ]

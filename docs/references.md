@@ -49,5 +49,5 @@ and executable mechanisms in this repository:
 - [Multi-agent research engineering](https://www.anthropic.com/engineering/multi-agent-research-system): decomposition, independent context and coordination costs.
 
 Northstar policies and source aliases BKP-7 revision 4, INC-3 revision 8 and ACC-2
-revision 3 are fictional teaching fixtures. Live ingestion assigns a content
+revision 3 are fictional policy sources. Live ingestion assigns a content
 revision digest; the friendly revision number is not the SQL revision key.

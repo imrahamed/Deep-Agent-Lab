@@ -2,6 +2,7 @@
   "status": "passed",
   "python": "3.11.9",
   "versions": {
+    "langchain-ollama": "1.1.0",
     "deepagents": "0.7.0",
     "langchain": "1.5.0",
     "langgraph": "1.2.22",

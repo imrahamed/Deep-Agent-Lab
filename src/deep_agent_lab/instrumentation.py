@@ -1,8 +1,69 @@
+import json
+from threading import Lock
+
 from langchain.agents.middleware import AgentMiddleware
 from langchain.agents.middleware.types import ExtendedModelResponse, ModelResponse
 from langchain.messages import HumanMessage, ToolMessage
+from langchain_core.callbacks import BaseCallbackHandler
 
 from deep_agent_lab.tracing import Tracing
+
+
+class ExecutionMetrics(BaseCallbackHandler):
+    """Count actual parent/child calls, failures, reported usage and repeated queries."""
+
+    def __init__(self):
+        self.lock = Lock()
+        self.started = 0
+        self.failed = 0
+        self.models = []
+        self.tools = []
+
+    def on_chat_model_start(self, serialized, messages, **kwargs):
+        with self.lock:
+            self.started += 1
+
+    def on_llm_error(self, error, **kwargs):
+        with self.lock:
+            self.failed += 1
+
+    def on_llm_end(self, response, **kwargs):
+        with self.lock:
+            for generations in response.generations:
+                for generation in generations:
+                    message = getattr(generation, "message", None)
+                    self.models.append(getattr(message, "usage_metadata", None))
+
+    def on_tool_start(self, serialized, input_str, **kwargs):
+        with self.lock:
+            self.tools.append({"name": serialized.get("name"), "input": input_str})
+
+    def report(self):
+        with self.lock:
+            searches = []
+            for item in self.tools:
+                if item["name"] == "search_knowledge":
+                    try:
+                        query = json.loads(item["input"])["query"]
+                    except (ValueError, KeyError, TypeError):
+                        query = item["input"]
+                    searches.append(" ".join(query.casefold().split()))
+            complete = bool(self.models) and len(self.models) == self.started and all(self.models)
+            return {
+                "model_calls": self.started,
+                "completed_model_calls": len(self.models),
+                "failed_model_calls": self.failed,
+                "tool_calls": len(self.tools),
+                "duplicated_retrieval": len(searches) - len(set(searches)),
+                "duplicate_retrieval_basis": "normalized_query",
+                "input_tokens": sum(row["input_tokens"] for row in self.models)
+                if complete
+                else None,
+                "output_tokens": sum(row["output_tokens"] for row in self.models)
+                if complete
+                else None,
+                "usage_complete": complete,
+            }
 
 
 class ResearchMiddleware(AgentMiddleware):
@@ -17,7 +78,7 @@ class ResearchMiddleware(AgentMiddleware):
             with self.tracing.span(
                 "deep-lab.model",
                 as_type="generation",
-                model=getattr(model_request.model, "model", "demo"),
+                model=getattr(model_request.model, "model", "unknown"),
                 metadata={"message_count": len(model_request.messages)},
                 input=[message.text for message in model_request.messages]
                 if self.tracing.capture_content

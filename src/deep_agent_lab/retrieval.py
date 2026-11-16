@@ -4,6 +4,9 @@ import math
 import re
 from collections import Counter
 from collections.abc import Callable
+from typing import Literal
+
+from pydantic import BaseModel, ConfigDict, Field
 
 from deep_agent_lab.knowledge import Evidence
 from deep_agent_lab.rag.search import reciprocal_rank_fusion
@@ -64,18 +67,108 @@ def rerank(query: str, candidates: list[Evidence], score: Callable, *, top_k=3):
     return [row for _, row in sorted(scored, key=lambda pair: (-pair[0], pair[1].id))][:top_k]
 
 
-def adaptive_search(query: str, search: Callable, reformulate: Callable, *, max_queries=2):
-    """Stop on a result, repeated query, or budget exhaustion. Failure is not an empty hit."""
-    if not 1 <= max_queries <= 5:
+class EvidenceAssessment(BaseModel):
+    model_config = ConfigDict(strict=True, extra="forbid")
+
+    answerable: bool
+    missing_information: list[str] = Field(default_factory=list)
+
+
+class AdaptiveSearchTrace(BaseModel):
+    original_question: str = Field(frozen=True)
+    queries_attempted: list[str]
+    retrieved_evidence: list[Evidence]
+    missing_information: list[str]
+    answerable: bool
+    stop_reason: Literal[
+        "answerable",
+        "query_budget_exhausted",
+        "repeated_query",
+        "reformulation_drift",
+        "no_new_query",
+    ]
+
+
+def protected_terms(question: str) -> set[str]:
+    """A conservative rewrite guard, with no claim to semantic equivalence checking."""
+    tokens = set(re.findall(r"[\w]+(?:-[\w]+)*", question.casefold()))
+    scope = {
+        "not",
+        "no",
+        "never",
+        "without",
+        "only",
+        "except",
+        "unless",
+        "production",
+        "staging",
+        "development",
+    }
+    return {token for token in tokens if any(c.isdigit() for c in token)} | (tokens & scope)
+
+
+def adaptive_search(
+    original_question: str,
+    search: Callable[[str], list[Evidence]],
+    reformulate: Callable[[str, list[str], list[str]], str],
+    assess: Callable[[str, list[Evidence]], EvidenceAssessment],
+    *,
+    max_queries: int = 2,
+) -> AdaptiveSearchTrace:
+    """Bound evidence gathering around an immutable question and an injected assessor.
+
+    Infrastructure and assessor errors propagate. They never establish policy absence.
+    Callbacks receive copies so their mutations cannot change accumulated trace state.
+    """
+    if type(max_queries) is not int or not 1 <= max_queries <= 5:
         raise ValueError("Invalid query budget")
-    queries = []
+    if not original_question.strip():
+        raise ValueError("A nonempty original question is required")
+    query = original_question
+    queries: list[str] = []
+    seen: set[str] = set()
+    registry: dict[str, Evidence] = {}
+    required = protected_terms(original_question)
+    assessment = EvidenceAssessment(answerable=False, missing_information=[original_question])
+    reason = "query_budget_exhausted"
     for _ in range(max_queries):
-        normalized = " ".join(query.lower().split())
-        if not normalized or normalized in queries:
+        normalized = " ".join(query.casefold().split())
+        if not normalized:
+            reason = "no_new_query"
             break
-        queries.append(normalized)
-        hits = search(query)
-        if hits:
-            return hits, queries
-        query = reformulate(query)
-    return [], queries
+        if normalized in seen:
+            reason = "repeated_query"
+            break
+        tokens = set(re.findall(r"[\w]+(?:-[\w]+)*", query.casefold()))
+        if required - tokens:
+            reason = "reformulation_drift"
+            break
+        seen.add(normalized)
+        queries.append(query)
+        for hit in search(query):
+            row = Evidence.model_validate(hit)
+            if row.id in registry and registry[row.id] != row:
+                raise ValueError("Conflicting content or provenance for an evidence ID")
+            registry.setdefault(row.id, row.model_copy(deep=True))
+        assessment = EvidenceAssessment.model_validate(
+            assess(original_question, [row.model_copy(deep=True) for row in registry.values()])
+        )
+        if assessment.answerable:
+            if not registry:
+                raise ValueError("An evidence-backed assessment requires evidence")
+            reason = "answerable"
+            break
+        if not assessment.missing_information:
+            raise ValueError("An unanswerable assessment must identify missing information")
+        if len(queries) < max_queries:
+            query = reformulate(
+                original_question, queries.copy(), assessment.missing_information.copy()
+            )
+    return AdaptiveSearchTrace(
+        original_question=original_question,
+        queries_attempted=queries,
+        retrieved_evidence=list(registry.values()),
+        missing_information=assessment.missing_information,
+        answerable=assessment.answerable,
+        stop_reason=reason,
+    )

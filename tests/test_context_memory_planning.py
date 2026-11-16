@@ -147,8 +147,8 @@ def test_specialist_timeout_partial_results_and_cancellation():
 
 
 def test_parent_independently_verifies_specialist_handoff():
-    from deep_agent_lab.knowledge import fixture_search
     from deep_agent_lab.planning import SpecialistFinding, verify_handoff
+    from tests.support import fixture_search
 
     row = fixture_search("restore", 1)[0]
     finding = SpecialistFinding(

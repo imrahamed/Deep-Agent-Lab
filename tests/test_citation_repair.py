@@ -4,9 +4,8 @@ from langchain.agents.middleware.types import ModelResponse
 from langchain.messages import AIMessage, HumanMessage, ToolMessage
 
 from deep_agent_lab.instrumentation import ResearchMiddleware
-from deep_agent_lab.knowledge import fixture_search
-from deep_agent_lab.model import DemoModel
 from deep_agent_lab.tracing import Tracing
+from tests.support import DemoModel, fixture_search
 
 
 def test_citation_repair_has_one_targeted_attempt_and_disables_tools():

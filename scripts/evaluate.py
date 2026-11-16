@@ -1,4 +1,4 @@
-"""Execute actual agent trials. Live evaluation is an explicit opt-in."""
+"""Execute actual agent trials against the configured models and retrieval services."""
 
 import argparse
 import json
@@ -11,7 +11,9 @@ from deep_agent_lab.settings import Settings
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--live", action="store_true")
+    parser.add_argument(
+        "--live", action="store_true", help="Compatibility flag; all trials use real services"
+    )
     parser.add_argument("--trials", type=int, default=1)
     parser.add_argument("--output", type=Path, default=Path("docs/reports/evaluation.json"))
     args = parser.parse_args()
@@ -21,9 +23,7 @@ def main():
             load_cases(root / "data/evaluation/northstar.jsonl"),
             Path(directory),
             trials=args.trials,
-            live_settings=Settings(deep_lab_mode="live", langfuse_enabled=False)
-            if args.live
-            else None,
+            live_settings=Settings(deep_lab_mode="live", langfuse_enabled=False),
         )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2), encoding="utf-8")

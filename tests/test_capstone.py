@@ -6,9 +6,41 @@ from deep_agent_lab.service import AgentService, Decision, ReviewRequest, open_c
 from deep_agent_lab.settings import Settings
 
 
+def test_research_record_uses_verifier_sentence_boundaries():
+    from types import SimpleNamespace
+
+    from deep_agent_lab.context import WorkingState
+    from deep_agent_lab.knowledge import Evidence
+    from deep_agent_lab.service import RunResult
+
+    row = Evidence(
+        id="multiline",
+        title="Policy",
+        source="policy.md",
+        position=0,
+        excerpt="Approval is required.\n\nValidation follows. Another condition.",
+    )
+    app = Northstar.__new__(Northstar)
+    app.inspect = lambda principal, job: RunResult(
+        thread_id="test", status="completed", evidence=[row]
+    )
+    app.service = SimpleNamespace(
+        config=lambda thread: {},
+        agent=SimpleNamespace(
+            get_state=lambda config: SimpleNamespace(
+                values={"working_state": WorkingState(objective="inspect").model_dump()}
+            )
+        ),
+    )
+    principal = Principal("northstar", "alice", permissions=frozenset({"research"}))
+    record = app.research_record(principal, "job")
+    assert record["claims"][0]["claim"]["text"] == "Approval is required."
+    assert record["claims"][0]["verdict"]["label"] == "supported"
+
+
 def test_capstone_scopes_plan_context_review_and_recovery(tmp_path):
     settings = Settings(
-        _env_file=None, deep_lab_mode="demo", deep_lab_state_dir=tmp_path, langfuse_enabled=False
+        _env_file=None, deep_lab_mode="live", deep_lab_state_dir=tmp_path, langfuse_enabled=False
     )
     alice, bob = Principal("northstar", "alice"), Principal("northstar", "bob")
     with open_checkpointer(settings) as saver:
@@ -61,7 +93,7 @@ def test_capstone_scopes_plan_context_review_and_recovery(tmp_path):
 def test_recovery_resumes_unfinished_tool_even_when_model_has_partial_text(tmp_path, monkeypatch):
     import time
 
-    from deep_agent_lab.model import DemoModel
+    from tests.support import DemoModel
 
     class Crash(BaseException):
         pass
@@ -75,7 +107,7 @@ def test_recovery_resumes_unfinished_tool_even_when_model_has_partial_text(tmp_p
             return response
 
     settings = Settings(
-        _env_file=None, deep_lab_mode="demo", deep_lab_state_dir=tmp_path, langfuse_enabled=False
+        _env_file=None, deep_lab_mode="live", deep_lab_state_dir=tmp_path, langfuse_enabled=False
     )
     alice = Principal("northstar", "alice")
     with open_checkpointer(settings) as saver:

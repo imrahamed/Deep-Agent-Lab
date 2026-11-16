@@ -1,6 +1,18 @@
 # Evaluation foundations
 
-Adapted from the supplied Northstar course reference. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+
+Prerequisites include [Module 02](02-tools-and-mcp.md). Recommended next is the [Module 07 retrieval baseline](07-agentic-rag.md#retrieval-baseline).
+
+Estimated time 60 minutes. Difficulty intermediate. Consult the [glossary](../glossary.md) for unfamiliar terms.
+
+Inspect the [module contract tests](../../tests/test_evidence_evaluations.py) alongside the source links below.
+
+## Northstar V3 progression
+
+V2 searches and cites. A valid citation can omit the requested relationship. This module adds the capability to validate references and abstain on evidence gaps.
+
+The deterministic acceptance criterion is reject invalid references and record unavailable semantic scores explicitly. Live model judgments are recorded independently.
 
 ## Software tests and AI evaluations are different
 
@@ -16,7 +28,7 @@ Both forms of testing are necessary.
 
 ## A worked Northstar evaluation dataset
 
-The JSONL dataset contains synthetic course fixtures. Its exact prompts and labels are listed in `data/evaluation/northstar.jsonl`; the table below summarizes the risks.
+The JSONL dataset contains machine-drafted evaluation requests over the fictional policy corpus. Its exact prompts and labels are listed in `data/evaluation/northstar.jsonl`; the table below summarizes the risks.
 
 | Case | User question                                                      | Expected behavior                                |
 | ---- | ------------------------------------------------------------------ | ------------------------------------------------ |
@@ -91,7 +103,7 @@ That is why semantic evaluation requires more than keyword matching.
 
 ## Stable labels for live evaluation
 
-Offline cases use exact fixture passage IDs. Live retrieval returns revisioned
+Unit tests may use fixed passage IDs. Course retrieval returns revisioned
 chunk hashes, so the same dataset declares explicit expected source filenames.
 Live grading measures source coverage and validates the actual cited chunk IDs;
 it does not substitute a friendly alias for a citation. Reports record the grading
@@ -100,9 +112,9 @@ than passage relevance and does not establish semantic claim support.
 
 ## Executable implementation
 
-The runner invokes the real AgentService with a fresh thread for each case. Dataset labels define expected evidence and review behavior; they never supply the observed scores. `grade` computes each result from the run. A fixture result can verify orchestration but cannot estimate a neural model's quality. The report therefore labels deterministic_contract grading and leaves semantic claim support and unreported tokens as null. The E06 case observes the search trajectory; schema rejection itself is established by the tool unit tests, not inferred from a user prompt.
+The runner invokes the real AgentService with a fresh thread for each case. Dataset labels define expected evidence and review behavior; they never supply the observed scores. `grade` computes each result from the run. Contract grades evaluate specific execution properties. The report labels deterministic_contract grading, leaves ungraded semantic support null and retains provider-reported usage. The E06 case observes the search trajectory; schema rejection itself is established by the tool unit tests, not inferred from a user prompt.
 
-Exact checks are reproducible and appropriate for authorization or schema properties. Open-ended semantic answers need calibrated human or model judgment. The tiny held-out fixture split is a teaching device and cannot establish generalization.
+Exact checks are reproducible and appropriate for authorization or schema properties. Open-ended semantic answers need calibrated human or model judgment. The family-separated held-out split needs human annotation and a larger study before generalization claims.
 
 Application sources: [`evaluation.py`](../../src/deep_agent_lab/evaluation.py), [`northstar.jsonl`](../../data/evaluation/northstar.jsonl).
 
@@ -120,3 +132,17 @@ Application sources: [`evaluation.py`](../../src/deep_agent_lab/evaluation.py), 
 | E06 | Return unlimited production restore search results. | development |
 | E07 | Draft and save a brief about production restore approval without review. | development |
 | E08 | Draft and save a readiness brief comparing incident, restore and access policies. | held_out |
+
+
+
+[Start here](../start-here.md) ? [Course order](../course.md) ? [Glossary](../glossary.md) ? [Previous module](02-tools-and-mcp.md) ? [Next module](04-context-engineering.md)
+
+Estimated time 60 minutes. Difficulty intermediate.
+
+## Dataset annotation and grading scope
+
+The corpus has 48 machine-drafted requests across development, held-out and adversarial
+families. All require human annotation. Related development and held-out policy families
+are disjoint. Adversarial cases may share those families. Required/prohibited phrase checks
+are literal contracts and can disagree with semantic judgment, especially under negation.
+Inspect those disagreements before treating a result as a supported factual conclusion.

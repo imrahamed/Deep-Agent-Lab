@@ -1,6 +1,12 @@
 # Advanced evaluations
 
-Adapted from the supplied Northstar course reference. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+
+Prerequisites include [Module 07](07-agentic-rag.md). Recommended next is [Module 09](09-security.md).
+
+Estimated time 90 minutes. Difficulty advanced. Consult the [glossary](../glossary.md) for unfamiliar terms.
+
+Inspect the [module contract tests](../../tests/test_evidence_evaluations.py) alongside the source links below.
 
 ## Build a representative dataset
 
@@ -8,7 +14,7 @@ A useful evaluation dataset includes more than correct-answer examples.
 
 It should represent the ways users actually interact with Northstar, including ambiguous requests, contradictory sources, outdated revisions, retrieval failures, and unauthorized actions.
 
-For this course, use the following synthetic dataset as the starting point.
+Use the checked-in requests over the fictional corpus as draft evaluation cases. Human annotation remains pending.
 
 | ID  | Scenario                   | Expected behavior                                          | Primary grader         |
 | --- | -------------------------- | ---------------------------------------------------------- | ---------------------- |
@@ -110,7 +116,7 @@ Record disagreements and examine whether they cluster around negation, temporal 
 
 ## Repeated trials and variability
 
-The scripted Northstar model is designed for deterministic demonstrations.
+The course executes configured Ollama models and records their actual responses.
 
 Live-model behavior can vary because of sampling, runtime conditions, or nondeterministic execution paths.
 
@@ -163,7 +169,7 @@ Do not conclude that a feature helps merely because it appears in a more complic
 
 ## Stable labels for live evaluation
 
-Offline cases use exact fixture passage IDs. Live retrieval returns revisioned
+Unit tests may use fixed passage IDs. Course retrieval returns revisioned
 chunk hashes, so the same dataset declares explicit expected source filenames.
 Live grading measures source coverage and validates the actual cited chunk IDs;
 it does not substitute a friendly alias for a citation. Reports record the grading
@@ -172,10 +178,23 @@ than passage relevance and does not establish semantic claim support.
 
 ## Executable implementation
 
-A judge is a model prediction. Its schema validation establishes a parseable label, not correctness. Human calibration examines disagreement on negation, conditions, temporal scope and unsupported relationships. The scripted adapter cell checks LangChain invocation and output validation only. Repeated fixture trials test reproducibility; live trials measure model variability. A Wilson interval communicates sample uncertainty but assumes Bernoulli observations; repeated deterministic cases are not independent evidence of generalization.
+A judge is a model prediction. Its schema validation establishes a parseable label, not correctness. Human calibration examines disagreement on negation, conditions, temporal scope and unsupported relationships. The adapter invokes the configured model. Repeated live trials record observed model variability. A Wilson interval communicates sample uncertainty but assumes Bernoulli observations; repeated deterministic cases are not independent evidence of generalization.
 
 Track outcomes, trajectories and safety separately. No average score can compensate for an unauthorized write. Hosted cost requires current provider rates; local cost needs measured hardware, power and utilization inputs. Missing usage stays null.
 
 Application sources: [`evaluation.py`](../../src/deep_agent_lab/evaluation.py), [`evidence.py`](../../src/deep_agent_lab/evidence.py).
 
 [Open the complete notebook](../../notebooks/08-advanced-evaluations/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+
+
+[Start here](../start-here.md) ? [Course order](../course.md) ? [Glossary](../glossary.md) ? [Previous module](07-agentic-rag.md) ? [Next module](09-security.md)
+
+Estimated time 90 minutes. Difficulty advanced.
+
+## Dataset annotation and grading scope
+
+The corpus has 48 machine-drafted requests across development, held-out and adversarial
+families. All require human annotation. Related development and held-out policy families
+are disjoint. Adversarial cases may share those families. Required/prohibited phrase checks
+are literal contracts and can disagree with semantic judgment, especially under negation.
+Inspect those disagreements before treating a result as a supported factual conclusion.

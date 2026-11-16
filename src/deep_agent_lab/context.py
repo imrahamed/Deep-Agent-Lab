@@ -62,6 +62,14 @@ def compact(state: WorkingState, summary: str) -> WorkingState:
     return state.model_copy(update={"summary": summary}, deep=True)
 
 
+def context_payload(evidence: list[dict], state: WorkingState) -> str:
+    """Deterministic payload including both evidence and working state/history."""
+    return json.dumps(
+        {"evidence": evidence, "working_state": state.model_dump()},
+        sort_keys=True, ensure_ascii=False, separators=(",", ":"),
+    )
+
+
 def validate_compaction(before: WorkingState, after: WorkingState):
     if before.model_dump(exclude={"summary"}) != after.model_dump(exclude={"summary"}):
         raise ValueError("Compaction lost required state")

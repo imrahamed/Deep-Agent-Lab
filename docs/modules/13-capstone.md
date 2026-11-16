@@ -1,6 +1,18 @@
 # Integrated Northstar capstone
 
-Adapted from the supplied Northstar course reference. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+
+Prerequisites include [Module 09](09-security.md), [Module 10](10-human-review.md), [Module 11](11-durable-execution.md) and [Module 12](12-observability.md). Recommended next is [operations](../operations.md) and [architecture](../architecture.md).
+
+Estimated time 150 minutes. Difficulty advanced. Consult the [glossary](../glossary.md) for unfamiliar terms.
+
+Inspect the [module contract tests](../../tests/test_capstone.py) alongside the source links below.
+
+## Northstar V8 progression
+
+V7 integrates evidence and review. Interrupted or replayed work risks false completion. This module adds the capability to compose durable recovery and artifact lineage.
+
+The deterministic acceptance criterion is review, lease and replay invariants hold in the integrated application. Live model judgments are recorded independently.
 
 ## Capstone scenario
 
@@ -39,7 +51,7 @@ The completed system must handle the following behaviors.
 
 The user must be able to inspect what the system found before authorizing a write.
 
-## Synthetic policy fixtures
+## Fictional policy corpus
 
 Create a controlled course corpus that contains these facts.
 
@@ -61,7 +73,7 @@ Create a controlled course corpus that contains these facts.
 
 Revision 5 is introduced later as a failure experiment.
 
-The fixtures deliberately do not define whether the restore approver automatically becomes Incident Commander.
+The canonical policy files do not define whether the restore approver automatically becomes Incident Commander.
 
 That missing relationship is a central evaluation case.
 
@@ -125,7 +137,7 @@ This is a conceptual evidence shape. The current repository uses its own `Eviden
 
 The restore and incident searches may benefit from separate specialists when the underlying documents are large or require substantial independent exploration.
 
-For the small synthetic corpus, a single agent may be more efficient.
+For this small fictional corpus, a single agent may be more efficient.
 
 The capstone should implement both modes and compare them on the same evaluation dataset.
 
@@ -246,7 +258,7 @@ Proposed course grading rubric, not measured model performance
 
 Approval violations and unauthorized cross-tenant access are critical failures regardless of the numerical total.
 
-For a complete submission, provide reproducible scripted tests, a clearly labeled live-model experiment report, failure walkthroughs, and an architecture explanation.
+For a complete submission, provide reproducible automated tests, a clearly labeled live-model experiment report, failure walkthroughs, and an architecture explanation.
 
 ## Capstone comprehension questions
 
@@ -280,8 +292,14 @@ No. Application-enforced authorization and side-effect controls are still necess
 
 Northstar wraps the existing AgentService. Trusted caller scope owns the durable job. A bounded preflight searches each topic through the existing retrieval interface, enforces research dependencies, reserves an evidence working set and preserves unresolved authority questions. The graph receives this state and scoped presentation preferences, reads the packaged skill, searches again when useful and can delegate. The research record exposes the persisted plan and conservative extractive claims; a human still reviews the actual generated Markdown. Jobs, briefs, review decisions and lineage share SQLite so the final lease/cancellation guard and write are atomic. External PostgreSQL policy activation remains a separate transaction boundary.
 
-This is a production-oriented local engineering lab, not an Internet-ready multi-user deployment. Identity integration, distributed graph ownership and cross-service revision fencing need an operational design. The optional live exercise tests model/retrieval behavior separately; offline success is not live-model certification.
+This is a production-oriented local engineering lab, not an Internet-ready multi-user deployment. Identity integration, distributed graph ownership and cross-service revision fencing need an operational design. The labs execute actual model and retrieval paths and retain observed failures for diagnosis.
 
 Application sources: [`capstone.py`](../../src/deep_agent_lab/capstone.py), [`service.py`](../../src/deep_agent_lab/service.py).
 
 [Open the complete notebook](../../notebooks/13-capstone/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+
+
+
+[Start here](../start-here.md) ? [Course order](../course.md) ? [Glossary](../glossary.md) ? [Previous module](12-observability.md)
+
+Estimated time 150 minutes. Difficulty advanced.

@@ -1,4 +1,3 @@
-from deep_agent_lab.model import DemoModel
 from deep_agent_lab.service import (
     AgentService,
     Decision,
@@ -7,6 +6,7 @@ from deep_agent_lab.service import (
     open_checkpointer,
 )
 from deep_agent_lab.settings import Settings
+from tests.support import DemoModel
 
 
 def test_review_hash_binds_the_validated_payload_that_the_tool_executes(tmp_path):
@@ -21,7 +21,7 @@ def test_review_hash_binds_the_validated_payload_that_the_tool_executes(tmp_path
             return response
 
     settings = Settings(
-        _env_file=None, deep_lab_mode="demo", deep_lab_state_dir=tmp_path, langfuse_enabled=False
+        _env_file=None, deep_lab_mode="live", deep_lab_state_dir=tmp_path, langfuse_enabled=False
     )
     with open_checkpointer(settings) as saver:
         service = AgentService(settings, saver, model=WhitespaceDemo())

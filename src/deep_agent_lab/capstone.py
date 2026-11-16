@@ -8,7 +8,7 @@ import json
 from dataclasses import asdict
 
 from deep_agent_lab.context import WorkingState, compact, select_evidence
-from deep_agent_lab.evidence import Claim, Reference, extractive_verdict
+from deep_agent_lab.evidence import Claim, Reference, extractive_verdict, source_sentences
 from deep_agent_lab.jobs import JobStore
 from deep_agent_lab.knowledge import search_knowledge
 from deep_agent_lab.memory import MemoryStore
@@ -169,7 +169,7 @@ class Northstar:
         claims = []
         for row in result.evidence:
             claim = Claim(
-                text=row.excerpt.split(". ")[0].rstrip(".") + ".",
+                text=source_sentences(row.excerpt)[0],
                 references=[
                     Reference(evidence_id=row.id, revision=row.revision, quote=row.excerpt)
                 ],

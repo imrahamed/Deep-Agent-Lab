@@ -13,7 +13,7 @@ flowchart TD
   P --> C[Selected evidence and scoped preferences]
   C --> A[Existing Deep Agents / LangGraph agent]
   A --> T[Search, skills, todos, specialist tools]
-  T --> R[Existing RAG pipeline or offline fixture corpus]
+  T --> R[Existing RAG pipeline and canonical policy sources]
   R --> E[Evidence IDs, quotations and source revisions]
   E --> H[Exact proposed save and human review]
   H --> V[Payload, version and current-revision checks]

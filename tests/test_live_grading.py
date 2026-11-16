@@ -1,6 +1,6 @@
 from deep_agent_lab.evaluation import EvalCase, grade
-from deep_agent_lab.knowledge import fixture_search
 from deep_agent_lab.service import RunResult
+from tests.support import fixture_search
 
 
 def test_live_grading_uses_explicit_sources_and_retains_exact_chunk_ids():

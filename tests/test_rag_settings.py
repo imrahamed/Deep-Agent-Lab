@@ -14,6 +14,7 @@ def test_live_mode_reuses_credentials_and_keeps_separate_index(tmp_path, monkeyp
         "LANGFUSE_CAPTURE_CONTENT=true\n",
         encoding="utf-8",
     )
+    monkeypatch.delenv("LANGFUSE_ENABLED", raising=False)
     monkeypatch.delenv("OPENSEARCH_INDEX", raising=False)
     monkeypatch.delenv("LANGFUSE_CAPTURE_CONTENT", raising=False)
     settings = Settings(
@@ -32,11 +33,8 @@ def test_live_mode_reuses_credentials_and_keeps_separate_index(tmp_path, monkeyp
     assert not settings.langfuse_capture_content
 
 
-def test_demo_can_run_without_inherited_settings(tmp_path):
-    settings = Settings(
-        _env_file=None,
-        deep_lab_mode="demo",
-        langfuse_enabled=False,
-        rag_lab_env_file=tmp_path / "missing.env",
-    )
-    assert settings.deep_lab_mode == "demo"
+def test_live_requires_valid_inherited_settings(tmp_path):
+    import pytest
+    with pytest.raises(ValueError, match="Could not read"):
+        Settings(_env_file=None, deep_lab_mode="live", langfuse_enabled=False,
+                 rag_lab_env_file=tmp_path / "missing.env")

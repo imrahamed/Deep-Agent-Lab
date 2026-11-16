@@ -24,7 +24,6 @@ def main() -> int:
     parser = argparse.ArgumentParser(prog="deep-lab", description="Run the Deep Agent Lab.")
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--live", action="store_true", help="Use RAG Lab and Ollama.")
-    mode.add_argument("--demo", action="store_true", help="Use offline fixtures.")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("doctor", help="Check dependencies for the selected mode.")
     sub.add_parser("init", help="Initialize the course schema and search index.")
@@ -53,11 +52,7 @@ def main() -> int:
     args = parser.parse_args()
 
     try:
-        selected_mode = "demo" if args.demo else "live" if args.live else None
-        overrides = {"deep_lab_mode": selected_mode} if selected_mode else {}
-        if args.demo:
-            overrides["langfuse_enabled"] = False
-        settings = Settings(**overrides)
+        settings = Settings(deep_lab_mode="live")
         if args.command == "doctor":
             status = doctor(settings, check_tracing=True)
             print(json.dumps(status, indent=2))

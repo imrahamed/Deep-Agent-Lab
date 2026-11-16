@@ -1,5 +1,7 @@
 # Module 3 · Context management
 
+Archived supplemental chapter. Follow the [current thirteen-module course](course.md) and [service setup](start-here.md) for the maintained learning path.
+
 [Course home](course.md) · [Previous module](module-2-execution-environment.md) · [Next module](module-4-delegation.md)
 
 An incident review might span dozens of searches and several draft revisions.
@@ -35,7 +37,7 @@ validate independently of the current model input.
 uv run python -m deep_agent_lab.labs context
 ```
 
-The tool produces a 9,400-character mock archive. The exercise lowers the inline
+The tool produces the actual repository policy archive. The exercise lowers the inline
 size threshold to make offloading visible with a small text. Compare
 `original_chars` with `tool_message`. The message starts with a pointer to
 `/large_tool_results/fetch_archive` and includes a preview. In a full run the
@@ -83,12 +85,12 @@ agent can discover which procedure fits without loading every full procedure
 into every request.
 
 ```powershell
-uv run deep-lab --demo ask "Draft an evidence brief about production restore approval."
+uv run deep-lab --live ask "Draft an evidence brief about production restore approval."
 ```
 
 Look for `read_file` before the brief appears. The procedure tells the agent to
 state the question, cite each finding, list gaps, and suggest next steps. The
-demo is scripted to show the read. Live mode lets you observe whether a model
+lab records actual tool calls so you can observe whether the model
 chooses the skill for a paraphrased request.
 
 **Real-world example.** A documentation team needs both a technical incident

@@ -1,5 +1,7 @@
 # Module 1 · Agent foundations
 
+Archived supplemental chapter. Follow the [current thirteen-module course](course.md) and [service setup](start-here.md) for the maintained learning path.
+
 [Course home](course.md) · [Next module](module-2-execution-environment.md)
 
 A teammate asks who can authorize a production restore. The answer needs to come
@@ -17,7 +19,7 @@ model. A **runtime** executes the steps, updates state, and handles pauses.
 
 | Layer | Responsibility | In this lab |
 | --- | --- | --- |
-| Chat model | Chooses an action or writes an answer | Scripted demo or Ollama |
+| Chat model | Chooses an action or writes an answer | Configured Ollama model |
 | LangChain | Defines how tools and messages are represented | Tool schemas and message objects |
 | Deep Agents | Assembles agent capabilities | Planning, files, skills, delegation, context management |
 | LangGraph | Runs and checkpoints the graph | Model and tool steps, interrupts, resume |
@@ -39,7 +41,7 @@ The harness presents its options and the runtime executes them.
 
 ```powershell
 $thread = "foundations-$([guid]::NewGuid().ToString('N'))"
-$result = uv run deep-lab --demo ask "Who approves a production restore?" --thread $thread |
+$result = uv run deep-lab --live ask "Who approves a production restore?" --thread $thread |
     ConvertFrom-Json
 $result.answer
 $result.steps
@@ -175,8 +177,8 @@ A checkpoint can exist while the official brief store still has zero rows for
 that proposal.
 
 ```powershell
-uv run deep-lab --demo thread $thread
-uv run deep-lab --demo ask "Show the restore policy again." --thread $thread
+uv run deep-lab --live thread $thread
+uv run deep-lab --live ask "Show the restore policy again." --thread $thread
 ```
 
 The second call adds a turn. The evidence and tool steps in the result can
@@ -190,18 +192,18 @@ handling rule. A saved brief has its own ID and lifetime.
 
 ```powershell
 $reviewThread = "review-$([guid]::NewGuid().ToString('N'))"
-$proposal = uv run deep-lab --demo ask "Draft and save an evidence brief about production restore approval." --thread $reviewThread |
+$proposal = uv run deep-lab --live ask "Draft and save an evidence brief about production restore approval." --thread $reviewThread |
     ConvertFrom-Json
 $proposal.status
 $proposal.reviews[0].action_requests[0].args.markdown
 $proposal.saved_brief_ids.Count
-uv run deep-lab --demo thread $reviewThread
-uv run deep-lab --demo review $reviewThread $proposal.reviews[0].id reject
+uv run deep-lab --live thread $reviewThread
+uv run deep-lab --live review $reviewThread $proposal.reviews[0].id reject
 ```
 
 The run is `interrupted` and a new CLI process can inspect the proposal. Repeat
 with a fresh thread and `approve`. `saved_brief_ids` identifies the committed brief.
-Fetch it with `uv run deep-lab --demo brief <brief-id>`, substituting your result. To edit,
+Fetch it with `uv run deep-lab --live brief <brief-id>`, substituting your result. To edit,
 pass `--title` and `--markdown-file` with replacement Markdown. Preserve a citation
 from the thread's retrieved evidence. Invalid or absent citations cause the save
 to be declined, and a stale review ID causes a conflict.
@@ -218,14 +220,14 @@ file contains one sentence with the exact citation from the backup policy:
 ```powershell
 $reviewThread = "edit-$([guid]::NewGuid().ToString('N'))"
 $prompt = "Draft and save an evidence brief about production restore approval."
-$proposal = uv run deep-lab --demo ask $prompt --thread $reviewThread | ConvertFrom-Json
+$proposal = uv run deep-lab --live ask $prompt --thread $reviewThread | ConvertFrom-Json
 $source = $proposal.evidence | Where-Object id -eq 'northstar-restore' | Select-Object -First 1
 $draftPath = Join-Path ([IO.Path]::GetTempPath()) 'northstar-review.md'
 "The database operations lead approves production restores. $($source.citation)" |
     Set-Content -LiteralPath $draftPath -Encoding utf8
-$finished = uv run deep-lab --demo review $reviewThread $proposal.reviews[0].id edit --title "Restore approval" --markdown-file $draftPath |
+$finished = uv run deep-lab --live review $reviewThread $proposal.reviews[0].id edit --title "Restore approval" --markdown-file $draftPath |
     ConvertFrom-Json
-uv run deep-lab --demo brief $finished.saved_brief_ids[0]
+uv run deep-lab --live brief $finished.saved_brief_ids[0]
 ```
 
 Read the brief that the app returns by ID to verify its contents, especially

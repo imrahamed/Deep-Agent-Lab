@@ -4,7 +4,6 @@ import pytest
 from fastapi.testclient import TestClient
 
 from deep_agent_lab.api import create_app
-from deep_agent_lab.labs import run_lab
 from deep_agent_lab.service import (
     AgentService,
     Decision,
@@ -13,13 +12,14 @@ from deep_agent_lab.service import (
     open_checkpointer,
 )
 from deep_agent_lab.settings import Settings
+from tests.support_labs import run_lab
 
 PROMPT = "Draft and save an evidence brief about production restore approval."
 
 
 def configuration(directory: Path) -> Settings:
     return Settings(
-        _env_file=None, deep_lab_mode="demo", deep_lab_state_dir=directory, langfuse_enabled=False
+        _env_file=None, deep_lab_mode="live", deep_lab_state_dir=directory, langfuse_enabled=False
     )
 
 

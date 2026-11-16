@@ -1,6 +1,18 @@
 # Planning and delegation
 
-Adapted from the supplied Northstar course reference. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+
+Prerequisites include [Module 05](05-skills-and-memory.md) and the [retrieval baseline](07-agentic-rag.md#retrieval-baseline). Recommended next is [advanced Module 07](07-agentic-rag.md#evidence-sufficiency-and-faithful-reformulation).
+
+Estimated time 120 minutes. Difficulty advanced. Consult the [glossary](../glossary.md) for unfamiliar terms.
+
+Inspect the [module contract tests](../../tests/test_context_memory_planning.py) alongside the source links below.
+
+## Northstar V6 progression
+
+V5 maintains skills and scoped memory. Independent policy research can duplicate work or omit handoffs. This module adds the capability to coordinate specialists with dependency and evidence acceptance checks.
+
+The deterministic acceptance criterion is dependent tasks wait for verified evidence and failures preserve sibling state. Live model judgments are recorded independently.
 
 ## Plans are not evidence of completion
 
@@ -123,10 +135,16 @@ Do not assume that more agents produce better answers.
 
 ## Executable implementation
 
-The task graph has two independent research nodes and a dependent comparison. `complete_task` accepts only evidence present in the trusted registry. A todo label is coordination metadata and is insufficient for verification. The existing Deep Agents lab uses separate child contexts and real task tools; scripted child answers make its scheduling reproducible. `asyncio.Semaphore` is comparable to a concurrency limiter around Promise.all. Our dispatcher adds per-task timeouts, a total deadline and cancellation cleanup; it remains process-local.
+The task graph has two independent research nodes and a dependent comparison. `complete_task` accepts only evidence present in the trusted registry. A todo label is coordination metadata and is insufficient for verification. The existing Deep Agents lab uses separate child contexts and real task tools; child models execute actual research calls and their handoffs require verification. `asyncio.Semaphore` is comparable to a concurrency limiter around Promise.all. Our dispatcher adds per-task timeouts, a total deadline and cancellation cleanup; it remains process-local.
 
 Delegation can isolate large contexts and shorten independent work. It also adds parent/child model calls and verification. For one short passage, direct RAG is usually the simpler baseline. Async execution alone cannot survive a process crash.
 
 Application sources: [`planning.py`](../../src/deep_agent_lab/planning.py), [`labs.py`](../../src/deep_agent_lab/labs.py).
 
 [Open the complete notebook](../../notebooks/06-planning-and-delegation/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+
+
+
+[Prerequisite retrieval baseline](07-agentic-rag.md#retrieval-baseline) ? [Start here](../start-here.md) ? [Course order](../course.md) ? [Glossary](../glossary.md) ? [Previous module](05-skills-and-memory.md) ? [Next module](07-agentic-rag.md)
+
+Estimated time 120 minutes. Difficulty advanced.

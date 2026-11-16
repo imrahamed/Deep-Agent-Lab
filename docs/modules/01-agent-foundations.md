@@ -1,6 +1,18 @@
 # Agent foundations
 
-Adapted from the supplied Northstar course reference. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+
+Prerequisites include the [Python bridge](../python-bridge.md). Recommended next is [Module 02](02-tools-and-mcp.md).
+
+Estimated time 60 minutes. Difficulty introductory. Consult the [glossary](../glossary.md) for unfamiliar terms.
+
+Inspect the [module contract tests](../../tests/test_foundations_tools.py) alongside the source links below.
+
+## Northstar V1 progression
+
+Start with a supplied policy paragraph. A question requiring undiscovered policy evidence fails. This module adds the capability to answer from supplied policy text.
+
+The deterministic acceptance criterion is compare the answer and source paragraph. Live model judgments are recorded independently.
 
 ## LLM inference from first principles
 
@@ -134,10 +146,16 @@ Agent complexity is justified by uncertainty in the required sequence of work—
 
 ## Executable implementation
 
-The scripted decision is explicitly a fixture: it performs no neural inference. It still returns the same two kinds of action a live model would request. Pydantic validates at runtime, whereas Python type hints alone do not. The real factory in `agent.py` constructs Deep Agents on LangGraph; its checkpoint contains HumanMessage, AIMessage and ToolMessage objects. The tool-call ID pairs an observation with its request. A workflow fixes the order in code; an agent can select the next tool from observations.
+The foundation lab invokes the installed model client, inspects actual messages and validates real tool calls. Pydantic validates at runtime, whereas Python type hints alone do not. The real factory in `agent.py` constructs Deep Agents on LangGraph; its checkpoint contains HumanMessage, AIMessage and ToolMessage objects. The tool-call ID pairs an observation with its request. A workflow fixes the order in code; an agent can select the next tool from observations.
 
 A single policy lookup often needs direct RAG rather than an agent. Use the feedback loop when the next search depends on the previous observation. Temperature zero reduces sampling variation but does not establish factual correctness.
 
 Application sources: [`foundations.py`](../../src/deep_agent_lab/foundations.py), [`agent.py`](../../src/deep_agent_lab/agent.py).
 
 [Open the complete notebook](../../notebooks/01-agent-foundations/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+
+
+
+[Start here](../start-here.md) ? [Course order](../course.md) ? [Glossary](../glossary.md) ? [Next module](02-tools-and-mcp.md)
+
+Estimated time 60 minutes. Difficulty introductory.

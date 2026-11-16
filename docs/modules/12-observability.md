@@ -1,6 +1,12 @@
 # Observability
 
-Adapted from the supplied Northstar course reference. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+
+Prerequisites include [Module 03](03-evaluation-foundations.md) and [Module 11](11-durable-execution.md). Recommended next is [Module 13](13-capstone.md).
+
+Estimated time 90 minutes. Difficulty advanced. Consult the [glossary](../glossary.md) for unfamiliar terms.
+
+Inspect the [module contract tests](../../tests/test_tracing.py) alongside the source links below.
 
 ## Trace structure
 
@@ -24,7 +30,7 @@ These are observable facts. Debugging should not depend on exposing hidden model
 
 Your repository already provides optional Langfuse tracing and privacy controls.
 
-The notebook exercises the installed Langfuse Python SDK with an OpenTelemetry in-memory exporter, then inspects real span parentage and timings. It uses the existing tracing wrapper and sends no content to an external backend.
+The notebook records actual provider and retrieval operations and invokes the production tracing wrapper. External export can be enabled explicitly with RUN_LANGFUSE_EXPORT=1 and configured Langfuse credentials. Verification keeps export disabled. Automated unit tests check SDK span parentage and exporter failure isolation.
 
 The same instrumentation can be expressed with decorators or manual observations.
 
@@ -149,10 +155,23 @@ No model benchmark or cost claim in this course should be considered measured un
 
 ## Executable implementation
 
-The experiment uses the installed Langfuse SDK and an OpenTelemetry in-memory exporter. Span creation and parent relationships are real; the remote backend is deliberately absent. The application wrapper suppresses input and output content by default and records sanitized exception types. Metadata still needs a deliberate schema because content suppression cannot sanitize arbitrary values. A trace records what happened, while an evaluation judges whether it was correct. Compare models with the same cases, prompts, tool contracts, retrieval and hardware conditions; retain each trial.
+The experiment records real model and retrieval durations and provider-reported usage. It prints the production tracing configuration. External export requires its explicit configuration. The application wrapper suppresses input and output content by default and records sanitized exception types. Metadata still needs a deliberate schema because content suppression cannot sanitize arbitrary values. A trace records what happened, while an evaluation judges whether it was correct. Compare models with the same cases, prompts, tool contracts, retrieval and hardware conditions; retain each trial.
 
-Capture only telemetry you can use and retain responsibly. Scripted model timing does not predict Ollama performance. Hosted token prices, power, VRAM and hardware amortization require separate measured inputs; a missing value is not zero.
+Capture only telemetry you can use and retain responsibly. The notebook timeline records actual operations from its kernel. Hosted token prices, power, VRAM and hardware amortization require separate measured inputs; a missing value is not zero.
 
 Application sources: [`tracing.py`](../../src/deep_agent_lab/tracing.py), [`instrumentation.py`](../../src/deep_agent_lab/instrumentation.py), [`storage.py`](../../src/deep_agent_lab/storage.py).
 
 [Open the complete notebook](../../notebooks/12-observability/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+
+
+[Start here](../start-here.md) ? [Course order](../course.md) ? [Glossary](../glossary.md) ? [Previous module](11-durable-execution.md) ? [Next module](13-capstone.md)
+
+Estimated time 90 minutes. Difficulty advanced.
+
+## Executable model comparisons
+
+Run `uv run python scripts/compare.py models --models qwen3.5:latest llama3.2:3b --case-limit 2`
+to compare actual configured model executions. The report retains source/dataset hashes,
+configuration, parent/child calls, reported usage and a labelled whole-answer support judge.
+Draft annotations remain visible and model judgments require calibration. No ranking is
+asserted before a corresponding experiment has executed.

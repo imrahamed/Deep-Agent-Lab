@@ -1,5 +1,7 @@
 # Module 2 · Execution environment
 
+Archived supplemental chapter. Follow the [current thirteen-module course](course.md) and [service setup](start-here.md) for the maintained learning path.
+
 [Course home](course.md) · [Previous module](module-1-agent-foundations.md) · [Next module](module-3-context-management.md)
 
 A restore-drill report needs a policy excerpt, raw measurements, and somewhere to

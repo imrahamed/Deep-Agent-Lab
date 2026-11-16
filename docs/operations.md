@@ -23,7 +23,7 @@ process environment, then the local `.env`, inherited settings, and defaults.
 | `DEEP_LAB_STATE_DIR` | Base for local checkpoints and approved briefs, with separate `demo` and `live` subdirectories |
 
 This checkout has Langfuse enabled and content capture off. Use
-`uv run deep-lab --demo ask "<question>"` for a fixture run. Use the same mode
+`uv run deep-lab ask "<question>"` for actual model and retrieval execution. Use the same mode
 for subsequent `thread`, `review`, and `brief` commands so they read the same
 state directory. The API takes its mode from configuration.
 
@@ -61,8 +61,8 @@ dimensions, and prefixes. [Ingestion and search lesson](module-5-capstone.md#51-
 uv run uvicorn deep_agent_lab.api:app --host 127.0.0.1 --port 8001
 ```
 
-Open the [interactive API](http://127.0.0.1:8001/docs). For a scripted server,
-set `$env:DEEP_LAB_MODE = 'demo'` in that terminal before starting it. Use
+Open the [interactive API](http://127.0.0.1:8001/docs). For the local service,
+set `$env:DEEP_LAB_MODE = 'live'` in that terminal before starting it. Use
 `Remove-Item Env:DEEP_LAB_MODE` to return to the checkout setting. The lab is a
 single-worker loopback service with no user authentication. Keep thread writes
 sequential across CLI and API processes.

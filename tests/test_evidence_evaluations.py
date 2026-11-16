@@ -17,8 +17,8 @@ from deep_agent_lab.evidence import (
     extractive_verdict,
     validate_references,
 )
-from deep_agent_lab.knowledge import fixture_search
-from deep_agent_lab.retrieval import adaptive_search, bm25, cosine, hybrid, rerank, vector_rank
+from deep_agent_lab.retrieval import bm25, cosine, hybrid, rerank, vector_rank
+from tests.support import fixture_search
 
 
 def test_provenance_and_valid_but_irrelevant_citations():
@@ -74,17 +74,13 @@ def test_rankers_reformulation_and_reranking():
     with pytest.raises(ValueError):
         hybrid([], [], k=0)
     assert rerank("commander", rows, lambda q, text: float(q in text))[0].id == "northstar-incident"
-    hits, queries = adaptive_search(
-        "unknown", lambda q: [1] if q == "restore" else [], lambda q: "restore"
-    )
-    assert hits == [1] and len(queries) == 2
-    assert adaptive_search("missing", lambda q: [], lambda q: q)[1] == ["missing"]
 
 
 def test_actual_agent_evaluations_and_metrics(tmp_path):
     dataset = Path(__file__).resolve().parents[1] / "data/evaluation/northstar.jsonl"
-    report = run_evaluation(load_cases(dataset), tmp_path)
-    assert report["kind"] == "measured" and report["summary"]["count"] == 8
+    cases = load_cases(dataset)[:8]
+    report = run_evaluation(cases, tmp_path)
+    assert report["kind"] == "measured" and report["summary"]["count"] == len(cases)
     assert report["summary"]["failures"] == []
     assert all(t["input_tokens"] is None and t["claim_support"] is None for t in report["trials"])
     assert regression_gate(report, report)

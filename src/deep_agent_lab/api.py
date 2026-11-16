@@ -51,11 +51,7 @@ def create_app(settings: Settings | None = None, *, model=None) -> FastAPI:
     @app.get("/health")
     def health(request: Request):
         rag = request.app.state.agent.rag
-        data = (
-            {"mode": "live", **rag.health()}
-            if rag is not None
-            else {"mode": "demo", "status": "ok"}
-        )
+        data = {"mode": "live", **rag.health()}
         return JSONResponse(status_code=200 if data["status"] == "ok" else 503, content=data)
 
     @app.get("/api/v1/documents")

@@ -4,8 +4,8 @@ import httpx
 from mcp.server.fastmcp import FastMCP
 from mcp.server.transport_security import TransportSecuritySettings
 
-from deep_agent_lab.knowledge import fixture_search
 from deep_agent_lab.tooling import remote_mcp_search
+from tests.support import fixture_search
 
 
 def test_real_streamable_http_protocol_with_in_process_authenticated_transport():

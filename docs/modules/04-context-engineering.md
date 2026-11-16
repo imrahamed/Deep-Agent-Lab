@@ -1,6 +1,18 @@
 # Context engineering
 
-Adapted from the supplied Northstar course reference. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+
+Prerequisites include [Module 03](03-evaluation-foundations.md) and the [retrieval baseline](07-agentic-rag.md#retrieval-baseline). Recommended next is [Module 05](05-skills-and-memory.md).
+
+Estimated time 90 minutes. Difficulty intermediate. Consult the [glossary](../glossary.md) for unfamiliar terms.
+
+Inspect the [module contract tests](../../tests/test_context_memory_planning.py) alongside the source links below.
+
+## Northstar V4 progression
+
+V3 verifies references and records gaps. Long history can lose a precondition or unresolved question. This module adds the capability to preserve structured working state during selection and compaction.
+
+The deterministic acceptance criterion is all durable state fields survive compaction. Live model judgments are recorded independently.
 
 ## Context is not memory
 
@@ -151,3 +163,9 @@ A shorter prompt can lose decisive counterevidence. Measure evidence retention s
 Application sources: [`context.py`](../../src/deep_agent_lab/context.py), [`labs.py`](../../src/deep_agent_lab/labs.py).
 
 [Open the complete notebook](../../notebooks/04-context-engineering/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+
+
+
+[Start here](../start-here.md) ? [Course order](../course.md) ? [Glossary](../glossary.md) ? [Previous module](03-evaluation-foundations.md) ? [Next module](05-skills-and-memory.md)
+
+Estimated time 90 minutes. Difficulty intermediate.

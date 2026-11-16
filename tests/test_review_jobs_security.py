@@ -120,7 +120,7 @@ s.save_reviewed('thread','Title','approved content',{'source':'4'})
 
 def test_agent_injected_excerpt_cannot_bypass_review(tmp_path, monkeypatch):
     import deep_agent_lab.agent as agent_module
-    from deep_agent_lab.knowledge import fixture_search
+    from tests.support import fixture_search
 
     original = fixture_search("restore", 1)[0]
     injected = original.model_copy(
@@ -128,7 +128,7 @@ def test_agent_injected_excerpt_cannot_bypass_review(tmp_path, monkeypatch):
     )
     monkeypatch.setattr(agent_module, "search_knowledge", lambda *args, **kwargs: [injected])
     settings = Settings(
-        _env_file=None, deep_lab_mode="demo", langfuse_enabled=False, deep_lab_state_dir=tmp_path
+        _env_file=None, deep_lab_mode="live", langfuse_enabled=False, deep_lab_state_dir=tmp_path
     )
     with open_checkpointer(settings) as saver:
         service = AgentService(settings, saver)
@@ -162,7 +162,7 @@ def test_path_traversal_absolute_and_sibling_prefix(tmp_path):
 @pytest.mark.parametrize("decision", ["approve", "edit", "reject"])
 def test_recover_decision_recorded_before_graph_resumption(tmp_path, monkeypatch, decision):
     settings = Settings(
-        _env_file=None, deep_lab_mode="demo", langfuse_enabled=False, deep_lab_state_dir=tmp_path
+        _env_file=None, deep_lab_mode="live", langfuse_enabled=False, deep_lab_state_dir=tmp_path
     )
     with open_checkpointer(settings) as saver:
         service = AgentService(settings, saver)
@@ -251,10 +251,12 @@ def test_review_batch_rolls_back_all_decisions_on_a_stale_payload(tmp_path):
 def test_checkpoint_survives_an_actual_process_restart(tmp_path):
     code = """
 import json,sys
+from tests.support import install_runtime
+install_runtime()
 from pathlib import Path
 from deep_agent_lab.settings import Settings
 from deep_agent_lab.service import AgentService,RunRequest,open_checkpointer
-s=Settings(_env_file=None,deep_lab_mode='demo',langfuse_enabled=False,
+s=Settings(_env_file=None,deep_lab_mode='live',langfuse_enabled=False,
            deep_lab_state_dir=Path(sys.argv[1]))
 with open_checkpointer(s) as cp:
  a=AgentService(s,cp)
@@ -273,7 +275,7 @@ with open_checkpointer(s) as cp:
     )
     pending = json.loads(child.stdout)
     settings = Settings(
-        _env_file=None, deep_lab_mode="demo", langfuse_enabled=False, deep_lab_state_dir=tmp_path
+        _env_file=None, deep_lab_mode="live", langfuse_enabled=False, deep_lab_state_dir=tmp_path
     )
     with open_checkpointer(settings) as saver:
         service = AgentService(settings, saver)

@@ -21,6 +21,120 @@
     "implementation": [
       "src/deep_agent_lab/foundations.py",
       "src/deep_agent_lab/agent.py"
+    ],
+    "estimated_minutes": 60,
+    "difficulty": "Introductory",
+    "topic_records": [
+      {
+        "topic": "LLM inference",
+        "explained_in": "docs/modules/01-agent-foundations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/model_lab.py:course_model"
+        ],
+        "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-06",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "tokens",
+        "explained_in": "docs/modules/01-agent-foundations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/model_lab.py:invoke_record"
+        ],
+        "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-11",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "messages",
+        "explained_in": "docs/modules/01-agent-foundations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/model_lab.py:tool_exchange"
+        ],
+        "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-15",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "structured outputs",
+        "explained_in": "docs/modules/01-agent-foundations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/model_lab.py:PolicyAnswer"
+        ],
+        "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-13",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "agent loops",
+        "explained_in": "docs/modules/01-agent-foundations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/foundations.py:agent_loop"
+        ],
+        "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-15",
+        "assertion_or_test": [
+          "tests/test_foundations_tools.py::test_invalid_call_never_executes_and_loop_is_bounded"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "workflows vs agents",
+        "explained_in": "docs/modules/01-agent-foundations.md",
+        "implemented_by": [],
+        "exercise_cell": null,
+        "assertion_or_test": [],
+        "verification_level": "explained",
+        "live_experiment": null
+      },
+      {
+        "topic": "harness",
+        "explained_in": "docs/modules/01-agent-foundations.md",
+        "implemented_by": [],
+        "exercise_cell": null,
+        "assertion_or_test": [],
+        "verification_level": "explained",
+        "live_experiment": null
+      },
+      {
+        "topic": "runtime",
+        "explained_in": "docs/modules/01-agent-foundations.md",
+        "implemented_by": [],
+        "exercise_cell": null,
+        "assertion_or_test": [],
+        "verification_level": "explained",
+        "live_experiment": null
+      },
+      {
+        "topic": "LangGraph",
+        "explained_in": "docs/modules/01-agent-foundations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/agent.py:build_agent"
+        ],
+        "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-15",
+        "assertion_or_test": [
+          "tests/test_course.py::test_checkpoint_review_restart"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "Deep Agents",
+        "explained_in": "docs/modules/01-agent-foundations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/agent.py:build_agent"
+        ],
+        "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-15",
+        "assertion_or_test": [
+          "tests/test_course.py::test_checkpoint_review_restart"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      }
     ]
   },
   {
@@ -46,6 +160,134 @@
     "implementation": [
       "src/deep_agent_lab/tooling.py",
       "src/deep_agent_lab/mcp_server.py"
+    ],
+    "estimated_minutes": 75,
+    "difficulty": "Introductory",
+    "topic_records": [
+      {
+        "topic": "tool schemas",
+        "explained_in": "docs/modules/02-tools-and-mcp.md",
+        "implemented_by": [
+          "src/deep_agent_lab/foundations.py:SearchArgs"
+        ],
+        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-06",
+        "assertion_or_test": [
+          "tests/test_foundations_tools.py::test_invalid_call_never_executes_and_loop_is_bounded"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "validation",
+        "explained_in": "docs/modules/02-tools-and-mcp.md",
+        "implemented_by": [
+          "src/deep_agent_lab/tooling.py:search_read"
+        ],
+        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-11",
+        "assertion_or_test": [
+          "tests/test_course_content.py::test_module_two_has_executable_tool_contract"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "tool-call IDs",
+        "explained_in": "docs/modules/02-tools-and-mcp.md",
+        "implemented_by": [
+          "src/deep_agent_lab/foundations.py:agent_loop"
+        ],
+        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-06",
+        "assertion_or_test": [
+          "tests/test_foundations_tools.py::test_loop_correlates_calls_and_uses_results"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "error handling",
+        "explained_in": "docs/modules/02-tools-and-mcp.md",
+        "implemented_by": [
+          "src/deep_agent_lab/tooling.py:ToolOutcome"
+        ],
+        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-13",
+        "assertion_or_test": [
+          "tests/test_foundations_tools.py::test_read_outcomes_retry_timeout_and_privacy"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "retries",
+        "explained_in": "docs/modules/02-tools-and-mcp.md",
+        "implemented_by": [
+          "src/deep_agent_lab/tooling.py:search_read"
+        ],
+        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-13",
+        "assertion_or_test": [
+          "tests/test_foundations_tools.py::test_read_outcomes_retry_timeout_and_privacy"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "timeouts",
+        "explained_in": "docs/modules/02-tools-and-mcp.md",
+        "implemented_by": [
+          "src/deep_agent_lab/tooling.py:search_read"
+        ],
+        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-13",
+        "assertion_or_test": [
+          "tests/test_foundations_tools.py::test_read_outcomes_retry_timeout_and_privacy"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "pagination",
+        "explained_in": "docs/modules/02-tools-and-mcp.md",
+        "implemented_by": [
+          "src/deep_agent_lab/tooling.py:collect_pages"
+        ],
+        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-18",
+        "assertion_or_test": [
+          "tests/test_foundations_tools.py::test_pagination_and_exact_remote_origin"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "local MCP",
+        "explained_in": "docs/modules/02-tools-and-mcp.md",
+        "implemented_by": [
+          "src/deep_agent_lab/labs.py:mcp_lab"
+        ],
+        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-08",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "remote MCP",
+        "explained_in": "docs/modules/02-tools-and-mcp.md",
+        "implemented_by": [
+          "src/deep_agent_lab/tooling.py:remote_mcp_search"
+        ],
+        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-18",
+        "assertion_or_test": [
+          "tests/test_mcp_http.py::test_real_streamable_http_protocol_with_in_process_authenticated_transport"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "authentication",
+        "explained_in": "docs/modules/02-tools-and-mcp.md",
+        "implemented_by": [],
+        "exercise_cell": null,
+        "assertion_or_test": [],
+        "verification_level": "explained",
+        "live_experiment": null
+      }
     ]
   },
   {
@@ -67,6 +309,93 @@
     "implementation": [
       "src/deep_agent_lab/evaluation.py",
       "data/evaluation/northstar.jsonl"
+    ],
+    "estimated_minutes": 60,
+    "difficulty": "Intermediate",
+    "topic_records": [
+      {
+        "topic": "datasets",
+        "explained_in": "docs/modules/03-evaluation-foundations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evaluation.py:load_cases"
+        ],
+        "exercise_cell": "notebooks/03-evaluation-foundations/lab.ipynb#03-08",
+        "assertion_or_test": [
+          "tests/test_evaluation_metadata.py::test_annotation_defaults_and_prohibited_conclusions"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "deterministic tests",
+        "explained_in": "docs/modules/03-evaluation-foundations.md",
+        "implemented_by": [],
+        "exercise_cell": null,
+        "assertion_or_test": [],
+        "verification_level": "explained",
+        "live_experiment": null
+      },
+      {
+        "topic": "baseline evaluations",
+        "explained_in": "docs/modules/03-evaluation-foundations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evaluation.py:run_evaluation"
+        ],
+        "exercise_cell": "notebooks/03-evaluation-foundations/lab.ipynb#03-08",
+        "assertion_or_test": [
+          "tests/test_evidence_evaluations.py::test_actual_agent_evaluations_and_metrics"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "tool correctness",
+        "explained_in": "docs/modules/03-evaluation-foundations.md",
+        "implemented_by": [],
+        "exercise_cell": null,
+        "assertion_or_test": [],
+        "verification_level": "explained",
+        "live_experiment": null
+      },
+      {
+        "topic": "task success",
+        "explained_in": "docs/modules/03-evaluation-foundations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evaluation.py:grade"
+        ],
+        "exercise_cell": "notebooks/03-evaluation-foundations/lab.ipynb#03-11",
+        "assertion_or_test": [
+          "tests/test_live_grading.py::test_live_grading_uses_explicit_sources_and_retains_exact_chunk_ids"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "trajectories",
+        "explained_in": "docs/modules/03-evaluation-foundations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evaluation.py:run_evaluation"
+        ],
+        "exercise_cell": "notebooks/03-evaluation-foundations/lab.ipynb#03-08",
+        "assertion_or_test": [
+          "tests/test_evidence_evaluations.py::test_actual_agent_evaluations_and_metrics"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "held-out split",
+        "explained_in": "docs/modules/03-evaluation-foundations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evaluation.py:validate_splits"
+        ],
+        "exercise_cell": "notebooks/03-evaluation-foundations/lab.ipynb#03-08",
+        "assertion_or_test": [
+          "tests/test_evaluation_metadata.py::test_family_leakage_and_adversarial_exception"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      }
     ]
   },
   {
@@ -90,6 +419,115 @@
     "implementation": [
       "src/deep_agent_lab/context.py",
       "src/deep_agent_lab/labs.py"
+    ],
+    "estimated_minutes": 90,
+    "difficulty": "Intermediate",
+    "topic_records": [
+      {
+        "topic": "context budgets",
+        "explained_in": "docs/modules/04-context-engineering.md",
+        "implemented_by": [
+          "src/deep_agent_lab/context.py:ContextBudget"
+        ],
+        "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-06",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_context_required_evidence_and_compaction"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "offloading",
+        "explained_in": "docs/modules/04-context-engineering.md",
+        "implemented_by": [
+          "src/deep_agent_lab/labs.py:context_lab"
+        ],
+        "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-18",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "trimming",
+        "explained_in": "docs/modules/04-context-engineering.md",
+        "implemented_by": [
+          "src/deep_agent_lab/context.py:trim_turns"
+        ],
+        "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-15",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_context_required_evidence_and_compaction"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "summarization",
+        "explained_in": "docs/modules/04-context-engineering.md",
+        "implemented_by": [
+          "src/deep_agent_lab/labs.py:summarization_lab"
+        ],
+        "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-18",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "compaction",
+        "explained_in": "docs/modules/04-context-engineering.md",
+        "implemented_by": [
+          "src/deep_agent_lab/context.py:validate_compaction"
+        ],
+        "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-13",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_context_required_evidence_and_compaction"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "progressive disclosure",
+        "explained_in": "docs/modules/04-context-engineering.md",
+        "implemented_by": [],
+        "exercise_cell": null,
+        "assertion_or_test": [],
+        "verification_level": "explained",
+        "live_experiment": null
+      },
+      {
+        "topic": "prompt caching",
+        "explained_in": "docs/modules/04-context-engineering.md",
+        "implemented_by": [
+          "src/deep_agent_lab/context.py:prefix_key"
+        ],
+        "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-15",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_context_required_evidence_and_compaction"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "selective rereading",
+        "explained_in": "docs/modules/04-context-engineering.md",
+        "implemented_by": [],
+        "exercise_cell": null,
+        "assertion_or_test": [],
+        "verification_level": "explained",
+        "live_experiment": null
+      },
+      {
+        "topic": "context ablation",
+        "explained_in": "docs/modules/04-context-engineering.md",
+        "implemented_by": [
+          "src/deep_agent_lab/context.py:context_payload"
+        ],
+        "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-11",
+        "assertion_or_test": [
+          "tests/test_course_content.py::test_context_estimate_includes_state_and_is_deterministic"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      }
     ]
   },
   {
@@ -114,6 +552,136 @@
     "implementation": [
       "src/deep_agent_lab/memory.py",
       "src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md"
+    ],
+    "estimated_minutes": 75,
+    "difficulty": "Intermediate",
+    "topic_records": [
+      {
+        "topic": "Agent Skills",
+        "explained_in": "docs/modules/05-skills-and-memory.md",
+        "implemented_by": [
+          "src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md"
+        ],
+        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-08",
+        "assertion_or_test": [],
+        "verification_level": "exercised",
+        "live_experiment": null
+      },
+      {
+        "topic": "memory types",
+        "explained_in": "docs/modules/05-skills-and-memory.md",
+        "implemented_by": [
+          "src/deep_agent_lab/memory.py:MemoryStore"
+        ],
+        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "memory scopes",
+        "explained_in": "docs/modules/05-skills-and-memory.md",
+        "implemented_by": [
+          "src/deep_agent_lab/memory.py:MemoryStore"
+        ],
+        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "checkpoints",
+        "explained_in": "docs/modules/05-skills-and-memory.md",
+        "implemented_by": [
+          "src/deep_agent_lab/labs.py:memory_lab"
+        ],
+        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-08",
+        "assertion_or_test": [],
+        "verification_level": "exercised",
+        "live_experiment": null
+      },
+      {
+        "topic": "provenance",
+        "explained_in": "docs/modules/05-skills-and-memory.md",
+        "implemented_by": [
+          "src/deep_agent_lab/memory.py:MemoryStore"
+        ],
+        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "expiration",
+        "explained_in": "docs/modules/05-skills-and-memory.md",
+        "implemented_by": [
+          "src/deep_agent_lab/memory.py:MemoryStore"
+        ],
+        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "conflicts",
+        "explained_in": "docs/modules/05-skills-and-memory.md",
+        "implemented_by": [
+          "src/deep_agent_lab/memory.py:MemoryStore"
+        ],
+        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "contamination",
+        "explained_in": "docs/modules/05-skills-and-memory.md",
+        "implemented_by": [
+          "src/deep_agent_lab/memory.py:MemoryStore"
+        ],
+        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "correction",
+        "explained_in": "docs/modules/05-skills-and-memory.md",
+        "implemented_by": [
+          "src/deep_agent_lab/memory.py:MemoryStore"
+        ],
+        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "deletion",
+        "explained_in": "docs/modules/05-skills-and-memory.md",
+        "implemented_by": [
+          "src/deep_agent_lab/memory.py:MemoryStore"
+        ],
+        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      }
     ]
   },
   {
@@ -137,6 +705,123 @@
     "implementation": [
       "src/deep_agent_lab/planning.py",
       "src/deep_agent_lab/labs.py"
+    ],
+    "estimated_minutes": 120,
+    "difficulty": "Advanced",
+    "topic_records": [
+      {
+        "topic": "task decomposition",
+        "explained_in": "docs/modules/06-planning-and-delegation.md",
+        "implemented_by": [
+          "src/deep_agent_lab/planning.py:validate_plan"
+        ],
+        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-learner-mechanism",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_plan_dependencies_and_invalid_handoffs"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "dependency graphs",
+        "explained_in": "docs/modules/06-planning-and-delegation.md",
+        "implemented_by": [
+          "src/deep_agent_lab/planning.py:validate_plan"
+        ],
+        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-learner-mechanism",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_plan_dependencies_and_invalid_handoffs"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "specialist agents",
+        "explained_in": "docs/modules/06-planning-and-delegation.md",
+        "implemented_by": [
+          "src/deep_agent_lab/planning.py:run_specialists"
+        ],
+        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-13",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_specialist_timeout_partial_results_and_cancellation"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "parallel execution",
+        "explained_in": "docs/modules/06-planning-and-delegation.md",
+        "implemented_by": [
+          "src/deep_agent_lab/planning.py:run_specialists"
+        ],
+        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-13",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_specialist_timeout_partial_results_and_cancellation"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "handoffs",
+        "explained_in": "docs/modules/06-planning-and-delegation.md",
+        "implemented_by": [
+          "src/deep_agent_lab/planning.py:verify_handoff"
+        ],
+        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-06",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_parent_independently_verifies_specialist_handoff"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "cancellation",
+        "explained_in": "docs/modules/06-planning-and-delegation.md",
+        "implemented_by": [
+          "src/deep_agent_lab/planning.py:run_specialists"
+        ],
+        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-13",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_specialist_timeout_partial_results_and_cancellation"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "budgets",
+        "explained_in": "docs/modules/06-planning-and-delegation.md",
+        "implemented_by": [
+          "src/deep_agent_lab/planning.py:run_specialists"
+        ],
+        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-13",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_specialist_timeout_partial_results_and_cancellation"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "partial results",
+        "explained_in": "docs/modules/06-planning-and-delegation.md",
+        "implemented_by": [
+          "src/deep_agent_lab/planning.py:run_specialists"
+        ],
+        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-13",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_specialist_timeout_partial_results_and_cancellation"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "context isolation",
+        "explained_in": "docs/modules/06-planning-and-delegation.md",
+        "implemented_by": [],
+        "exercise_cell": null,
+        "assertion_or_test": [],
+        "verification_level": "explained",
+        "live_experiment": null
+      }
     ]
   },
   {
@@ -163,6 +848,151 @@
       "src/deep_agent_lab/retrieval.py",
       "src/deep_agent_lab/evidence.py",
       "src/deep_agent_lab/rag/pipeline.py"
+    ],
+    "estimated_minutes": 120,
+    "difficulty": "Intermediate",
+    "topic_records": [
+      {
+        "topic": "BM25",
+        "explained_in": "docs/modules/07-agentic-rag.md",
+        "implemented_by": [
+          "src/deep_agent_lab/retrieval.py:bm25"
+        ],
+        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-06",
+        "assertion_or_test": [
+          "tests/test_evidence_evaluations.py::test_rankers_reformulation_and_reranking"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "vectors",
+        "explained_in": "docs/modules/07-agentic-rag.md",
+        "implemented_by": [
+          "src/deep_agent_lab/rag/ollama.py:Ollama.embed"
+        ],
+        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+        "assertion_or_test": [
+          "tests/test_rag_pipeline.py::test_embedding_profile_and_partial_search_are_rejected"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "RRF",
+        "explained_in": "docs/modules/07-agentic-rag.md",
+        "implemented_by": [
+          "src/deep_agent_lab/rag/search.py:reciprocal_rank_fusion"
+        ],
+        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+        "assertion_or_test": [
+          "tests/test_evidence_evaluations.py::test_rankers_reformulation_and_reranking"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "hybrid retrieval",
+        "explained_in": "docs/modules/07-agentic-rag.md",
+        "implemented_by": [
+          "src/deep_agent_lab/rag/pipeline.py:RagService._search"
+        ],
+        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+        "assertion_or_test": [
+          "tests/test_rag_pipeline.py::test_active_hydration_preserves_source_revision_and_drops_stale_ids"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "reranking",
+        "explained_in": "docs/modules/07-agentic-rag.md",
+        "implemented_by": [
+          "src/deep_agent_lab/comparisons.py:retrieval_comparison"
+        ],
+        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "query reformulation",
+        "explained_in": "docs/modules/07-agentic-rag.md",
+        "implemented_by": [
+          "src/deep_agent_lab/retrieval.py:adaptive_search"
+        ],
+        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-11",
+        "assertion_or_test": [
+          "tests/test_adaptive_retrieval.py::test_faithful_rewrite_accumulates_evidence"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "claim verification",
+        "explained_in": "docs/modules/07-agentic-rag.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evidence.py:extractive_verdict"
+        ],
+        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-13",
+        "assertion_or_test": [
+          "tests/test_evidence_evaluations.py::test_provenance_and_valid_but_irrelevant_citations"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "contradictions",
+        "explained_in": "docs/modules/07-agentic-rag.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evidence.py:contradictions"
+        ],
+        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-13",
+        "assertion_or_test": [
+          "tests/test_evidence_evaluations.py::test_provenance_and_valid_but_irrelevant_citations"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "abstention",
+        "explained_in": "docs/modules/07-agentic-rag.md",
+        "implemented_by": [
+          "src/deep_agent_lab/retrieval.py:adaptive_search"
+        ],
+        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-11",
+        "assertion_or_test": [
+          "tests/test_adaptive_retrieval.py::test_missing_fact_abstains_even_with_related_documents"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "active revision hydration",
+        "explained_in": "docs/modules/07-agentic-rag.md",
+        "implemented_by": [
+          "src/deep_agent_lab/rag/pipeline.py:RagService._search"
+        ],
+        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+        "assertion_or_test": [
+          "tests/test_rag_pipeline.py::test_active_hydration_preserves_source_revision_and_drops_stale_ids"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "embedding profiles",
+        "explained_in": "docs/modules/07-agentic-rag.md",
+        "implemented_by": [
+          "src/deep_agent_lab/settings.py:Settings.embedding_profile"
+        ],
+        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+        "assertion_or_test": [
+          "tests/test_rag_pipeline.py::test_embedding_profile_and_partial_search_are_rejected"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      }
     ]
   },
   {
@@ -188,6 +1018,133 @@
     "implementation": [
       "src/deep_agent_lab/evaluation.py",
       "src/deep_agent_lab/evidence.py"
+    ],
+    "estimated_minutes": 90,
+    "difficulty": "Advanced",
+    "topic_records": [
+      {
+        "topic": "model judges",
+        "explained_in": "docs/modules/08-advanced-evaluations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evidence.py:model_verdict"
+        ],
+        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-18",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "human calibration",
+        "explained_in": "docs/modules/08-advanced-evaluations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evaluation.py:calibration"
+        ],
+        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-18",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "regression tests",
+        "explained_in": "docs/modules/08-advanced-evaluations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evaluation.py:regression_gate"
+        ],
+        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-13",
+        "assertion_or_test": [
+          "tests/test_evidence_evaluations.py::test_actual_agent_evaluations_and_metrics"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "ablation studies",
+        "explained_in": "docs/modules/08-advanced-evaluations.md",
+        "implemented_by": [],
+        "exercise_cell": null,
+        "assertion_or_test": [],
+        "verification_level": "explained",
+        "live_experiment": null
+      },
+      {
+        "topic": "retrieval metrics",
+        "explained_in": "docs/modules/08-advanced-evaluations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evaluation.py:retrieval_metrics"
+        ],
+        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-11",
+        "assertion_or_test": [
+          "tests/test_evidence_evaluations.py::test_actual_agent_evaluations_and_metrics"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "claim support",
+        "explained_in": "docs/modules/08-advanced-evaluations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evidence.py:model_verdict"
+        ],
+        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-18",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "latency",
+        "explained_in": "docs/modules/08-advanced-evaluations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evaluation.py:run_evaluation"
+        ],
+        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-08",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "tokens",
+        "explained_in": "docs/modules/08-advanced-evaluations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evaluation.py:run_evaluation"
+        ],
+        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-15",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "repeated trials",
+        "explained_in": "docs/modules/08-advanced-evaluations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evaluation.py:run_evaluation"
+        ],
+        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-08",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "confidence intervals",
+        "explained_in": "docs/modules/08-advanced-evaluations.md",
+        "implemented_by": [
+          "src/deep_agent_lab/evaluation.py:wilson"
+        ],
+        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-18",
+        "assertion_or_test": [
+          "tests/test_evidence_evaluations.py::test_actual_agent_evaluations_and_metrics"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "cost",
+        "explained_in": "docs/modules/08-advanced-evaluations.md",
+        "implemented_by": [],
+        "exercise_cell": null,
+        "assertion_or_test": [],
+        "verification_level": "explained",
+        "live_experiment": null
+      }
     ]
   },
   {
@@ -212,6 +1169,106 @@
       "src/deep_agent_lab/security.py",
       "src/deep_agent_lab/capstone.py",
       "src/deep_agent_lab/agent.py"
+    ],
+    "estimated_minutes": 90,
+    "difficulty": "Advanced",
+    "topic_records": [
+      {
+        "topic": "prompt injection",
+        "explained_in": "docs/modules/09-security.md",
+        "implemented_by": [
+          "src/deep_agent_lab/agent.py:build_agent"
+        ],
+        "exercise_cell": "notebooks/09-security/lab.ipynb#09-08",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_agent_injected_excerpt_cannot_bypass_review"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "trust boundaries",
+        "explained_in": "docs/modules/09-security.md",
+        "implemented_by": [],
+        "exercise_cell": null,
+        "assertion_or_test": [],
+        "verification_level": "explained",
+        "live_experiment": null
+      },
+      {
+        "topic": "authorization",
+        "explained_in": "docs/modules/09-security.md",
+        "implemented_by": [
+          "src/deep_agent_lab/security.py:authorize"
+        ],
+        "exercise_cell": "notebooks/09-security/lab.ipynb#09-06",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_path_traversal_absolute_and_sibling_prefix"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "filesystem protection",
+        "explained_in": "docs/modules/09-security.md",
+        "implemented_by": [
+          "src/deep_agent_lab/security.py:scoped_path"
+        ],
+        "exercise_cell": "notebooks/09-security/lab.ipynb#09-11",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_path_traversal_absolute_and_sibling_prefix"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "memory attacks",
+        "explained_in": "docs/modules/09-security.md",
+        "implemented_by": [
+          "src/deep_agent_lab/memory.py:MemoryStore.put"
+        ],
+        "exercise_cell": "notebooks/09-security/lab.ipynb#09-18",
+        "assertion_or_test": [
+          "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "trace privacy",
+        "explained_in": "docs/modules/09-security.md",
+        "implemented_by": [
+          "src/deep_agent_lab/tracing.py:Observation.update"
+        ],
+        "exercise_cell": "notebooks/09-security/lab.ipynb#09-15",
+        "assertion_or_test": [
+          "tests/test_observability.py::test_exception_trace_uses_type_not_secret_message"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "MCP credential forwarding",
+        "explained_in": "docs/modules/09-security.md",
+        "implemented_by": [
+          "src/deep_agent_lab/tooling.py:remote_headers"
+        ],
+        "exercise_cell": "notebooks/09-security/lab.ipynb#09-15",
+        "assertion_or_test": [
+          "tests/test_foundations_tools.py::test_pagination_and_exact_remote_origin"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "execution isolation",
+        "explained_in": "docs/modules/09-security.md",
+        "implemented_by": [],
+        "exercise_cell": null,
+        "assertion_or_test": [],
+        "verification_level": "explained",
+        "live_experiment": null
+      }
     ]
   },
   {
@@ -235,6 +1292,114 @@
     "implementation": [
       "src/deep_agent_lab/storage.py",
       "src/deep_agent_lab/service.py"
+    ],
+    "estimated_minutes": 120,
+    "difficulty": "Advanced",
+    "topic_records": [
+      {
+        "topic": "LangGraph interrupts",
+        "explained_in": "docs/modules/10-human-review.md",
+        "implemented_by": [
+          "src/deep_agent_lab/agent.py:build_agent"
+        ],
+        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-08",
+        "assertion_or_test": [
+          "tests/test_course.py::test_checkpoint_review_restart"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "exact-action approval",
+        "explained_in": "docs/modules/10-human-review.md",
+        "implemented_by": [
+          "src/deep_agent_lab/storage.py:BriefStore.decide"
+        ],
+        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "approve/edit/reject",
+        "explained_in": "docs/modules/10-human-review.md",
+        "implemented_by": [
+          "src/deep_agent_lab/storage.py:BriefStore.decide"
+        ],
+        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "payload validation",
+        "explained_in": "docs/modules/10-human-review.md",
+        "implemented_by": [
+          "src/deep_agent_lab/storage.py:BriefStore.decide"
+        ],
+        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "stale approvals",
+        "explained_in": "docs/modules/10-human-review.md",
+        "implemented_by": [
+          "src/deep_agent_lab/storage.py:BriefStore.decide"
+        ],
+        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "proposal versions",
+        "explained_in": "docs/modules/10-human-review.md",
+        "implemented_by": [
+          "src/deep_agent_lab/storage.py:BriefStore.decide"
+        ],
+        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "expiration",
+        "explained_in": "docs/modules/10-human-review.md",
+        "implemented_by": [
+          "src/deep_agent_lab/storage.py:BriefStore.decide"
+        ],
+        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "duplicate review",
+        "explained_in": "docs/modules/10-human-review.md",
+        "implemented_by": [
+          "src/deep_agent_lab/storage.py:BriefStore.decide"
+        ],
+        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      }
     ]
   },
   {
@@ -261,6 +1426,153 @@
       "src/deep_agent_lab/jobs.py",
       "src/deep_agent_lab/storage.py",
       "src/deep_agent_lab/capstone.py"
+    ],
+    "estimated_minutes": 120,
+    "difficulty": "Advanced",
+    "topic_records": [
+      {
+        "topic": "checkpoints",
+        "explained_in": "docs/modules/11-durable-execution.md",
+        "implemented_by": [
+          "src/deep_agent_lab/service.py:open_checkpointer"
+        ],
+        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-08",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_checkpoint_survives_an_actual_process_restart"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "persistent jobs",
+        "explained_in": "docs/modules/11-durable-execution.md",
+        "implemented_by": [
+          "src/deep_agent_lab/jobs.py:JobStore"
+        ],
+        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "retries",
+        "explained_in": "docs/modules/11-durable-execution.md",
+        "implemented_by": [
+          "src/deep_agent_lab/jobs.py:JobStore"
+        ],
+        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "idempotency",
+        "explained_in": "docs/modules/11-durable-execution.md",
+        "implemented_by": [
+          "src/deep_agent_lab/storage.py:BriefStore.save_reviewed"
+        ],
+        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-18",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_process_restart_and_ambiguous_write_reconciliation"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "crash recovery",
+        "explained_in": "docs/modules/11-durable-execution.md",
+        "implemented_by": [
+          "src/deep_agent_lab/storage.py:BriefStore.save_reviewed"
+        ],
+        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-18",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_process_restart_and_ambiguous_write_reconciliation"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "leases",
+        "explained_in": "docs/modules/11-durable-execution.md",
+        "implemented_by": [
+          "src/deep_agent_lab/jobs.py:JobStore"
+        ],
+        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "fencing",
+        "explained_in": "docs/modules/11-durable-execution.md",
+        "implemented_by": [
+          "src/deep_agent_lab/jobs.py:JobStore"
+        ],
+        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "cancellation",
+        "explained_in": "docs/modules/11-durable-execution.md",
+        "implemented_by": [
+          "src/deep_agent_lab/jobs.py:JobStore"
+        ],
+        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "deadlines",
+        "explained_in": "docs/modules/11-durable-execution.md",
+        "implemented_by": [
+          "src/deep_agent_lab/jobs.py:JobStore"
+        ],
+        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "ambiguous writes",
+        "explained_in": "docs/modules/11-durable-execution.md",
+        "implemented_by": [
+          "src/deep_agent_lab/storage.py:BriefStore.save_reviewed"
+        ],
+        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-18",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_process_restart_and_ambiguous_write_reconciliation"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "reconciliation",
+        "explained_in": "docs/modules/11-durable-execution.md",
+        "implemented_by": [
+          "src/deep_agent_lab/storage.py:BriefStore.save_reviewed"
+        ],
+        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-18",
+        "assertion_or_test": [
+          "tests/test_review_jobs_security.py::test_process_restart_and_ambiguous_write_reconciliation"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      }
     ]
   },
   {
@@ -286,6 +1598,113 @@
       "src/deep_agent_lab/tracing.py",
       "src/deep_agent_lab/instrumentation.py",
       "src/deep_agent_lab/storage.py"
+    ],
+    "estimated_minutes": 90,
+    "difficulty": "Advanced",
+    "topic_records": [
+      {
+        "topic": "Langfuse tracing",
+        "explained_in": "docs/modules/12-observability.md",
+        "implemented_by": [
+          "src/deep_agent_lab/tracing.py:Tracing"
+        ],
+        "exercise_cell": "notebooks/12-observability/lab.ipynb#12-08",
+        "assertion_or_test": [
+          "tests/test_tracing.py::test_observations_exclude_content_by_default"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "spans",
+        "explained_in": "docs/modules/12-observability.md",
+        "implemented_by": [
+          "src/deep_agent_lab/tracing.py:Tracing.span"
+        ],
+        "exercise_cell": "notebooks/12-observability/lab.ipynb#12-08",
+        "assertion_or_test": [
+          "tests/test_tracing.py::test_observations_exclude_content_by_default"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "agent debugging",
+        "explained_in": "docs/modules/12-observability.md",
+        "implemented_by": [],
+        "exercise_cell": null,
+        "assertion_or_test": [],
+        "verification_level": "explained",
+        "live_experiment": null
+      },
+      {
+        "topic": "model comparisons",
+        "explained_in": "docs/modules/12-observability.md",
+        "implemented_by": [
+          "src/deep_agent_lab/comparisons.py:agent_comparison"
+        ],
+        "exercise_cell": "notebooks/12-observability/lab.ipynb#12-18",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "cost",
+        "explained_in": "docs/modules/12-observability.md",
+        "implemented_by": [],
+        "exercise_cell": null,
+        "assertion_or_test": [],
+        "verification_level": "explained",
+        "live_experiment": null
+      },
+      {
+        "topic": "resource analysis",
+        "explained_in": "docs/modules/12-observability.md",
+        "implemented_by": [
+          "src/deep_agent_lab/model_lab.py:invoke_record"
+        ],
+        "exercise_cell": "notebooks/12-observability/lab.ipynb#12-18",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "trace timelines",
+        "explained_in": "docs/modules/12-observability.md",
+        "implemented_by": [
+          "src/deep_agent_lab/model_lab.py:invoke_record"
+        ],
+        "exercise_cell": "notebooks/12-observability/lab.ipynb#12-11",
+        "assertion_or_test": [],
+        "verification_level": "implemented",
+        "live_experiment": null
+      },
+      {
+        "topic": "bounded repair loops",
+        "explained_in": "docs/modules/12-observability.md",
+        "implemented_by": [
+          "src/deep_agent_lab/instrumentation.py:ResearchMiddleware"
+        ],
+        "exercise_cell": "notebooks/12-observability/lab.ipynb#12-15",
+        "assertion_or_test": [
+          "tests/test_citation_repair.py::test_citation_repair_has_one_targeted_attempt_and_disables_tools"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "artifact lineage",
+        "explained_in": "docs/modules/12-observability.md",
+        "implemented_by": [
+          "src/deep_agent_lab/storage.py:BriefStore.lineage"
+        ],
+        "exercise_cell": "notebooks/12-observability/lab.ipynb#12-18",
+        "assertion_or_test": [
+          "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      }
     ]
   },
   {
@@ -310,6 +1729,127 @@
     "implementation": [
       "src/deep_agent_lab/capstone.py",
       "src/deep_agent_lab/service.py"
+    ],
+    "estimated_minutes": 150,
+    "difficulty": "Advanced",
+    "topic_records": [
+      {
+        "topic": "integrated Northstar",
+        "explained_in": "docs/modules/13-capstone.md",
+        "implemented_by": [
+          "src/deep_agent_lab/capstone.py:Northstar"
+        ],
+        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "assertion_or_test": [
+          "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "evaluation",
+        "explained_in": "docs/modules/13-capstone.md",
+        "implemented_by": [
+          "src/deep_agent_lab/capstone.py:Northstar"
+        ],
+        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "assertion_or_test": [
+          "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "security",
+        "explained_in": "docs/modules/13-capstone.md",
+        "implemented_by": [
+          "src/deep_agent_lab/capstone.py:Northstar"
+        ],
+        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "assertion_or_test": [
+          "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "recovery",
+        "explained_in": "docs/modules/13-capstone.md",
+        "implemented_by": [
+          "src/deep_agent_lab/capstone.py:Northstar"
+        ],
+        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "assertion_or_test": [
+          "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "skills integration",
+        "explained_in": "docs/modules/13-capstone.md",
+        "implemented_by": [
+          "src/deep_agent_lab/capstone.py:Northstar"
+        ],
+        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "assertion_or_test": [
+          "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "memory integration",
+        "explained_in": "docs/modules/13-capstone.md",
+        "implemented_by": [
+          "src/deep_agent_lab/capstone.py:Northstar"
+        ],
+        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "assertion_or_test": [
+          "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "review integration",
+        "explained_in": "docs/modules/13-capstone.md",
+        "implemented_by": [
+          "src/deep_agent_lab/capstone.py:Northstar"
+        ],
+        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "assertion_or_test": [
+          "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "source revisions",
+        "explained_in": "docs/modules/13-capstone.md",
+        "implemented_by": [
+          "src/deep_agent_lab/capstone.py:Northstar"
+        ],
+        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "assertion_or_test": [
+          "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      },
+      {
+        "topic": "approved artifact lineage",
+        "explained_in": "docs/modules/13-capstone.md",
+        "implemented_by": [
+          "src/deep_agent_lab/capstone.py:Northstar"
+        ],
+        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "assertion_or_test": [
+          "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
+        ],
+        "verification_level": "deterministically_tested",
+        "live_experiment": null
+      }
     ]
   }
 ]

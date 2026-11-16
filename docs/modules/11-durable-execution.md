@@ -1,6 +1,18 @@
 # Durable execution
 
-Adapted from the supplied Northstar course reference. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+
+Prerequisites include [Module 10](10-human-review.md). Recommended next is [Module 12](12-observability.md).
+
+Estimated time 120 minutes. Difficulty advanced. Consult the [glossary](../glossary.md) for unfamiliar terms.
+
+Inspect the [module contract tests](../../tests/test_review_jobs_security.py) alongside the source links below.
+
+## Northstar V8 progression
+
+V7 saves only exact reviewed actions. The process exits after commit but before acknowledgement. This module adds the capability to recover durably with idempotency, ownership and lineage.
+
+The deterministic acceptance criterion is a separate interpreter reconciles one durable artifact. Live model judgments are recorded independently.
 
 ## Checkpoints versus durable jobs
 
@@ -158,3 +170,9 @@ This queue is a local reference implementation. SQLite is not a distributed work
 Application sources: [`jobs.py`](../../src/deep_agent_lab/jobs.py), [`storage.py`](../../src/deep_agent_lab/storage.py), [`capstone.py`](../../src/deep_agent_lab/capstone.py).
 
 [Open the complete notebook](../../notebooks/11-durable-execution/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+
+
+
+[Start here](../start-here.md) ? [Course order](../course.md) ? [Glossary](../glossary.md) ? [Previous module](10-human-review.md) ? [Next module](12-observability.md)
+
+Estimated time 120 minutes. Difficulty advanced.

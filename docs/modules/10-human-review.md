@@ -1,6 +1,18 @@
 # Human review
 
-Adapted from the supplied Northstar course reference. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+
+Prerequisites include [Module 09](09-security.md). Recommended next is [Module 11](11-durable-execution.md).
+
+Estimated time 120 minutes. Difficulty advanced. Consult the [glossary](../glossary.md) for unfamiliar terms.
+
+Inspect the [module contract tests](../../tests/test_review_jobs_security.py) alongside the source links below.
+
+## Northstar V7 progression
+
+V6 coordinates research. A request to save can change after a reviewer reads it. This module adds the capability to bind approve/edit/reject to the exact payload and version.
+
+The deterministic acceptance criterion is changed, expired and stale actions are rejected by storage. Live model judgments are recorded independently.
 
 ## Existing Northstar review flow
 
@@ -91,3 +103,9 @@ Approval authorizes an action; it does not prove every sentence is correct. The 
 Application sources: [`storage.py`](../../src/deep_agent_lab/storage.py), [`service.py`](../../src/deep_agent_lab/service.py).
 
 [Open the complete notebook](../../notebooks/10-human-review/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+
+
+
+[Start here](../start-here.md) ? [Course order](../course.md) ? [Glossary](../glossary.md) ? [Previous module](09-security.md) ? [Next module](11-durable-execution.md)
+
+Estimated time 120 minutes. Difficulty advanced.
