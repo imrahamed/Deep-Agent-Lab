@@ -7,7 +7,7 @@ evaluation, context, memory, delegation, security, human review, durable executi
 observability. Follow a request from its first model call to a source-backed brief with
 an exact approval record and recoverable execution state.
 
-The course combines concept chapters, executable Jupyter notebooks, reusable Python
+The course combines concept chapters, one executable master notebook, reusable Python
 implementations, and automated contract tests. Labs use actual Ollama models, tools,
 retrieval services, and storage. Test doubles are confined to automated unit tests.
 The included Northstar policies are fictional source documents for the exercises.
@@ -38,20 +38,20 @@ Across the course, you will build the mechanisms needed to
 
 ## How the course works
 
-Each numbered module pairs a reading chapter with a primary `lab.ipynb`. Work through
-the notebook in a fresh kernel, inspect intermediate state, reproduce a failure, repair
-the mechanism, and compare the learner implementation with the application code.
+Open **[the master notebook](notebooks/deep_agents.ipynb)** and run the shared setup once.
+Work through its sections in order, inspect intermediate state, reproduce failures, and
+compare the learner implementations with the application code. Each section links to
+its detailed reading chapter and uses its own temporary state directory.
 
-The notebooks include exercises, reference solutions, experiments, and explanations of
+The notebook includes exercises, worked examples, experiments, and explanations of
 what their results establish. Model responses and task outcomes can vary between runs.
 Inspect those observations alongside the application invariants and evaluation contracts.
 
 ### Recommended learning order
 
-Complete **01–03**, then the **[retrieval baseline in Module 07](docs/modules/07-agentic-rag.md#retrieval-baseline)**.
-Continue through **04–06**, return to **Module 07 for adaptive retrieval**, and finish
-**08–13**. This establishes single-pass retrieval and evidence handling before advanced
-delegation. Module numbers and notebook URLs provide stable navigation throughout.
+Follow the notebook's contents: **01, 02, 07, 03–06, then 08–13**. Retrieval and evidence
+handling come before evaluation and delegation. Module numbers still match the reading
+chapters, and the links below open the corresponding master notebook sections.
 
 The module times below are planning estimates for guided study and exercises. Allow
 additional time for service setup, model execution, and optional comparisons.
@@ -87,7 +87,7 @@ an unsupported claim. Compare application-defined workflows with bounded agent l
 This lab uses Ollama and local policy files, so you can begin before configuring the
 database and search services.
 
-[Read](docs/modules/01-agent-foundations.md) · [Run the lab](notebooks/01-agent-foundations/lab.ipynb) ·
+[Read](docs/modules/01-agent-foundations.md) · [Run the lab](notebooks/deep_agents.ipynb#module-01) ·
 [Model client](src/deep_agent_lab/model_lab.py) · [Loop implementation](src/deep_agent_lab/foundations.py) ·
 [Contract tests](tests/test_foundations_tools.py)
 
@@ -102,7 +102,7 @@ Execute a real local MCP exchange and inspect discovery and search results. Work
 bounded reads, retries, deadlines, pagination, and tool-call correlation. Study the
 trusted-origin and token requirements of the remote MCP adapter.
 
-[Read](docs/modules/02-tools-and-mcp.md) · [Run the lab](notebooks/02-tools-and-mcp/lab.ipynb) ·
+[Read](docs/modules/02-tools-and-mcp.md) · [Run the lab](notebooks/deep_agents.ipynb#module-02) ·
 [Tooling](src/deep_agent_lab/tooling.py) · [MCP server](src/deep_agent_lab/mcp_server.py) ·
 [Contract tests](tests/test_foundations_tools.py)
 
@@ -116,7 +116,7 @@ Run actual agent trials, inspect their trajectories, calculate retrieval metrics
 persist trial records. Examine the limits of phrase-based grading and keep citation
 checks, task contracts, and semantic support judgments distinguishable.
 
-[Read](docs/modules/03-evaluation-foundations.md) · [Run the lab](notebooks/03-evaluation-foundations/lab.ipynb) ·
+[Read](docs/modules/03-evaluation-foundations.md) · [Run the lab](notebooks/deep_agents.ipynb#module-03) ·
 [Evaluator](src/deep_agent_lab/evaluation.py) · [Dataset](data/evaluation/northstar.jsonl) ·
 [Evaluator tests](tests/test_evidence_evaluations.py)
 
@@ -131,7 +131,7 @@ compacted state using the same task and source pool. Inspect required-evidence r
 state fidelity, and heuristic token estimates. Inject a lossy compaction, repair it,
 and investigate evidence position and offloading in separate experiments.
 
-[Read](docs/modules/04-context-engineering.md) · [Run the lab](notebooks/04-context-engineering/lab.ipynb) ·
+[Read](docs/modules/04-context-engineering.md) · [Run the lab](notebooks/deep_agents.ipynb#module-04) ·
 [Context implementation](src/deep_agent_lab/context.py) · [Context tests](tests/test_context_memory_planning.py)
 
 ### 05. Skills and memory
@@ -144,7 +144,7 @@ Compare actual model responses with absent, correctly scoped, stale, and untrust
 inputs. Exercise admission and visibility checks before connecting persistent information
 to the agent's working context.
 
-[Read](docs/modules/05-skills-and-memory.md) · [Run the lab](notebooks/05-skills-and-memory/lab.ipynb) ·
+[Read](docs/modules/05-skills-and-memory.md) · [Run the lab](notebooks/deep_agents.ipynb#module-05) ·
 [Memory store](src/deep_agent_lab/memory.py) · [Evidence-brief skill](src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md) ·
 [Memory tests](tests/test_context_memory_planning.py)
 
@@ -160,7 +160,7 @@ using observed durations and provider usage, then examine the coordination overh
 
 Complete the Module 07 retrieval baseline before this module.
 
-[Read](docs/modules/06-planning-and-delegation.md) · [Run the lab](notebooks/06-planning-and-delegation/lab.ipynb) ·
+[Read](docs/modules/06-planning-and-delegation.md) · [Run the lab](notebooks/deep_agents.ipynb#module-06) ·
 [Planning implementation](src/deep_agent_lab/planning.py) · [Planning tests](tests/test_context_memory_planning.py)
 
 ### 07. Agentic RAG
@@ -174,7 +174,7 @@ evidence, assess the requested fact explicitly, preserve identifiers and scope d
 reformulation, and stop on a supported answer or an explicit evidence gap. Compare a real
 terminology mismatch, relevant documents with a missing fact, and an undocumented system.
 
-[Read](docs/modules/07-agentic-rag.md) · [Run the lab](notebooks/07-agentic-rag/lab.ipynb) ·
+[Read](docs/modules/07-agentic-rag.md) · [Run the lab](notebooks/deep_agents.ipynb#module-07) ·
 [Adaptive retrieval](src/deep_agent_lab/retrieval.py) · [Retrieval pipeline](src/deep_agent_lab/rag/pipeline.py) ·
 [Adaptive-search tests](tests/test_adaptive_retrieval.py)
 
@@ -188,7 +188,7 @@ Run a real judge against draft reference annotations and visualize its disagreem
 matrix. Keep annotation status visible, record provider-reported usage, and interpret
 small repeated samples within their experimental scope.
 
-[Read](docs/modules/08-advanced-evaluations.md) · [Run the lab](notebooks/08-advanced-evaluations/lab.ipynb) ·
+[Read](docs/modules/08-advanced-evaluations.md) · [Run the lab](notebooks/deep_agents.ipynb#module-08) ·
 [Grading implementation](src/deep_agent_lab/evaluation.py) · [Evidence verifier](src/deep_agent_lab/evidence.py) ·
 [Metadata and split tests](tests/test_evaluation_metadata.py)
 
@@ -202,7 +202,7 @@ Exercise prompt-injection requests, workspace traversal attempts, protected refe
 files, unapproved saves, and untrusted MCP destinations. Inspect the actual model's
 behavior alongside application-level authorization and storage checks.
 
-[Read](docs/modules/09-security.md) · [Run the lab](notebooks/09-security/lab.ipynb) ·
+[Read](docs/modules/09-security.md) · [Run the lab](notebooks/deep_agents.ipynb#module-09) ·
 [Authorization](src/deep_agent_lab/security.py) · [Security and review tests](tests/test_review_jobs_security.py)
 
 ### 10. Human review
@@ -215,7 +215,7 @@ Follow an actual model-generated save proposal through a LangGraph interrupt. In
 proposed title and Markdown, resolve the matching review, and compare the committed artifact
 with the exact reviewed content.
 
-[Read](docs/modules/10-human-review.md) · [Run the lab](notebooks/10-human-review/lab.ipynb) ·
+[Read](docs/modules/10-human-review.md) · [Run the lab](notebooks/deep_agents.ipynb#module-10) ·
 [Review storage](src/deep_agent_lab/storage.py) · [Service lifecycle](src/deep_agent_lab/service.py) ·
 [Review tests](tests/test_review_jobs_security.py)
 
@@ -229,7 +229,7 @@ Reopen persisted state, resume a pending review, and reconcile an approved write
 separate process commits without returning its artifact ID. Follow the idempotency record
 to recover the existing effect.
 
-[Read](docs/modules/11-durable-execution.md) · [Run the lab](notebooks/11-durable-execution/lab.ipynb) ·
+[Read](docs/modules/11-durable-execution.md) · [Run the lab](notebooks/deep_agents.ipynb#module-11) ·
 [Job store](src/deep_agent_lab/jobs.py) · [Recovery tests](tests/test_review_jobs_security.py)
 
 ### 12. Observability and model comparison
@@ -242,7 +242,7 @@ Use controlled comparison harnesses to keep cases, model configuration, source h
 and measurement scope explicit. Explore optional Langfuse export with configured
 credentials and content-capture controls. Keep unavailable cost and hardware data explicit.
 
-[Read](docs/modules/12-observability.md) · [Run the lab](notebooks/12-observability/lab.ipynb) ·
+[Read](docs/modules/12-observability.md) · [Run the lab](notebooks/deep_agents.ipynb#module-12) ·
 [Tracing](src/deep_agent_lab/tracing.py) · [Call accounting](src/deep_agent_lab/instrumentation.py) ·
 [Tracing tests](tests/test_tracing.py)
 
@@ -256,19 +256,18 @@ Inspect owned jobs, scoped preferences, evidence state, exact review, interrupte
 recovery, and approved artifact lineage. Explain how each completion decision is supported
 and how stale or unauthorized actions are rejected.
 
-[Read](docs/modules/13-capstone.md) · [Run the lab](notebooks/13-capstone/lab.ipynb) ·
+[Read](docs/modules/13-capstone.md) · [Run the lab](notebooks/deep_agents.ipynb#module-13) ·
 [Northstar boundary](src/deep_agent_lab/capstone.py) · [Capstone tests](tests/test_capstone.py)
 
 ### Supplemental material
 
-- [Evidence and claims deep dive](notebooks/07-agentic-rag/evidence-and-claims.ipynb)
-- [Separate-process recovery deep dive](notebooks/11-durable-execution/process-recovery.ipynb)
-- [Supplemental integrated walkthrough](notebooks/deep_agents.ipynb)
+- [Evidence and claims deep dive](notebooks/deep_agents.ipynb#claims)
+- [Separate-process recovery deep dive](notebooks/deep_agents.ipynb#recovery)
 - [Managed deployment exercise](docs/managed-deployment.md)
 - [Advanced extensions](docs/advanced-topics.md)
 
-The legacy `docs/module-*.md` chapters are archived supplemental reading. Use the numbered
-`docs/modules/` chapters and their paired notebooks for the maintained curriculum.
+Both deep dives are included in the master notebook. The legacy `docs/module-*.md`
+chapters are archived supplemental reading; `docs/modules/` holds the maintained chapters.
 
 ## Northstar capability progression
 
@@ -343,7 +342,7 @@ uv run jupyter lab
 ```
 
 For an existing checkout, start from its project root and run the dependency and
-configuration steps. Open `notebooks/01-agent-foundations/lab.ipynb` to begin the course.
+configuration steps. Open `notebooks/deep_agents.ipynb` to begin the course.
 
 `init` creates the configured lab schema and index. Ingestion writes the fictional policy
 files into that corpus. The defaults use PostgreSQL schema `deep_agent_lab`, OpenSearch
@@ -541,14 +540,11 @@ The [GitHub Actions contract workflow](.github/workflows/offline-ci.yml) runs li
 automated tests, topic-reference validation, and local-link checks using Python 3.11.
 Its tests isolate external dependencies through test support code under `tests/`.
 
-With the real services configured, execute notebooks or the complete course gate
+With the real services configured, execute the master notebook or the complete course gate
 
 ```bash
-# Execute every notebook in a fresh project-Python kernel.
+# Execute the master notebook in a fresh project-Python kernel.
 uv run python scripts/check_notebook.py
-
-# Execute one notebook while developing a module.
-uv run python scripts/check_notebook.py notebooks/07-agentic-rag/lab.ipynb
 
 # Run lint, compatibility, tests, coverage, links, service health,
 # evaluation, notebooks, and figure checks.
@@ -577,7 +573,7 @@ configuration, and outcomes together with the linked tests and notebook cells.
 | Location | Contents |
 | --- | --- |
 | `docs/modules/` | Thirteen maintained concept chapters |
-| `notebooks/01-*/` through `notebooks/13-*/` | Primary module labs and focused deep dives |
+| `notebooks/deep_agents.ipynb` | Master notebook with all modules and integrated deep dives |
 | `src/deep_agent_lab/` | Application, teaching helpers, service boundaries, and storage |
 | `src/deep_agent_lab/rag/` | Loading, chunking, embeddings, indexing, fusion, and hydration |
 | `src/deep_agent_lab/assets/reference/` | Reference instructions and the evidence-brief skill |

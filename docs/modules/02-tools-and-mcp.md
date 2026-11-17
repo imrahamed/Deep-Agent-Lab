@@ -1,6 +1,6 @@
 # Tools and MCP
 
-This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The master notebook section supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
 
 Prerequisites include [Module 01](01-agent-foundations.md). Recommended next is [Module 03](03-evaluation-foundations.md).
 
@@ -132,7 +132,7 @@ MCP helps interoperability and process separation. A normal Python function is s
 
 Application sources: [`tooling.py`](../../src/deep_agent_lab/tooling.py), [`mcp_server.py`](../../src/deep_agent_lab/mcp_server.py).
 
-[Open the complete notebook](../../notebooks/02-tools-and-mcp/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+[Open this master notebook section](../../notebooks/deep_agents.ipynb#module-02), which includes learner mechanisms, framework execution, experiments and assertions.
 
 
 

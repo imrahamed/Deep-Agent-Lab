@@ -1,0 +1,51 @@
+{
+  "notebook": "notebooks/deep_agents.ipynb",
+  "verification_date": "2026-11-17",
+  "current_notebook_sha256": "5cd87e2d8dffe24c62b2439955297b2812c5ff60eff74f2152d7b07fef1456da",
+  "status": "validated_by_section",
+  "source_gate_status": "passed",
+  "automated_tests_passed": 81,
+  "topic_references_validated": 122,
+  "notebooks_before": 16,
+  "notebooks_after": 1,
+  "cells_before": 353,
+  "cells_after": 147,
+  "code_cells": 115,
+  "live_services": {
+    "postgresql": "healthy; three policy documents",
+    "opensearch": "healthy; green cluster",
+    "ollama": "healthy"
+  },
+  "live_validation": [
+    {
+      "scope": "Modules 01 through 12 and capstone learner mechanism",
+      "status": "passed",
+      "fresh_kernel": true,
+      "code_cells_completed_before_capstone_assertion": 109,
+      "run_note": "Sequential full-course run then stopped on legacy capstone assertions, subsequently corrected."
+    },
+    {
+      "status": "passed",
+      "scope": "final capstone, exact review, lineage, access, cancellation and rejection",
+      "fresh_kernel": true,
+      "code_cell_ids": [
+        "master-setup",
+        "13-04",
+        "13-learner-mechanism",
+        "13-06",
+        "13-08",
+        "13-11",
+        "13-13",
+        "13-15",
+        "13-18",
+        "master-cleanup"
+      ]
+    }
+  ],
+  "full_fresh_kernel_pass_after_final_edits": false,
+  "limitations": [
+    "The corrected capstone was validated separately; the complete notebook was not rerun after capstone-only fixes.",
+    "Live model evaluations may report failed cases; those results are observations and are not hidden.",
+    "The retained notebooks.json describes the earlier full run, including superseded capstone assertion failures."
+  ]
+}

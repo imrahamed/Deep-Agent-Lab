@@ -66,6 +66,7 @@ def main():
         for directory in ["src", "tests", "scripts", "docs/modules", "notebooks", "data"]
         for path in (ROOT / directory).rglob("*")
         if path.is_file() and path.suffix in {".py", ".md", ".jsonl", ".ipynb"}
+        and ".ipynb_checkpoints" not in path.parts
     )
     fingerprint = hashlib.sha256()
     for path in inputs:
@@ -89,6 +90,7 @@ def main():
     for record in records:
         outcome = "passed" if record["returncode"] == 0 else "failed"
         text += f"| {record['name']} | {outcome} |\n"
+    unreviewed = "unknown"
     if (ROOT / "docs/reports/evaluation.json").exists() and not args.skip_notebooks:
         evaluation = json.loads((ROOT / "docs/reports/evaluation.json").read_text(encoding="utf-8"))
         summary = evaluation["summary"]

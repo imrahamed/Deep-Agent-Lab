@@ -1,6 +1,6 @@
 # Security
 
-This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The master notebook section supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
 
 Prerequisites include [Module 02](02-tools-and-mcp.md) and [Module 08](08-advanced-evaluations.md). Recommended next is [Module 10](10-human-review.md).
 
@@ -120,7 +120,7 @@ Prompt instructions and text filters are useful guidance but do not enforce auth
 
 Application sources: [`security.py`](../../src/deep_agent_lab/security.py), [`capstone.py`](../../src/deep_agent_lab/capstone.py), [`agent.py`](../../src/deep_agent_lab/agent.py).
 
-[Open the complete notebook](../../notebooks/09-security/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+[Open this master notebook section](../../notebooks/deep_agents.ipynb#module-09), which includes learner mechanisms, framework execution, experiments and assertions.
 
 
 [Start here](../start-here.md) ? [Course order](../course.md) ? [Glossary](../glossary.md) ? [Previous module](08-advanced-evaluations.md) ? [Next module](10-human-review.md)

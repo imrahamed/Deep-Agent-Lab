@@ -1,6 +1,6 @@
 # Human review
 
-This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The master notebook section supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
 
 Prerequisites include [Module 09](09-security.md). Recommended next is [Module 11](11-durable-execution.md).
 
@@ -102,7 +102,7 @@ Approval authorizes an action; it does not prove every sentence is correct. The 
 
 Application sources: [`storage.py`](../../src/deep_agent_lab/storage.py), [`service.py`](../../src/deep_agent_lab/service.py).
 
-[Open the complete notebook](../../notebooks/10-human-review/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+[Open this master notebook section](../../notebooks/deep_agents.ipynb#module-10), which includes learner mechanisms, framework execution, experiments and assertions.
 
 
 

@@ -45,8 +45,9 @@ files directly and can be completed before configuring database/search services.
 
 ## Learning order
 
-Follow 01, 02, 03, the [Module 07 retrieval baseline](modules/07-agentic-rag.md#retrieval-baseline),
-04, 05, 06, the remainder of 07, then 08 through 13. Stable numeric URLs are preserved.
+Open [the master notebook](../notebooks/deep_agents.ipynb), run the shared setup once,
+and follow its contents: 01, 02, 07, 03 through 06, then 08 through 13. Retrieval comes
+before evaluation and delegation. Numbered chapter links open the matching sections.
 The [course table](course.md) supplies time, difficulty, reading, source and test links.
 
 ## Verification and experiments
@@ -70,7 +71,7 @@ Langfuse and remote MCP need their own configured destinations and authorization
 capture remains disabled by default. Inspect [operations](operations.md) and
 [architecture](architecture.md) before extending deployment or identity integration.
 
-The original integrated notebook is supplemental. Legacy unnumbered chapters are archived
-background material. The thirteen numbered modules define the current learning path.
+The master notebook includes all thirteen modules, evidence/claim checks and process
+recovery. Legacy unnumbered chapters are archived background material.
 
 [Glossary](glossary.md) ? [References](references.md) ? [Coverage](coverage.md)

@@ -1,14 +1,26 @@
 # Verification results
 
-The complete live course gate failed.
+The targeted source gate passed.
+
+
+The master notebook contains all thirteen topics in one file. Live validation on
+17 November 2026 completed Modules 01?12 in a sequential fresh-kernel run. The final
+capstone passed separately in a fresh kernel after correcting legacy assertions about
+model-selected delegation, baseline evaluation scores and fixture-only source IDs.
+Exact approval, saved-content equality, owned artifact lineage, cancellation and rejection
+were verified against real services. PostgreSQL, OpenSearch and Ollama were healthy.
+
+A further whole-notebook run after the capstone-only corrections has not been performed.
+The retained full-run notebook report includes the earlier failures; it is not a success
+record for the final source. See the [current master validation scope](reports/master-notebook-validation.json).
 
 | Check | Actual outcome |
 | --- | --- |
 | lint | passed |
 | compatibility | passed |
-| tests | failed |
-
-The retained evaluation has 8 actual trials and 0 failed draft contracts. These failures remain visible. Execution success does not establish answer accuracy.
+| tests | passed |
+| coverage | passed |
+| links | passed |
 
 Cases awaiting human annotation in that cohort: unknown.
 

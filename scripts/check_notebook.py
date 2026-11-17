@@ -1,4 +1,4 @@
-"""Execute notebooks in fresh project-Python kernels and persist verified outputs."""
+"""Execute the master notebook in a fresh project-Python kernel and export results."""
 
 import argparse
 import asyncio
@@ -24,6 +24,12 @@ def execute(path: Path, *, write=True):
     client = NotebookClient(
         notebook, timeout=600, kernel_name="python3", resources={"metadata": {"path": str(ROOT)}}
     )
+
+    def cell_started(cell, cell_index):
+        if cell.cell_type == "code":
+            print(f"  Executing {cell.id}", flush=True)
+
+    client.on_cell_start = cell_started
     client.km = client.create_kernel_manager()
     # Use the exact locked interpreter rather than a machine's global Jupyter kernel.
     client.km.kernel_spec.argv = [
@@ -63,7 +69,7 @@ def execute(path: Path, *, write=True):
                         raise AssertionError(f"Undeclared figure in {path.name}#{cell.id}")
                     figure_records.append({"cell_id": cell.id, **declarations[image_index]})
                     image_index += 1
-    if path.name != "deep_agents.ipynb" and not images:
+    if not images:
         raise AssertionError(f"Notebook did not render a diagram: {path}")
     relative = path.relative_to(ROOT).as_posix()
     code_cells = sum(c.cell_type == "code" for c in notebook.cells)
@@ -98,7 +104,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("paths", nargs="*", type=Path)
     args = parser.parse_args()
-    paths = args.paths or sorted((ROOT / "notebooks").rglob("*.ipynb"))
+    paths = args.paths or [ROOT / "notebooks/deep_agents.ipynb"]
     results, failures = [], []
     for path in paths:
         path = path.resolve()

@@ -1,6 +1,6 @@
 # Advanced evaluations
 
-This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The master notebook section supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
 
 Prerequisites include [Module 07](07-agentic-rag.md). Recommended next is [Module 09](09-security.md).
 
@@ -184,7 +184,7 @@ Track outcomes, trajectories and safety separately. No average score can compens
 
 Application sources: [`evaluation.py`](../../src/deep_agent_lab/evaluation.py), [`evidence.py`](../../src/deep_agent_lab/evidence.py).
 
-[Open the complete notebook](../../notebooks/08-advanced-evaluations/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+[Open this master notebook section](../../notebooks/deep_agents.ipynb#module-08), which includes learner mechanisms, framework execution, experiments and assertions.
 
 
 [Start here](../start-here.md) ? [Course order](../course.md) ? [Glossary](../glossary.md) ? [Previous module](07-agentic-rag.md) ? [Next module](09-security.md)

@@ -15,7 +15,7 @@ def main():
         ROOT / "README.md",
         *sorted((ROOT / "docs").rglob("*.md")),
         *sorted((ROOT / "notebooks").rglob("*.md")),
-        *sorted((ROOT / "notebooks").rglob("*.ipynb")),
+        ROOT / "notebooks/deep_agents.ipynb",
     ]
     for path in paths:
         if path.suffix == ".ipynb":
@@ -26,14 +26,21 @@ def main():
         else:
             text = path.read_text(encoding="utf-8")
         for target in re.findall(r"\[[^\]]+\]\(([^)]+)\)", text):
-            if target.startswith(("http:", "https:", "mailto:", "#")):
+            if target.startswith(("http:", "https:", "mailto:")):
                 continue
-            target = unquote(target.split("#", 1)[0].strip("<>"))
-            if not target:
-                continue
+            target, _, fragment = unquote(target.strip("<>")).partition("#")
+            destination = (path.parent / target).resolve() if target else path
             count += 1
-            if not (path.parent / target).resolve().exists():
+            if not destination.exists():
                 problems.append(f"{path.relative_to(ROOT)} -> {target}")
+            elif fragment and destination.suffix == ".ipynb":
+                notebook = json.loads(destination.read_text(encoding="utf-8"))
+                anchors = {cell["id"] for cell in notebook["cells"]}
+                for cell in notebook["cells"]:
+                    if cell["cell_type"] == "markdown":
+                        anchors.update(re.findall(r'<a id="([^"]+)"', "".join(cell["source"])))
+                if fragment not in anchors:
+                    problems.append(f"{path.relative_to(ROOT)} -> {target}#{fragment}")
     if problems:
         raise AssertionError("Broken course links:\n" + "\n".join(problems))
     print(f"Validated {count} local document/notebook links.")

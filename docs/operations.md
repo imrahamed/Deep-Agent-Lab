@@ -4,16 +4,16 @@
 
 ## Configuration
 
-This checkout's ignored `.env` sets `DEEP_LAB_MODE=live` and points
-`RAG_LAB_ENV_FILE` at `C:\Users\imrah\Documents\Rag-project\.env`.
-The app reads credentials from that file and connects directly to the services.
-On a new machine, copy `.env.example` and supply your own path or individual
-settings. From highest to lowest precedence, the CLI mode flag overrides the
+This checkout's ignored `.env` sets `DEEP_LAB_MODE=live` and contains its own
+PostgreSQL, OpenSearch, Ollama and Langfuse configuration. It does not depend on
+another repository's environment file. On a new machine, copy `.env.example`
+and supply the service endpoints and credentials directly.
+From highest to lowest precedence, the CLI mode flag overrides the
 process environment, then the local `.env`, inherited settings, and defaults.
 
 | Setting | What it controls |
 | --- | --- |
-| `RAG_LAB_ENV_FILE` | Source for selected PostgreSQL, OpenSearch, Ollama, and Langfuse settings |
+| `RAG_LAB_ENV_FILE` | Optional shared configuration source; unused by this checkout |
 | `POSTGRES_DSN` | Database connection. The course uses schema `deep_agent_lab` |
 | `OPENSEARCH_URL`, `OPENSEARCH_USERNAME`, `OPENSEARCH_PASSWORD` | Search endpoint and basic authentication when configured |
 | `OPENSEARCH_INDEX` | Course index, initially `deep-agent-lab-v1` |

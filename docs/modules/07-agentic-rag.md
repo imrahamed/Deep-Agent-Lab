@@ -1,6 +1,6 @@
 # Agentic RAG
 
-This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The master notebook section supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
 
 Prerequisites include [Module 03](03-evaluation-foundations.md) for the baseline and [Module 04](04-context-engineering.md) for adaptive research. Recommended next is [Module 04](04-context-engineering.md) after the baseline, then [Module 08](08-advanced-evaluations.md) after adaptive research.
 
@@ -280,11 +280,11 @@ This is more useful than inventing a convenient relationship.
 
 BM25 weights rare terms and saturates term frequency while normalizing document length. Cosine compares direction in one embedding space. RRF uses rank positions because BM25 and vector scores have different scales. Learned vectors come from actual Ollama embedding calls in the service experiments. The existing pipeline hydrates candidate IDs from canonical SQL, excluding orphaned or inactive index records. A reranker scores query/passage relevance; it does not establish claim entailment.
 
-More candidates or reranking can improve recall at additional latency. An empty successful search permits a bounded reformulation; a failed backend must be reported as unavailable. Source changes require rechecking active revisions. The companion evidence notebook examines provenance, conflict and semantic limits in depth.
+More candidates or reranking can improve recall at additional latency. An empty successful search permits a bounded reformulation; a failed backend must be reported as unavailable. Source changes require rechecking active revisions. The master notebook's evidence subsection examines provenance, conflict and semantic limits in depth.
 
 Application sources: [`retrieval.py`](../../src/deep_agent_lab/retrieval.py), [`evidence.py`](../../src/deep_agent_lab/evidence.py), [`pipeline.py`](../../src/deep_agent_lab/rag/pipeline.py).
 
-[Open the complete notebook](../../notebooks/07-agentic-rag/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+[Open this master notebook section](../../notebooks/deep_agents.ipynb#module-07), which includes learner mechanisms, framework execution, experiments and assertions.
 
 ## Evidence sufficiency and faithful reformulation
 
@@ -305,4 +305,6 @@ Estimated time 120 minutes. Difficulty intermediate.
 
 ## Retrieval baseline
 
-Before advanced delegation, complete the lexical baseline, learned-vector search, fusion and active-revision hydration in the paired notebook. Return for adaptive retrieval after context engineering.
+The master notebook places retrieval before evaluation, context and delegation. Complete
+the lexical baseline, learned-vector search, fusion, active-revision hydration and bounded
+adaptive retrieval in that section, then continue in the notebook's contents order.

@@ -1,5 +1,5 @@
 {
-  "mode": "live",
+  "mode": "source contracts",
   "checks": [
     {
       "name": "lint",
@@ -13,11 +13,21 @@
     },
     {
       "name": "tests",
-      "returncode": 1,
-      "output": "........................................................F............... [ 98%]\n.                                                                        [100%]\n================================== FAILURES ===================================\n_________ test_live_mode_reuses_credentials_and_keeps_separate_index __________\n\ntmp_path = WindowsPath('C:/Users/imrah/AppData/Local/Temp/pytest-of-imrah/pytest-34/test_live_mode_reuses_credenti0')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001DD81C76F10>\n\n    def test_live_mode_reuses_credentials_and_keeps_separate_index(tmp_path, monkeypatch):\n        shared = tmp_path / \"rag.env\"\n        shared.write_text(\n            \"POSTGRES_DSN=postgresql://rag_user:example@db.test/rag\\n\"\n            \"OPENSEARCH_URL=https://search.test\\n\"\n            \"OPENSEARCH_INDEX=rag-lab-v1\\n\"\n            \"OLLAMA_URL=http://localhost:11434\\n\"\n            \"LANGFUSE_ENABLED=true\\n\"\n            \"LANGFUSE_PUBLIC_KEY=pk-example\\n\"\n            \"LANGFUSE_SECRET_KEY=sk-example\\n\"\n            \"LANGFUSE_CAPTURE_CONTENT=true\\n\",\n            encoding=\"utf-8\",\n        )\n        monkeypatch.delenv(\"OPENSEARCH_INDEX\", raising=False)\n        monkeypatch.delenv(\"LANGFUSE_CAPTURE_CONTENT\", raising=False)\n        settings = Settings(\n            _env_file=None,\n            deep_lab_mode=\"live\",\n            rag_lab_env_file=shared,\n            ollama_url=\"http://localhost:20000\",\n        )\n    \n        assert settings.postgres_dsn.get_secret_value().endswith(\"@db.test/rag\")\n        assert str(settings.opensearch_url) == \"https://search.test/\"\n        assert settings.opensearch_index == \"deep-agent-lab-v1\"\n        assert str(settings.ollama_url) == \"http://localhost:20000/\"\n>       assert settings.langfuse_enabled\nE       AssertionError: assert False\nE        +  where False = Settings(deep_lab_mode='live', deep_lab_state_dir=WindowsPath('.deep-lab'), rag_lab_env_file=WindowsPath('C:/Users/imr.../cloud.langfuse.com/'), langfuse_environment='development', langfuse_capture_content=False, langfuse_timeout_seconds=5).langfuse_enabled\n\ntests\\test_rag_settings.py:30: AssertionError\n============================== warnings summary ===============================\ntests/test_course.py::test_learning_labs\n  C:\\Users\\imrah\\Documents\\deepagents\\tests\\support_labs.py:134: LangChainBetaWarning: The class `CodeInterpreterMiddleware` is in beta. It is actively being worked on, so the API may change.\n    middleware=[CodeInterpreterMiddleware(subagents=False, timeout=2)],\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ===========================\nFAILED tests/test_rag_settings.py::test_live_mode_reuses_credentials_and_keeps_separate_index\n1 failed, 72 passed, 1 warning in 14.84s\n"
+      "returncode": 0,
+      "output": "........................................................................ [ 88%]\n.........                                                                [100%]\n============================== warnings summary ===============================\ntests/test_course.py::test_learning_labs\n  C:\\Users\\imrah\\Documents\\deepagents\\tests\\support_labs.py:134: LangChainBetaWarning: The class `CodeInterpreterMiddleware` is in beta. It is actively being worked on, so the API may change.\n    middleware=[CodeInterpreterMiddleware(subagents=False, timeout=2)],\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n81 passed, 1 warning in 19.41s\n"
+    },
+    {
+      "name": "coverage",
+      "returncode": 0,
+      "output": "Validated evidence references for 122 topics.\n"
+    },
+    {
+      "name": "links",
+      "returncode": 0,
+      "output": "Validated 843 local document/notebook links.\n"
     }
   ],
-  "input_sha256": "ae91989a278c76e8be898e14b1871790498fc19c76efe2cbdd93d3513ed580a7",
-  "notebooks_reexecuted": true,
-  "status": "failed"
+  "input_sha256": "2909f4dbc740747986dcc2ab70bc539806d8a4bae74147459583b5daa5452425",
+  "notebooks_reexecuted": false,
+  "status": "passed"
 }

@@ -1,6 +1,6 @@
 # Context engineering
 
-This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The master notebook section supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
 
 Prerequisites include [Module 03](03-evaluation-foundations.md) and the [retrieval baseline](07-agentic-rag.md#retrieval-baseline). Recommended next is [Module 05](05-skills-and-memory.md).
 
@@ -162,7 +162,7 @@ A shorter prompt can lose decisive counterevidence. Measure evidence retention s
 
 Application sources: [`context.py`](../../src/deep_agent_lab/context.py), [`labs.py`](../../src/deep_agent_lab/labs.py).
 
-[Open the complete notebook](../../notebooks/04-context-engineering/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+[Open this master notebook section](../../notebooks/deep_agents.ipynb#module-04), which includes learner mechanisms, framework execution, experiments and assertions.
 
 
 

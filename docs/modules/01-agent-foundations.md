@@ -1,6 +1,6 @@
 # Agent foundations
 
-This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The master notebook section supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
 
 Prerequisites include the [Python bridge](../python-bridge.md). Recommended next is [Module 02](02-tools-and-mcp.md).
 
@@ -152,7 +152,7 @@ A single policy lookup often needs direct RAG rather than an agent. Use the feed
 
 Application sources: [`foundations.py`](../../src/deep_agent_lab/foundations.py), [`agent.py`](../../src/deep_agent_lab/agent.py).
 
-[Open the complete notebook](../../notebooks/01-agent-foundations/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+[Open this master notebook section](../../notebooks/deep_agents.ipynb#module-01), which includes learner mechanisms, framework execution, experiments and assertions.
 
 
 

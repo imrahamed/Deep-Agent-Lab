@@ -1,6 +1,6 @@
 # Planning and delegation
 
-This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The master notebook section supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
 
 Prerequisites include [Module 05](05-skills-and-memory.md) and the [retrieval baseline](07-agentic-rag.md#retrieval-baseline). Recommended next is [advanced Module 07](07-agentic-rag.md#evidence-sufficiency-and-faithful-reformulation).
 
@@ -141,7 +141,7 @@ Delegation can isolate large contexts and shorten independent work. It also adds
 
 Application sources: [`planning.py`](../../src/deep_agent_lab/planning.py), [`labs.py`](../../src/deep_agent_lab/labs.py).
 
-[Open the complete notebook](../../notebooks/06-planning-and-delegation/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+[Open this master notebook section](../../notebooks/deep_agents.ipynb#module-06), which includes learner mechanisms, framework execution, experiments and assertions.
 
 
 

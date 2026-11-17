@@ -1,6 +1,6 @@
 # Integrated Northstar capstone
 
-This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The master notebook section supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
 
 Prerequisites include [Module 09](09-security.md), [Module 10](10-human-review.md), [Module 11](11-durable-execution.md) and [Module 12](12-observability.md). Recommended next is [operations](../operations.md) and [architecture](../architecture.md).
 
@@ -296,7 +296,7 @@ This is a production-oriented local engineering lab, not an Internet-ready multi
 
 Application sources: [`capstone.py`](../../src/deep_agent_lab/capstone.py), [`service.py`](../../src/deep_agent_lab/service.py).
 
-[Open the complete notebook](../../notebooks/13-capstone/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+[Open this master notebook section](../../notebooks/deep_agents.ipynb#module-13), which includes learner mechanisms, framework execution, experiments and assertions.
 
 
 

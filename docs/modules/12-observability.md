@@ -1,6 +1,6 @@
 # Observability
 
-This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The master notebook section supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
 
 Prerequisites include [Module 03](03-evaluation-foundations.md) and [Module 11](11-durable-execution.md). Recommended next is [Module 13](13-capstone.md).
 
@@ -161,7 +161,7 @@ Capture only telemetry you can use and retain responsibly. The notebook timeline
 
 Application sources: [`tracing.py`](../../src/deep_agent_lab/tracing.py), [`instrumentation.py`](../../src/deep_agent_lab/instrumentation.py), [`storage.py`](../../src/deep_agent_lab/storage.py).
 
-[Open the complete notebook](../../notebooks/12-observability/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+[Open this master notebook section](../../notebooks/deep_agents.ipynb#module-12), which includes learner mechanisms, framework execution, experiments and assertions.
 
 
 [Start here](../start-here.md) ? [Course order](../course.md) ? [Glossary](../glossary.md) ? [Previous module](11-durable-execution.md) ? [Next module](13-capstone.md)

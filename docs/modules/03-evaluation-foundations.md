@@ -1,6 +1,6 @@
 # Evaluation foundations
 
-This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The master notebook section supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
 
 Prerequisites include [Module 02](02-tools-and-mcp.md). Recommended next is the [Module 07 retrieval baseline](07-agentic-rag.md#retrieval-baseline).
 
@@ -118,7 +118,7 @@ Exact checks are reproducible and appropriate for authorization or schema proper
 
 Application sources: [`evaluation.py`](../../src/deep_agent_lab/evaluation.py), [`northstar.jsonl`](../../data/evaluation/northstar.jsonl).
 
-[Open the complete notebook](../../notebooks/03-evaluation-foundations/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+[Open this master notebook section](../../notebooks/deep_agents.ipynb#module-03), which includes learner mechanisms, framework execution, experiments and assertions.
 
 ## Executed dataset prompts
 

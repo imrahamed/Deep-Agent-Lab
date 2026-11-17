@@ -1,6 +1,6 @@
 # Durable execution
 
-This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The master notebook section supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
 
 Prerequisites include [Module 10](10-human-review.md). Recommended next is [Module 12](12-observability.md).
 
@@ -169,7 +169,7 @@ This queue is a local reference implementation. SQLite is not a distributed work
 
 Application sources: [`jobs.py`](../../src/deep_agent_lab/jobs.py), [`storage.py`](../../src/deep_agent_lab/storage.py), [`capstone.py`](../../src/deep_agent_lab/capstone.py).
 
-[Open the complete notebook](../../notebooks/11-durable-execution/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+[Open this master notebook section](../../notebooks/deep_agents.ipynb#module-11), which includes learner mechanisms, framework execution, experiments and assertions.
 
 
 

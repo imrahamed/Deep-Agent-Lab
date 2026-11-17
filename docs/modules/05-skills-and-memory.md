@@ -1,6 +1,6 @@
 # Skills and memory
 
-This chapter develops the Northstar policy research assistant. The paired notebook supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
+This chapter develops the Northstar policy research assistant. The master notebook section supplies executable implementations and checks. Examples using BKP-7, INC-3 and ACC-2 are conceptual source aliases; the executable application uses its stored IDs and exact citation tokens.
 
 Prerequisites include [Module 04](04-context-engineering.md). Recommended next is [Module 06](06-planning-and-delegation.md).
 
@@ -194,7 +194,7 @@ Many assistants need no learned policy memory: retrieve current policy instead. 
 
 Application sources: [`memory.py`](../../src/deep_agent_lab/memory.py), [`SKILL.md`](../../src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md).
 
-[Open the complete notebook](../../notebooks/05-skills-and-memory/lab.ipynb), which includes the implementation from scratch, framework execution, failure experiment, assertions and complete exercise solution.
+[Open this master notebook section](../../notebooks/deep_agents.ipynb#module-05), which includes learner mechanisms, framework execution, experiments and assertions.
 
 
 

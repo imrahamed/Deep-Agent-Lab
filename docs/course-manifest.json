@@ -31,7 +31,7 @@
         "implemented_by": [
           "src/deep_agent_lab/model_lab.py:course_model"
         ],
-        "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-06",
+        "exercise_cell": "notebooks/deep_agents.ipynb#01-06",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -42,7 +42,7 @@
         "implemented_by": [
           "src/deep_agent_lab/model_lab.py:invoke_record"
         ],
-        "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#01-11",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -53,7 +53,7 @@
         "implemented_by": [
           "src/deep_agent_lab/model_lab.py:tool_exchange"
         ],
-        "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-15",
+        "exercise_cell": "notebooks/deep_agents.ipynb#01-15",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -64,7 +64,7 @@
         "implemented_by": [
           "src/deep_agent_lab/model_lab.py:PolicyAnswer"
         ],
-        "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#01-13",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -75,7 +75,7 @@
         "implemented_by": [
           "src/deep_agent_lab/foundations.py:agent_loop"
         ],
-        "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-15",
+        "exercise_cell": "notebooks/deep_agents.ipynb#01-15",
         "assertion_or_test": [
           "tests/test_foundations_tools.py::test_invalid_call_never_executes_and_loop_is_bounded"
         ],
@@ -115,7 +115,7 @@
         "implemented_by": [
           "src/deep_agent_lab/agent.py:build_agent"
         ],
-        "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-15",
+        "exercise_cell": "notebooks/deep_agents.ipynb#01-15",
         "assertion_or_test": [
           "tests/test_course.py::test_checkpoint_review_restart"
         ],
@@ -128,7 +128,7 @@
         "implemented_by": [
           "src/deep_agent_lab/agent.py:build_agent"
         ],
-        "exercise_cell": "notebooks/01-agent-foundations/lab.ipynb#01-15",
+        "exercise_cell": "notebooks/deep_agents.ipynb#01-15",
         "assertion_or_test": [
           "tests/test_course.py::test_checkpoint_review_restart"
         ],
@@ -170,7 +170,7 @@
         "implemented_by": [
           "src/deep_agent_lab/foundations.py:SearchArgs"
         ],
-        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-06",
+        "exercise_cell": "notebooks/deep_agents.ipynb#02-06",
         "assertion_or_test": [
           "tests/test_foundations_tools.py::test_invalid_call_never_executes_and_loop_is_bounded"
         ],
@@ -183,7 +183,7 @@
         "implemented_by": [
           "src/deep_agent_lab/tooling.py:search_read"
         ],
-        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#02-11",
         "assertion_or_test": [
           "tests/test_course_content.py::test_module_two_has_executable_tool_contract"
         ],
@@ -196,7 +196,7 @@
         "implemented_by": [
           "src/deep_agent_lab/foundations.py:agent_loop"
         ],
-        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-06",
+        "exercise_cell": "notebooks/deep_agents.ipynb#02-06",
         "assertion_or_test": [
           "tests/test_foundations_tools.py::test_loop_correlates_calls_and_uses_results"
         ],
@@ -209,7 +209,7 @@
         "implemented_by": [
           "src/deep_agent_lab/tooling.py:ToolOutcome"
         ],
-        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#02-13",
         "assertion_or_test": [
           "tests/test_foundations_tools.py::test_read_outcomes_retry_timeout_and_privacy"
         ],
@@ -222,7 +222,7 @@
         "implemented_by": [
           "src/deep_agent_lab/tooling.py:search_read"
         ],
-        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#02-13",
         "assertion_or_test": [
           "tests/test_foundations_tools.py::test_read_outcomes_retry_timeout_and_privacy"
         ],
@@ -235,7 +235,7 @@
         "implemented_by": [
           "src/deep_agent_lab/tooling.py:search_read"
         ],
-        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#02-13",
         "assertion_or_test": [
           "tests/test_foundations_tools.py::test_read_outcomes_retry_timeout_and_privacy"
         ],
@@ -248,7 +248,7 @@
         "implemented_by": [
           "src/deep_agent_lab/tooling.py:collect_pages"
         ],
-        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#02-18",
         "assertion_or_test": [
           "tests/test_foundations_tools.py::test_pagination_and_exact_remote_origin"
         ],
@@ -261,7 +261,7 @@
         "implemented_by": [
           "src/deep_agent_lab/labs.py:mcp_lab"
         ],
-        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#02-08",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -272,7 +272,7 @@
         "implemented_by": [
           "src/deep_agent_lab/tooling.py:remote_mcp_search"
         ],
-        "exercise_cell": "notebooks/02-tools-and-mcp/lab.ipynb#02-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#02-18",
         "assertion_or_test": [
           "tests/test_mcp_http.py::test_real_streamable_http_protocol_with_in_process_authenticated_transport"
         ],
@@ -319,7 +319,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evaluation.py:load_cases"
         ],
-        "exercise_cell": "notebooks/03-evaluation-foundations/lab.ipynb#03-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#03-08",
         "assertion_or_test": [
           "tests/test_evaluation_metadata.py::test_annotation_defaults_and_prohibited_conclusions"
         ],
@@ -341,7 +341,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evaluation.py:run_evaluation"
         ],
-        "exercise_cell": "notebooks/03-evaluation-foundations/lab.ipynb#03-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#03-08",
         "assertion_or_test": [
           "tests/test_evidence_evaluations.py::test_actual_agent_evaluations_and_metrics"
         ],
@@ -363,7 +363,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evaluation.py:grade"
         ],
-        "exercise_cell": "notebooks/03-evaluation-foundations/lab.ipynb#03-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#03-11",
         "assertion_or_test": [
           "tests/test_live_grading.py::test_live_grading_uses_explicit_sources_and_retains_exact_chunk_ids"
         ],
@@ -376,7 +376,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evaluation.py:run_evaluation"
         ],
-        "exercise_cell": "notebooks/03-evaluation-foundations/lab.ipynb#03-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#03-08",
         "assertion_or_test": [
           "tests/test_evidence_evaluations.py::test_actual_agent_evaluations_and_metrics"
         ],
@@ -389,7 +389,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evaluation.py:validate_splits"
         ],
-        "exercise_cell": "notebooks/03-evaluation-foundations/lab.ipynb#03-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#03-08",
         "assertion_or_test": [
           "tests/test_evaluation_metadata.py::test_family_leakage_and_adversarial_exception"
         ],
@@ -429,7 +429,7 @@
         "implemented_by": [
           "src/deep_agent_lab/context.py:ContextBudget"
         ],
-        "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-06",
+        "exercise_cell": "notebooks/deep_agents.ipynb#04-06",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_context_required_evidence_and_compaction"
         ],
@@ -442,7 +442,7 @@
         "implemented_by": [
           "src/deep_agent_lab/labs.py:context_lab"
         ],
-        "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#04-18",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -453,7 +453,7 @@
         "implemented_by": [
           "src/deep_agent_lab/context.py:trim_turns"
         ],
-        "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-15",
+        "exercise_cell": "notebooks/deep_agents.ipynb#04-15",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_context_required_evidence_and_compaction"
         ],
@@ -466,7 +466,7 @@
         "implemented_by": [
           "src/deep_agent_lab/labs.py:summarization_lab"
         ],
-        "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#04-18",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -477,7 +477,7 @@
         "implemented_by": [
           "src/deep_agent_lab/context.py:validate_compaction"
         ],
-        "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#04-13",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_context_required_evidence_and_compaction"
         ],
@@ -499,7 +499,7 @@
         "implemented_by": [
           "src/deep_agent_lab/context.py:prefix_key"
         ],
-        "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-15",
+        "exercise_cell": "notebooks/deep_agents.ipynb#04-15",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_context_required_evidence_and_compaction"
         ],
@@ -521,7 +521,7 @@
         "implemented_by": [
           "src/deep_agent_lab/context.py:context_payload"
         ],
-        "exercise_cell": "notebooks/04-context-engineering/lab.ipynb#04-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#04-11",
         "assertion_or_test": [
           "tests/test_course_content.py::test_context_estimate_includes_state_and_is_deterministic"
         ],
@@ -562,7 +562,7 @@
         "implemented_by": [
           "src/deep_agent_lab/assets/reference/skills/evidence-brief/SKILL.md"
         ],
-        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#05-08",
         "assertion_or_test": [],
         "verification_level": "exercised",
         "live_experiment": null
@@ -573,7 +573,7 @@
         "implemented_by": [
           "src/deep_agent_lab/memory.py:MemoryStore"
         ],
-        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#05-11",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
         ],
@@ -586,7 +586,7 @@
         "implemented_by": [
           "src/deep_agent_lab/memory.py:MemoryStore"
         ],
-        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#05-11",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
         ],
@@ -599,7 +599,7 @@
         "implemented_by": [
           "src/deep_agent_lab/labs.py:memory_lab"
         ],
-        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#05-08",
         "assertion_or_test": [],
         "verification_level": "exercised",
         "live_experiment": null
@@ -610,7 +610,7 @@
         "implemented_by": [
           "src/deep_agent_lab/memory.py:MemoryStore"
         ],
-        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#05-11",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
         ],
@@ -623,7 +623,7 @@
         "implemented_by": [
           "src/deep_agent_lab/memory.py:MemoryStore"
         ],
-        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#05-11",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
         ],
@@ -636,7 +636,7 @@
         "implemented_by": [
           "src/deep_agent_lab/memory.py:MemoryStore"
         ],
-        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#05-11",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
         ],
@@ -649,7 +649,7 @@
         "implemented_by": [
           "src/deep_agent_lab/memory.py:MemoryStore"
         ],
-        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#05-11",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
         ],
@@ -662,7 +662,7 @@
         "implemented_by": [
           "src/deep_agent_lab/memory.py:MemoryStore"
         ],
-        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#05-11",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
         ],
@@ -675,7 +675,7 @@
         "implemented_by": [
           "src/deep_agent_lab/memory.py:MemoryStore"
         ],
-        "exercise_cell": "notebooks/05-skills-and-memory/lab.ipynb#05-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#05-11",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
         ],
@@ -715,7 +715,7 @@
         "implemented_by": [
           "src/deep_agent_lab/planning.py:validate_plan"
         ],
-        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-learner-mechanism",
+        "exercise_cell": "notebooks/deep_agents.ipynb#06-learner-mechanism",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_plan_dependencies_and_invalid_handoffs"
         ],
@@ -728,7 +728,7 @@
         "implemented_by": [
           "src/deep_agent_lab/planning.py:validate_plan"
         ],
-        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-learner-mechanism",
+        "exercise_cell": "notebooks/deep_agents.ipynb#06-learner-mechanism",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_plan_dependencies_and_invalid_handoffs"
         ],
@@ -741,7 +741,7 @@
         "implemented_by": [
           "src/deep_agent_lab/planning.py:run_specialists"
         ],
-        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#06-13",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_specialist_timeout_partial_results_and_cancellation"
         ],
@@ -754,7 +754,7 @@
         "implemented_by": [
           "src/deep_agent_lab/planning.py:run_specialists"
         ],
-        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#06-13",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_specialist_timeout_partial_results_and_cancellation"
         ],
@@ -767,7 +767,7 @@
         "implemented_by": [
           "src/deep_agent_lab/planning.py:verify_handoff"
         ],
-        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-06",
+        "exercise_cell": "notebooks/deep_agents.ipynb#06-06",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_parent_independently_verifies_specialist_handoff"
         ],
@@ -780,7 +780,7 @@
         "implemented_by": [
           "src/deep_agent_lab/planning.py:run_specialists"
         ],
-        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#06-13",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_specialist_timeout_partial_results_and_cancellation"
         ],
@@ -793,7 +793,7 @@
         "implemented_by": [
           "src/deep_agent_lab/planning.py:run_specialists"
         ],
-        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#06-13",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_specialist_timeout_partial_results_and_cancellation"
         ],
@@ -806,7 +806,7 @@
         "implemented_by": [
           "src/deep_agent_lab/planning.py:run_specialists"
         ],
-        "exercise_cell": "notebooks/06-planning-and-delegation/lab.ipynb#06-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#06-13",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_specialist_timeout_partial_results_and_cancellation"
         ],
@@ -858,7 +858,7 @@
         "implemented_by": [
           "src/deep_agent_lab/retrieval.py:bm25"
         ],
-        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-06",
+        "exercise_cell": "notebooks/deep_agents.ipynb#07-06",
         "assertion_or_test": [
           "tests/test_evidence_evaluations.py::test_rankers_reformulation_and_reranking"
         ],
@@ -871,7 +871,7 @@
         "implemented_by": [
           "src/deep_agent_lab/rag/ollama.py:Ollama.embed"
         ],
-        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#07-08",
         "assertion_or_test": [
           "tests/test_rag_pipeline.py::test_embedding_profile_and_partial_search_are_rejected"
         ],
@@ -884,7 +884,7 @@
         "implemented_by": [
           "src/deep_agent_lab/rag/search.py:reciprocal_rank_fusion"
         ],
-        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#07-08",
         "assertion_or_test": [
           "tests/test_evidence_evaluations.py::test_rankers_reformulation_and_reranking"
         ],
@@ -897,7 +897,7 @@
         "implemented_by": [
           "src/deep_agent_lab/rag/pipeline.py:RagService._search"
         ],
-        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#07-08",
         "assertion_or_test": [
           "tests/test_rag_pipeline.py::test_active_hydration_preserves_source_revision_and_drops_stale_ids"
         ],
@@ -910,7 +910,7 @@
         "implemented_by": [
           "src/deep_agent_lab/comparisons.py:retrieval_comparison"
         ],
-        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#07-08",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -921,7 +921,7 @@
         "implemented_by": [
           "src/deep_agent_lab/retrieval.py:adaptive_search"
         ],
-        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#07-11",
         "assertion_or_test": [
           "tests/test_adaptive_retrieval.py::test_faithful_rewrite_accumulates_evidence"
         ],
@@ -934,7 +934,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evidence.py:extractive_verdict"
         ],
-        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#07-13",
         "assertion_or_test": [
           "tests/test_evidence_evaluations.py::test_provenance_and_valid_but_irrelevant_citations"
         ],
@@ -947,7 +947,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evidence.py:contradictions"
         ],
-        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#07-13",
         "assertion_or_test": [
           "tests/test_evidence_evaluations.py::test_provenance_and_valid_but_irrelevant_citations"
         ],
@@ -960,7 +960,7 @@
         "implemented_by": [
           "src/deep_agent_lab/retrieval.py:adaptive_search"
         ],
-        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#07-11",
         "assertion_or_test": [
           "tests/test_adaptive_retrieval.py::test_missing_fact_abstains_even_with_related_documents"
         ],
@@ -973,7 +973,7 @@
         "implemented_by": [
           "src/deep_agent_lab/rag/pipeline.py:RagService._search"
         ],
-        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#07-08",
         "assertion_or_test": [
           "tests/test_rag_pipeline.py::test_active_hydration_preserves_source_revision_and_drops_stale_ids"
         ],
@@ -986,7 +986,7 @@
         "implemented_by": [
           "src/deep_agent_lab/settings.py:Settings.embedding_profile"
         ],
-        "exercise_cell": "notebooks/07-agentic-rag/lab.ipynb#07-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#07-08",
         "assertion_or_test": [
           "tests/test_rag_pipeline.py::test_embedding_profile_and_partial_search_are_rejected"
         ],
@@ -1028,7 +1028,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evidence.py:model_verdict"
         ],
-        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#08-18",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -1039,7 +1039,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evaluation.py:calibration"
         ],
-        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#08-18",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -1050,7 +1050,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evaluation.py:regression_gate"
         ],
-        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#08-13",
         "assertion_or_test": [
           "tests/test_evidence_evaluations.py::test_actual_agent_evaluations_and_metrics"
         ],
@@ -1072,7 +1072,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evaluation.py:retrieval_metrics"
         ],
-        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#08-11",
         "assertion_or_test": [
           "tests/test_evidence_evaluations.py::test_actual_agent_evaluations_and_metrics"
         ],
@@ -1085,7 +1085,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evidence.py:model_verdict"
         ],
-        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#08-18",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -1096,7 +1096,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evaluation.py:run_evaluation"
         ],
-        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#08-08",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -1107,7 +1107,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evaluation.py:run_evaluation"
         ],
-        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-15",
+        "exercise_cell": "notebooks/deep_agents.ipynb#08-15",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -1118,7 +1118,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evaluation.py:run_evaluation"
         ],
-        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#08-08",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -1129,7 +1129,7 @@
         "implemented_by": [
           "src/deep_agent_lab/evaluation.py:wilson"
         ],
-        "exercise_cell": "notebooks/08-advanced-evaluations/lab.ipynb#08-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#08-18",
         "assertion_or_test": [
           "tests/test_evidence_evaluations.py::test_actual_agent_evaluations_and_metrics"
         ],
@@ -1179,7 +1179,7 @@
         "implemented_by": [
           "src/deep_agent_lab/agent.py:build_agent"
         ],
-        "exercise_cell": "notebooks/09-security/lab.ipynb#09-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#09-08",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_agent_injected_excerpt_cannot_bypass_review"
         ],
@@ -1201,7 +1201,7 @@
         "implemented_by": [
           "src/deep_agent_lab/security.py:authorize"
         ],
-        "exercise_cell": "notebooks/09-security/lab.ipynb#09-06",
+        "exercise_cell": "notebooks/deep_agents.ipynb#09-06",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_path_traversal_absolute_and_sibling_prefix"
         ],
@@ -1214,7 +1214,7 @@
         "implemented_by": [
           "src/deep_agent_lab/security.py:scoped_path"
         ],
-        "exercise_cell": "notebooks/09-security/lab.ipynb#09-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#09-11",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_path_traversal_absolute_and_sibling_prefix"
         ],
@@ -1227,7 +1227,7 @@
         "implemented_by": [
           "src/deep_agent_lab/memory.py:MemoryStore.put"
         ],
-        "exercise_cell": "notebooks/09-security/lab.ipynb#09-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#09-18",
         "assertion_or_test": [
           "tests/test_context_memory_planning.py::test_memory_scope_expiration_corrections_and_contamination"
         ],
@@ -1240,7 +1240,7 @@
         "implemented_by": [
           "src/deep_agent_lab/tracing.py:Observation.update"
         ],
-        "exercise_cell": "notebooks/09-security/lab.ipynb#09-15",
+        "exercise_cell": "notebooks/deep_agents.ipynb#09-15",
         "assertion_or_test": [
           "tests/test_observability.py::test_exception_trace_uses_type_not_secret_message"
         ],
@@ -1253,7 +1253,7 @@
         "implemented_by": [
           "src/deep_agent_lab/tooling.py:remote_headers"
         ],
-        "exercise_cell": "notebooks/09-security/lab.ipynb#09-15",
+        "exercise_cell": "notebooks/deep_agents.ipynb#09-15",
         "assertion_or_test": [
           "tests/test_foundations_tools.py::test_pagination_and_exact_remote_origin"
         ],
@@ -1302,7 +1302,7 @@
         "implemented_by": [
           "src/deep_agent_lab/agent.py:build_agent"
         ],
-        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#10-08",
         "assertion_or_test": [
           "tests/test_course.py::test_checkpoint_review_restart"
         ],
@@ -1315,7 +1315,7 @@
         "implemented_by": [
           "src/deep_agent_lab/storage.py:BriefStore.decide"
         ],
-        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+        "exercise_cell": "notebooks/deep_agents.ipynb#10-learner-mechanism",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
         ],
@@ -1328,7 +1328,7 @@
         "implemented_by": [
           "src/deep_agent_lab/storage.py:BriefStore.decide"
         ],
-        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+        "exercise_cell": "notebooks/deep_agents.ipynb#10-learner-mechanism",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
         ],
@@ -1341,7 +1341,7 @@
         "implemented_by": [
           "src/deep_agent_lab/storage.py:BriefStore.decide"
         ],
-        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+        "exercise_cell": "notebooks/deep_agents.ipynb#10-learner-mechanism",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
         ],
@@ -1354,7 +1354,7 @@
         "implemented_by": [
           "src/deep_agent_lab/storage.py:BriefStore.decide"
         ],
-        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+        "exercise_cell": "notebooks/deep_agents.ipynb#10-learner-mechanism",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
         ],
@@ -1367,7 +1367,7 @@
         "implemented_by": [
           "src/deep_agent_lab/storage.py:BriefStore.decide"
         ],
-        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+        "exercise_cell": "notebooks/deep_agents.ipynb#10-learner-mechanism",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
         ],
@@ -1380,7 +1380,7 @@
         "implemented_by": [
           "src/deep_agent_lab/storage.py:BriefStore.decide"
         ],
-        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+        "exercise_cell": "notebooks/deep_agents.ipynb#10-learner-mechanism",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
         ],
@@ -1393,7 +1393,7 @@
         "implemented_by": [
           "src/deep_agent_lab/storage.py:BriefStore.decide"
         ],
-        "exercise_cell": "notebooks/10-human-review/lab.ipynb#10-learner-mechanism",
+        "exercise_cell": "notebooks/deep_agents.ipynb#10-learner-mechanism",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_exact_action_edit_stale_expiry_duplicate_and_guard"
         ],
@@ -1436,7 +1436,7 @@
         "implemented_by": [
           "src/deep_agent_lab/service.py:open_checkpointer"
         ],
-        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#11-08",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_checkpoint_survives_an_actual_process_restart"
         ],
@@ -1449,7 +1449,7 @@
         "implemented_by": [
           "src/deep_agent_lab/jobs.py:JobStore"
         ],
-        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#11-13",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
         ],
@@ -1462,7 +1462,7 @@
         "implemented_by": [
           "src/deep_agent_lab/jobs.py:JobStore"
         ],
-        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#11-13",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
         ],
@@ -1475,7 +1475,7 @@
         "implemented_by": [
           "src/deep_agent_lab/storage.py:BriefStore.save_reviewed"
         ],
-        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#11-18",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_process_restart_and_ambiguous_write_reconciliation"
         ],
@@ -1488,7 +1488,7 @@
         "implemented_by": [
           "src/deep_agent_lab/storage.py:BriefStore.save_reviewed"
         ],
-        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#11-18",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_process_restart_and_ambiguous_write_reconciliation"
         ],
@@ -1501,7 +1501,7 @@
         "implemented_by": [
           "src/deep_agent_lab/jobs.py:JobStore"
         ],
-        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#11-13",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
         ],
@@ -1514,7 +1514,7 @@
         "implemented_by": [
           "src/deep_agent_lab/jobs.py:JobStore"
         ],
-        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#11-13",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
         ],
@@ -1527,7 +1527,7 @@
         "implemented_by": [
           "src/deep_agent_lab/jobs.py:JobStore"
         ],
-        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#11-13",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
         ],
@@ -1540,7 +1540,7 @@
         "implemented_by": [
           "src/deep_agent_lab/jobs.py:JobStore"
         ],
-        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-13",
+        "exercise_cell": "notebooks/deep_agents.ipynb#11-13",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_jobs_fence_retries_cancellation_and_restart"
         ],
@@ -1553,7 +1553,7 @@
         "implemented_by": [
           "src/deep_agent_lab/storage.py:BriefStore.save_reviewed"
         ],
-        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#11-18",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_process_restart_and_ambiguous_write_reconciliation"
         ],
@@ -1566,7 +1566,7 @@
         "implemented_by": [
           "src/deep_agent_lab/storage.py:BriefStore.save_reviewed"
         ],
-        "exercise_cell": "notebooks/11-durable-execution/lab.ipynb#11-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#11-18",
         "assertion_or_test": [
           "tests/test_review_jobs_security.py::test_process_restart_and_ambiguous_write_reconciliation"
         ],
@@ -1608,7 +1608,7 @@
         "implemented_by": [
           "src/deep_agent_lab/tracing.py:Tracing"
         ],
-        "exercise_cell": "notebooks/12-observability/lab.ipynb#12-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#12-08",
         "assertion_or_test": [
           "tests/test_tracing.py::test_observations_exclude_content_by_default"
         ],
@@ -1621,7 +1621,7 @@
         "implemented_by": [
           "src/deep_agent_lab/tracing.py:Tracing.span"
         ],
-        "exercise_cell": "notebooks/12-observability/lab.ipynb#12-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#12-08",
         "assertion_or_test": [
           "tests/test_tracing.py::test_observations_exclude_content_by_default"
         ],
@@ -1643,7 +1643,7 @@
         "implemented_by": [
           "src/deep_agent_lab/comparisons.py:agent_comparison"
         ],
-        "exercise_cell": "notebooks/12-observability/lab.ipynb#12-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#12-18",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -1663,7 +1663,7 @@
         "implemented_by": [
           "src/deep_agent_lab/model_lab.py:invoke_record"
         ],
-        "exercise_cell": "notebooks/12-observability/lab.ipynb#12-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#12-18",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -1674,7 +1674,7 @@
         "implemented_by": [
           "src/deep_agent_lab/model_lab.py:invoke_record"
         ],
-        "exercise_cell": "notebooks/12-observability/lab.ipynb#12-11",
+        "exercise_cell": "notebooks/deep_agents.ipynb#12-11",
         "assertion_or_test": [],
         "verification_level": "implemented",
         "live_experiment": null
@@ -1685,7 +1685,7 @@
         "implemented_by": [
           "src/deep_agent_lab/instrumentation.py:ResearchMiddleware"
         ],
-        "exercise_cell": "notebooks/12-observability/lab.ipynb#12-15",
+        "exercise_cell": "notebooks/deep_agents.ipynb#12-15",
         "assertion_or_test": [
           "tests/test_citation_repair.py::test_citation_repair_has_one_targeted_attempt_and_disables_tools"
         ],
@@ -1698,7 +1698,7 @@
         "implemented_by": [
           "src/deep_agent_lab/storage.py:BriefStore.lineage"
         ],
-        "exercise_cell": "notebooks/12-observability/lab.ipynb#12-18",
+        "exercise_cell": "notebooks/deep_agents.ipynb#12-18",
         "assertion_or_test": [
           "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
         ],
@@ -1739,7 +1739,7 @@
         "implemented_by": [
           "src/deep_agent_lab/capstone.py:Northstar"
         ],
-        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#13-08",
         "assertion_or_test": [
           "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
         ],
@@ -1752,7 +1752,7 @@
         "implemented_by": [
           "src/deep_agent_lab/capstone.py:Northstar"
         ],
-        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#13-08",
         "assertion_or_test": [
           "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
         ],
@@ -1765,7 +1765,7 @@
         "implemented_by": [
           "src/deep_agent_lab/capstone.py:Northstar"
         ],
-        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#13-08",
         "assertion_or_test": [
           "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
         ],
@@ -1778,7 +1778,7 @@
         "implemented_by": [
           "src/deep_agent_lab/capstone.py:Northstar"
         ],
-        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#13-08",
         "assertion_or_test": [
           "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
         ],
@@ -1791,7 +1791,7 @@
         "implemented_by": [
           "src/deep_agent_lab/capstone.py:Northstar"
         ],
-        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#13-08",
         "assertion_or_test": [
           "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
         ],
@@ -1804,7 +1804,7 @@
         "implemented_by": [
           "src/deep_agent_lab/capstone.py:Northstar"
         ],
-        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#13-08",
         "assertion_or_test": [
           "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
         ],
@@ -1817,7 +1817,7 @@
         "implemented_by": [
           "src/deep_agent_lab/capstone.py:Northstar"
         ],
-        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#13-08",
         "assertion_or_test": [
           "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
         ],
@@ -1830,7 +1830,7 @@
         "implemented_by": [
           "src/deep_agent_lab/capstone.py:Northstar"
         ],
-        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#13-08",
         "assertion_or_test": [
           "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
         ],
@@ -1843,7 +1843,7 @@
         "implemented_by": [
           "src/deep_agent_lab/capstone.py:Northstar"
         ],
-        "exercise_cell": "notebooks/13-capstone/lab.ipynb#13-08",
+        "exercise_cell": "notebooks/deep_agents.ipynb#13-08",
         "assertion_or_test": [
           "tests/test_capstone.py::test_capstone_scopes_plan_context_review_and_recovery"
         ],
